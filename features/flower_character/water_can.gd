@@ -12,12 +12,12 @@ func _ready():
 
 
 
-func _on_Area_body_entered(body):
+func _on_Area_body_entered(_body):
 	print("can entered")
 	well_in_proximity = true;
 	
 	
-func _on_Area_body_exited(body):
+func _on_Area_body_exited(_body):
 	print("can exited")
 	well_in_proximity = false;
 	

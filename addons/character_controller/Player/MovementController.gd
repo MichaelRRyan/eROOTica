@@ -20,7 +20,6 @@ onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity")
 		* gravity_multiplier)
 		
 
-
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:
 	input_axis = Input.get_vector("move_back", "move_forward",

@@ -2,8 +2,9 @@ class_name DialogInterface
 extends Control
 
 signal answer_given(answer_no)
+signal continue_pressed()
 
-onready var portrait = get_node("Portrait/Image")
+
 onready var name_label = get_node("NamePanel/Name")
 onready var character_dialog = get_node("DialogPanel/Label")
 onready var answers = [
@@ -22,8 +23,6 @@ func _ready():
 #-------------------------------------------------------------------------------
 func _on_AnswerButton_pressed(button_no : int):
 	emit_signal("answer_given", button_no)
-	hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 #-------------------------------------------------------------------------------
@@ -49,6 +48,20 @@ func set_answer_dialog(answer_no : int, dialog : String) -> void:
 		return
 	
 	answers[answer_no].get_node("Label").text = dialog
+	$Answers.show()
+	$ContinueBox.hide()
+
+
+#-------------------------------------------------------------------------------
+func display_follow_up(dialog : String) -> void:
+	character_dialog.text = dialog
+	$Answers.hide()
+	$ContinueBox.show()
+
+
+#-------------------------------------------------------------------------------
+func _on_Continue_pressed():
+	emit_signal("continue_pressed")
 
 
 #-------------------------------------------------------------------------------

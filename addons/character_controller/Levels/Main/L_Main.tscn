@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Cube.tscn" type="PackedScene" id=6]
 [ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
-[ext_resource path="res://features/karma_system/flower_brain.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/images/rose.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sunflower.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/nightshade.png" type="Texture" id=12]
@@ -161,40 +160,30 @@ shape = SubResource( 2 )
 
 [node name="Flowers" type="Node" parent="."]
 
-[node name="FlowerCharacter" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Rose" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6714, -0.0879298, -0.166789 )
-character_name = "rose"
+character_name = "Rose"
 texture = ExtResource( 10 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter" instance=ExtResource( 8 )]
-
-[node name="FlowerCharacter2" parent="Flowers" instance=ExtResource( 7 )]
+[node name="BellaAndDonna" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9816, -0.0879298, -0.165431 )
-character_name = "nightshade"
+character_name = "Bella & Donna"
 texture = ExtResource( 12 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter2" instance=ExtResource( 8 )]
-
-[node name="FlowerCharacter3" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Poppy" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92906, -0.0879298, 17.3394 )
-character_name = "poppy"
+character_name = "Poppy"
 texture = ExtResource( 13 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter3" instance=ExtResource( 8 )]
-
-[node name="FlowerCharacter4" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Sunflower" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9816, -0.0879298, -16.2245 )
-character_name = "sunflower"
+character_name = "Sunflower"
 texture = ExtResource( 11 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter4" instance=ExtResource( 8 )]
-
-[node name="FlowerCharacter5" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Tulip" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6368, -0.0879298, -18.8674 )
-character_name = "tulip"
+character_name = "Tulip"
 texture = ExtResource( 14 )
-
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter5" instance=ExtResource( 8 )]
 
 [node name="DialogSystem" parent="." instance=ExtResource( 19 )]
 
@@ -214,8 +203,3 @@ shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]
-[connection signal="_on_food_received" from="Flowers/FlowerCharacter" to="Flowers/FlowerCharacter/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/FlowerCharacter2" to="Flowers/FlowerCharacter2/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/FlowerCharacter3" to="Flowers/FlowerCharacter3/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/FlowerCharacter4" to="Flowers/FlowerCharacter4/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/FlowerCharacter5" to="Flowers/FlowerCharacter5/FlowerBrain" method="_on_food_received"]

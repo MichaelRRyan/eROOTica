@@ -1,11 +1,8 @@
 extends Node2D
 
-
 var time = 0
-var endOfDayTime = 20 #in seconds
+var endOfDayTime = 120 #in seconds
 var endOfDay = false
-
-var dayReset = false
 
 onready var flowerBrain = get_node("../FlowerBrain")
 var flowerHealthDecrement = 0.1
@@ -20,32 +17,26 @@ var energyDecrease = ((END_ENERGY - MID_ENERGY) / (endOfDayTime / 2)) / 60
 var startToMiddleDay = true;
 var	middleToEndDay = false;
 
-var lightRotationAngle = (endOfDayTime / 10000.0)
+var lightRotationAngle = (endOfDayTime / 400000.0)
 
-
-	
+var pausedInDialogue = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	directionalLight.light_energy = 0
 	directionalLight.rotation_degrees.x = -1
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if dayReset:
-		dayReset = false
-		endOfDay = false
-		time = 0
-		
+func _process(delta):	
 	
-	time += delta
+	if Input.is_action_just_pressed("jump"):
+		pausedInDialogue = !pausedInDialogue
 	
-	
+	if !pausedInDialogue:
+		time += delta
 	
 	_manage_Lighting_with_Time()
-	
 	
 	if !endOfDay:
 		print(time)
@@ -59,13 +50,24 @@ func _manage_Lighting_with_Time():
 		startToMiddleDay = false;
 		middleToEndDay = true
 		
-	if startToMiddleDay:
-		directionalLight.light_energy += energyIncrease
+	if(!pausedInDialogue):
+		if startToMiddleDay:
+			directionalLight.light_energy += energyIncrease
+				
+		if middleToEndDay:					
+			directionalLight.light_energy += energyDecrease
 			
-	if middleToEndDay:					
-		directionalLight.light_energy += energyDecrease
+		directionalLight.rotate_x(-lightRotationAngle)
 		
-		#rotation
-	directionalLight.rotate_x(-lightRotationAngle)
+func _reset_day():
+	time = 0
+	startToMiddleDay = true;
+	middleToEndDay = false;
+	directionalLight.light_energy = 0
+	directionalLight.rotation_degrees.x = -1
 	
-	pass
+func _pause_time_dependencies():
+	pausedInDialogue = true
+	
+func _unpause_time_dependencies():
+	pausedInDialogue = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://addons/character_controller/Levels/Main/water_can.gd" type="Script" id=17]
 [ext_resource path="res://features/time_manager/TimeManager.tscn" type="PackedScene" id=18]
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1.69785, 1.35048, 0.494939 )
+
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.67025, 1, 1 )
 
@@ -26,9 +29,6 @@ extents = Vector3( 2.67025, 1, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.717102, 1, 0.851346 )
-
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 1.69785, 1.35048, 0.494939 )
 
 [node name="L_Main" type="Spatial"]
 script = ExtResource( 4 )
@@ -38,6 +38,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
 [node name="Spatial" type="Spatial" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29832e-06, 0.0103648, -0.000842571 )
+
+[node name="water_can" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44735, -0.271916, 1.27265 )
+script = ExtResource( 17 )
+
+[node name="CanSprite" type="Sprite3D" parent="Player/water_can"]
+transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671, 0.58053, -0.958136 )
+billboard = 2
+texture = ExtResource( 16 )
+
+[node name="Area" type="Area" parent="Player/water_can"]
+transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671, 0.58053, -0.958136 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player/water_can/Area"]
+transform = Transform( 1.26557, 0, 0, 0, 1.37663, 0, 0, 0, 1.37663, 0, 0, 0 )
+shape = SubResource( 4 )
 
 [node name="ArenaGeometry" type="Spatial" parent="."]
 
@@ -193,29 +209,12 @@ texture = ExtResource( 15 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63118, 3.90584, -0.746861 )
 shape = SubResource( 3 )
 
-[node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0319307, -0.0804302, 0.249995 )
-script = ExtResource( 17 )
+[node name="TimeManager" parent="." instance=ExtResource( 18 )]
 
-[node name="Sprite3D" type="Sprite3D" parent="Spatial"]
-transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671, 0.58053, -0.958136 )
-billboard = 2
-texture = ExtResource( 16 )
-
-[node name="Area" type="Area" parent="Spatial"]
-transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671, 0.58053, -0.958136 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Spatial/Area"]
-transform = Transform( 1.26557, 0, 0, 0, 1.37663, 0, 0, 0, 1.37663, 0, 0, 0 )
-shape = SubResource( 4 )
-
+[connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter" to="Flowers/FlowerCharacter/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter2" to="Flowers/FlowerCharacter2/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter3" to="Flowers/FlowerCharacter3/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter4" to="Flowers/FlowerCharacter4/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter5" to="Flowers/FlowerCharacter5/FlowerBrain" method="_on_food_received"]
-[connection signal="body_entered" from="Spatial/Area" to="Spatial" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Spatial/Area" to="Spatial" method="_on_Area_body_exited"]
-[node name="TimeManager" parent="." instance=ExtResource( 18 )]
-
-

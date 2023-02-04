@@ -4,7 +4,7 @@ var time = 0
 var endOfDayTime = 120 #in seconds
 var endOfDay = false
 
-onready var flowerBrain = get_node("../FlowerBrain")
+#onready var flowerBrain = get_node("../FlowerBrain")
 var flowerHealthDecrement = 0.1
 
 onready var directionalLight = get_node(("../Lighting/DirectionalLight"))
@@ -42,7 +42,7 @@ func _process(delta):
 		print(time)
 		if time > endOfDayTime:
 			endOfDay = true
-			flowerBrain.currentFlowerHealth -= flowerHealthDecrement
+			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement
 #	pass
 
 func _manage_Lighting_with_Time():		

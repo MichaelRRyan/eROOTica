@@ -33,7 +33,9 @@ var foodHealthIncrease = 0.3
 var positiveKarmaIncrease = 0.1
 var negativeKarmaIncrease = 0.1
 
-var character_name : String = "Bella & Donna"
+var flowerHealthDecrement = 0.1
+
+var character_name : String = "Rose"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -86,3 +88,8 @@ func answer_given(response, new_familiarity):
 			
 	currentFlowerInterest += interestAffector
 	print("Interest: " + str(currentFlowerInterest) + " Familiarity: " + str(familiarity))
+
+func _decrease_health():
+	print(currentFlowerHealth)
+	currentFlowerHealth -= flowerHealthDecrement
+	print(currentFlowerHealth)

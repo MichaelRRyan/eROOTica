@@ -36,7 +36,11 @@ func _ready():
 	
 	#test_3_positive_responses()
 	
-	test_3_negative_responses()
+	#test_3_negative_responses()
+	
+	test_strange_case_1()
+	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -113,6 +117,49 @@ func test_3_negative_responses():
 	_on_dialogue_response_recieved(Response.NEGATIVE_RESPONSE)
 	
 	print("Flower Interest: " + str(currentFlowerInterest))
+	
+func test_strange_case_1():
+	#Flower is dying but your nice
+	#You neglected it but havent been mean 
+	#And you try to be nice
+	currentFlowerHealth = 0.1
+	currentFlowerInterest = 0.2
+	currentNegativeFlowerKarma = 0.5
+	currentPositiveFlowerKarma = 0.7
+	
+	print("Before repsonse: " + str(currentFlowerInterest))
+		
+	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
+	print("Flower Interest: " + str(currentFlowerInterest))
+	print("Flower Health: " + str(currentFlowerHealth))
+	
+	#Lets say you fed and watered them and you were nice again
+	_on_food_received()
+	_on_water_received()
+	
+	print("Flower Health: " + str(currentFlowerHealth))
+	
+	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
+	print("Flower Interest: " + str(currentFlowerInterest))
+	
+	#Lets say you fed them again and you were nice again
+	_on_food_received()
+	
+	print("Flower Health: " + str(currentFlowerHealth))
+	
+	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
+	print("Flower Interest: " + str(currentFlowerInterest))
+	
+	#then you were just nice again. this kinda tests if you can bounce out of a despereate situation
+	
+	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
+	print("Flower Interest: " + str(currentFlowerInterest))
+	
+	#test again
+	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
+	print("Flower Interest: " + str(currentFlowerInterest))
+	
+
 
 
 

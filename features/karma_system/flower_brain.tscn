@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://features/karma_system/flower_brain.gd" type="Script" id=1]
+
+[node name="FlowerBrain" type="Node2D"]
+script = ExtResource( 1 )

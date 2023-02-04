@@ -3,6 +3,7 @@ extends Node2D
 var time = 0
 var endOfDayTime = 120 #in seconds
 var endOfDay = false
+var dayNumber = 0;
 
 onready var directionalLight = get_node(("../Lighting/DirectionalLight"))
 const START_ENERGY = 0.8
@@ -20,6 +21,7 @@ var pausedInDialogue = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("day number: " + str(dayNumber))
 	directionalLight.light_energy = 0
 	directionalLight.rotation_degrees.x = -1
 
@@ -62,12 +64,14 @@ func _manage_Lighting_with_Time():
 		directionalLight.rotate_x(-lightRotationAngle)
 		
 func _reset_day():
+	dayNumber+=1
 	time = 0
 	endOfDay = false
 	startToMiddleDay = true;
 	middleToEndDay = false;
 	directionalLight.light_energy = 0
 	directionalLight.rotation_degrees.x = -1
+	print("day number: " + str(dayNumber))
 	
 func _pause_time_dependencies():
 	pausedInDialogue = true

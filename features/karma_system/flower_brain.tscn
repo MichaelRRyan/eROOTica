@@ -2,5 +2,5 @@
 
 [ext_resource path="res://features/karma_system/flower_brain.gd" type="Script" id=1]
 
-[node name="FlowerBrain" type="Node2D"]
+[node name="FlowerBrain" type="Node2D" groups=["flower_brains"]]
 script = ExtResource( 1 )

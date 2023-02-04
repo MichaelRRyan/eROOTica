@@ -4,9 +4,6 @@ var time = 0
 var endOfDayTime = 120 #in seconds
 var endOfDay = false
 
-#onready var flowerBrain = get_node("../FlowerBrain")
-var flowerHealthDecrement = 0.1
-
 onready var directionalLight = get_node(("../Lighting/DirectionalLight"))
 const START_ENERGY = 0.8
 const MID_ENERGY = 6.725
@@ -34,15 +31,20 @@ func _process(delta):
 		pausedInDialogue = !pausedInDialogue
 	
 	if !pausedInDialogue:
-		time += delta
+		if !endOfDay:
+			time += delta
 	
 	_manage_Lighting_with_Time()
 	
 	if !endOfDay:
-		print(time)
+		#print(time)
 		if time > endOfDayTime:
 			endOfDay = true
 			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement
+			
+	if endOfDay:
+		get_tree().call_group("flower_brains", "_decrease_health")
+		_reset_day()
 #	pass
 
 func _manage_Lighting_with_Time():		
@@ -61,6 +63,7 @@ func _manage_Lighting_with_Time():
 		
 func _reset_day():
 	time = 0
+	endOfDay = false
 	startToMiddleDay = true;
 	middleToEndDay = false;
 	directionalLight.light_energy = 0

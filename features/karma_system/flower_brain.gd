@@ -32,6 +32,8 @@ var foodHealthIncrease = 0.3
 var positiveKarmaIncrease = 0.1
 var negativeKarmaIncrease = 0.1
 
+var flowerHealthDecrement = 0.1
+
 var character_name : String = "Rose"
 
 
@@ -188,3 +190,8 @@ func test_strange_case_1():
 
 func _on_Timer_timeout():
 	talked_to()
+	
+func _decrease_health():
+	print(currentFlowerHealth)
+	currentFlowerHealth -= flowerHealthDecrement
+	print(currentFlowerHealth)

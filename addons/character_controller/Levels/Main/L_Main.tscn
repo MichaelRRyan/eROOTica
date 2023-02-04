@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/images/well.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/watering_can.png" type="Texture" id=16]
 [ext_resource path="res://addons/character_controller/Levels/Main/water_can.gd" type="Script" id=17]
+[ext_resource path="res://features/time_manager/TimeManager.tscn" type="PackedScene" id=18]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.67025, 1, 1 )
@@ -126,8 +127,8 @@ transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 2, -16.5, 5.5
 environment = ExtResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 0.559176, -0.828699, -0.0240943, -0.162976, -0.138373, 0.976879, -0.812872, -0.542321, -0.212433, -0.371058, 5, 0 )
-light_energy = 2.615
+transform = Transform( 1, 0, 0, 0, 0.0976002, 0.995226, 0, -0.995226, 0.0976002, 0, 10.031, 0 )
+light_energy = 3.569
 shadow_enabled = true
 shadow_bias = 0.05
 directional_shadow_max_distance = 250.0
@@ -215,3 +216,6 @@ shape = SubResource( 4 )
 [connection signal="_on_food_received" from="Flowers/FlowerCharacter5" to="Flowers/FlowerCharacter5/FlowerBrain" method="_on_food_received"]
 [connection signal="body_entered" from="Spatial/Area" to="Spatial" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Spatial/Area" to="Spatial" method="_on_Area_body_exited"]
+[node name="TimeManager" parent="." instance=ExtResource( 18 )]
+
+

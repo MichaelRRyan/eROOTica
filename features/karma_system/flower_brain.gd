@@ -1,6 +1,9 @@
 extends Node2D
 
 
+
+
+
 #Constants
 var MAX_INTEREST_LEVEL = 1
 var MIN_INTEREST_LEVEL = 0

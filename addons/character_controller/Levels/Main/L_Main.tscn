@@ -150,35 +150,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6714, -0.0879298, -0.166789
 character_name = "rose"
 texture = ExtResource( 10 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter" instance=ExtResource( 8 )]
+[node name="FlowerBrain" parent="Flowers/FlowerCharacter" groups=["flower_brains"] instance=ExtResource( 8 )]
 
 [node name="FlowerCharacter2" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9816, -0.0879298, -0.165431 )
 character_name = "nightshade"
 texture = ExtResource( 12 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter2" instance=ExtResource( 8 )]
+[node name="FlowerBrain" parent="Flowers/FlowerCharacter2" groups=["flower_brains"] instance=ExtResource( 8 )]
 
 [node name="FlowerCharacter3" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92906, -0.0879298, 17.3394 )
 character_name = "poppy"
 texture = ExtResource( 13 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter3" instance=ExtResource( 8 )]
+[node name="FlowerBrain" parent="Flowers/FlowerCharacter3" groups=["flower_brains"] instance=ExtResource( 8 )]
 
 [node name="FlowerCharacter4" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9816, -0.0879298, -16.2245 )
 character_name = "sunflower"
 texture = ExtResource( 11 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter4" instance=ExtResource( 8 )]
+[node name="FlowerBrain" parent="Flowers/FlowerCharacter4" groups=["flower_brains"] instance=ExtResource( 8 )]
 
 [node name="FlowerCharacter5" parent="Flowers" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6368, -0.0879298, -18.8674 )
 character_name = "tulip"
 texture = ExtResource( 14 )
 
-[node name="FlowerBrain" parent="Flowers/FlowerCharacter5" instance=ExtResource( 8 )]
+[node name="FlowerBrain" parent="Flowers/FlowerCharacter5" groups=["flower_brains"] instance=ExtResource( 8 )]
 
 [node name="DialogSystem" parent="." instance=ExtResource( 19 )]
 

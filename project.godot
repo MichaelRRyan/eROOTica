@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "DialogInterface",
+"language": "GDScript",
+"path": "res://features/dialog_system/dialog_interface.gd"
+}, {
 "base": "KinematicBody",
 "class": "MovementController",
 "language": "GDScript",
 "path": "res://addons/character_controller/Player/MovementController.gd"
 } ]
 _global_script_class_icons={
+"DialogInterface": "",
 "MovementController": ""
 }
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 var time = 0
-var endOfDayTime = 120 #in seconds
+var endOfDayTime = 20 #in seconds
 var endOfDay = false
 var dayNumber = 0;
 
@@ -39,7 +39,6 @@ func _process(delta):
 	_manage_Lighting_with_Time()
 	
 	if !endOfDay:
-		#print(time)
 		if time > endOfDayTime:
 			endOfDay = true
 			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement

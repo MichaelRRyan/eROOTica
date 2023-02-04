@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://features/flower_character/flower_character.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/poppy.png" type="Texture" id=2]
+[ext_resource path="res://features/karma_system/flower_brain.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.630504, 0.698266, 0.543627 )
 
 [node name="FlowerCharacter" type="Spatial"]
 script = ExtResource( 1 )
+
+[node name="FlowerBrain" parent="." instance=ExtResource( 3 )]
 
 [node name="FlowerSprite" type="Sprite3D" parent="."]
 transform = Transform( 0.164601, 0, 0, 0, 0.155391, 0, 0, 0, 0.52591, -0.0268637, 1.01334, 0.492166 )
@@ -28,6 +31,7 @@ modulate = Color( 0.937255, 0.313726, 0.313726, 1 )
 outline_modulate = Color( 1, 0, 0, 1 )
 text = "Press E to feed"
 
+[connection signal="_on_food_received" from="." to="FlowerBrain" method="_on_food_received"]
 [connection signal="child_entered_tree" from="FlowerSprite" to="." method="_on_FlowerSprite_child_entered_tree"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

@@ -39,7 +39,6 @@ func _process(delta):
 	_manage_Lighting_with_Time()
 	
 	if !endOfDay:
-		print(time)
 		if time > endOfDayTime:
 			endOfDay = true
 			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement

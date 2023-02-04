@@ -66,6 +66,6 @@ func _manage_Lighting_with_Time():
 		directionalLight.light_energy += energyDecrease
 		
 		#rotation
-	directionalLight.rotate_x(lightRotationAngle)
+	directionalLight.rotate_x(-lightRotationAngle)
 	
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Cube.tscn" type="PackedScene" id=6]
 [ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://features/karma_system/flower_brain.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.67025, 1, 1 )
@@ -110,7 +111,8 @@ transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 2, -16.5, 5.5
 environment = ExtResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( -0.866026, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 5, 0 )
+transform = Transform( 0.559176, -0.828699, -0.0240943, -0.162976, -0.138373, 0.976879, -0.812872, -0.542321, -0.212433, -0.371058, 5, 0 )
+light_energy = 2.615
 shadow_enabled = true
 shadow_bias = 0.05
 directional_shadow_max_distance = 250.0
@@ -128,4 +130,4 @@ shape = SubResource( 2 )
 [node name="FlowerCharacter" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7611, -0.0879298, -0.165431 )
 
-[connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]
+[node name="FlowerBrain" parent="." instance=ExtResource( 8 )]

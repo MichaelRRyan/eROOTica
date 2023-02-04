@@ -13,7 +13,7 @@ var in_range_of_player: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = Vector3(1, 1, 1)
+	
 	text_box.hide()
 
 

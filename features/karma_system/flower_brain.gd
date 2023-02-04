@@ -2,6 +2,9 @@ extends Node2D
 
 signal talked_to(me)
 
+
+
+
 #Constants
 var MAX_INTEREST_LEVEL = 1
 var MIN_INTEREST_LEVEL = 0

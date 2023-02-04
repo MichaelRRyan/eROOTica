@@ -12,6 +12,8 @@ onready var answers = [
 	get_node("Answers/Answer3"),
 ]
 
+
+#-------------------------------------------------------------------------------
 func _ready():
 	for i in answers.size():
 		answers[i].connect("pressed", self, "_on_AnswerButton_pressed", [i])
@@ -20,12 +22,19 @@ func _ready():
 #-------------------------------------------------------------------------------
 func _on_AnswerButton_pressed(button_no : int):
 	emit_signal("answer_given", button_no)
+	hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 #-------------------------------------------------------------------------------
-func set_character_details(character_name : String, portrait_image : Texture) -> void:
+func show():
+	visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
+#-------------------------------------------------------------------------------
+func set_character_name(character_name : String) -> void:
 	name_label.text = character_name
-	portrait.texture = portrait_image
 
 
 #-------------------------------------------------------------------------------

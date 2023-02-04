@@ -1,5 +1,6 @@
 extends Node2D
 
+signal talked_to(me)
 
 #Constants
 var MAX_INTEREST_LEVEL = 1
@@ -28,9 +29,17 @@ var foodHealthIncrease = 0.3
 var positiveKarmaIncrease = 0.1
 var negativeKarmaIncrease = 0.1
 
+var character_name : String = "Rose"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var systems = get_tree().get_nodes_in_group("dialog_system")
+	if systems and !systems.empty():
+		var dialog_system = systems.front()
+		dialog_system.connect("answer_given", self, "_on_dialogue_response_recieved")
+		connect("talked_to", dialog_system, "_on_character_talked_to")
+	
 	#TESTS
 	#test_positive_response()
 	
@@ -41,7 +50,20 @@ func _ready():
 	test_strange_case_1()
 	
 
+func talked_to():
+	emit_signal("talked_to", self)
 
+
+func get_name():
+	return character_name
+	
+
+func get_familiarity():
+	return 0
+
+
+func get_attraction():
+	return currentFlowerInterest
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -69,6 +91,7 @@ func _on_dialogue_response_recieved(response):
 			currentNegativeFlowerKarma += negativeKarmaIncrease
 			
 	currentFlowerInterest += interestAffector
+	print(currentFlowerInterest)
 	
 func test_positive_response():
 	currentFlowerHealth = 0.7
@@ -158,9 +181,7 @@ func test_strange_case_1():
 	#test again
 	_on_dialogue_response_recieved(Response.POSITIVE_RESPONSE)
 	print("Flower Interest: " + str(currentFlowerInterest))
-	
 
 
-
-
-
+func _on_Timer_timeout():
+	talked_to()

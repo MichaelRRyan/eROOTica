@@ -19,8 +19,9 @@ export var texture: Texture = null
 
 var in_range_of_player: bool = false
 var can_be_watered: bool = false
-var fertilzer_equiped:bool = false
 var water_equiped:bool = false
+var fertilzer_equiped:bool = false
+var fertilzer_full:bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -55,10 +56,11 @@ func _input(delta):
 			print("You watered the flower")
 			can_be_watered = false
 			
-		if (in_range_of_player && can_be_watered && fertilzer_equiped && !water_equiped):
+		if (in_range_of_player && fertilzer_full && fertilzer_equiped ):
 			emit_signal("_on_food_received")
 			emit_signal("__fertilizer_emptied")
 			print("You fertilizer the flower")
+			fertilzer_full = false
 	
 			
 	if(Input.is_action_pressed("talk")):
@@ -86,3 +88,7 @@ func _fertilizer_equiped():
 
 func _fertilizer_unequiped():
 	fertilzer_equiped = true
+
+
+func _fertilizer_full():
+	fertilzer_full = true

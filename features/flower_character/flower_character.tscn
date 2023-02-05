@@ -29,7 +29,8 @@ transform = Transform( 1.00148, 0, 0, 0, 1.00148, 0, 0, 0, 1.00148, -0.0571409, 
 billboard = 2
 modulate = Color( 0.937255, 0.313726, 0.313726, 1 )
 outline_modulate = Color( 1, 0, 0, 1 )
-text = "Press E to feed"
+text = " To feed: Left click
+ To talk:  press T"
 
 [connection signal="_on_food_received" from="." to="FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="." to="FlowerBrain" method="_on_water_received"]

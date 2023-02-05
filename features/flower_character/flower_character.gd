@@ -44,7 +44,7 @@ func water_can_equiped():
 	can_be_watered = true
 	
 
-func _input(delta):
+func _input(_delta):
 	
 	if(Input.is_action_pressed("feed")):
 		if(in_range_of_player && can_be_watered):

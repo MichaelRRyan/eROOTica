@@ -51,7 +51,7 @@ func _ready():
 	fertilizer_icon.hide()
 	
 	
-func _on_Area_body_entered(body):
+func _on_Area_body_entered(_body):
 	print("can entered")
 	well_in_proximity = true;
 	well_label.show()
@@ -63,7 +63,7 @@ func _on_Area_body_exited(_body):
 	well_label.hide()
 	
 	
-func _input(delta):
+func _input(_event):
 	if(well_in_proximity):
 		if(Input.is_action_pressed("feed") && water_equiped):
 			print("You got water from the well")

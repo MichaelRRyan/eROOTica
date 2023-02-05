@@ -3,7 +3,9 @@ extends Node2D
 signal talked_to(me)
 
 
-
+onready var flower_face_sprites = []
+#default
+var flower_face_texture = load("res://assets//images//faces//neutral.png")
 
 #Constants
 var MAX_INTEREST_LEVEL = 1
@@ -18,6 +20,19 @@ enum Response {
 	NEUTRAL_RESPONSE = 0,
 	POSITIVE_RESPONSE = 1,
 	NEGATIVE_RESPONSE = 2
+}
+
+#PlantFace enum for image change
+enum PlantFaces {
+	AHEGAO = 0,
+	ANGRY = 1,
+	CLOSED = 2,
+	DROWSEY = 3,
+	HAPPY = 4,
+	NEUTRAL = 5,
+	SAD = 6,
+	SHOCK = 7,
+	TALKING = 8
 }
 
 #these variables will be in the range 0 - 1
@@ -48,7 +63,25 @@ func _ready():
 
 func talked_to():
 	emit_signal("talked_to", self)
-
+	
+	
+func set_name(char_name):
+	character_name = char_name
+	
+	if character_name == "Bella & Donna":
+		flower_face_sprites.append(get_node(("../BelladonnaFace1")))
+		flower_face_sprites.append(get_node(("../BelladonnaFace2")))
+	elif character_name == "Rose":
+		flower_face_sprites.append(get_node(("../RoseFace")))
+	elif character_name == "Poppy":
+		flower_face_sprites.append(get_node(("../Face")))
+		get_node("../BobbyFace").show()
+	else:
+		flower_face_sprites.append(get_node(("../Face")))
+	
+	for face in flower_face_sprites:
+		face.show()
+	
 
 func get_name():
 	return character_name
@@ -59,7 +92,7 @@ func get_familiarity():
 
 
 func get_attraction():
-	return currentFlowerInterest
+	return clamp(currentFlowerInterest, 0.0, 1.0)
 
 
 func _on_water_received():
@@ -93,3 +126,79 @@ func _decrease_health():
 	print(currentFlowerHealth)
 	currentFlowerHealth -= flowerHealthDecrement
 	print(currentFlowerHealth)
+	
+func _process(_delta):
+	_update_current_face()
+	
+func _update_current_face():
+
+	var rangeOfInterest = 0.14
+	var midPointOfInterest = MAX_INTEREST_LEVEL / 2.0
+	var plantFace = PlantFaces.NEUTRAL
+	
+	
+	if currentFlowerInterest > midPointOfInterest - rangeOfInterest \
+	&& currentFlowerInterest < midPointOfInterest + rangeOfInterest:
+		plantFace = PlantFaces.NEUTRAL
+		
+		#negative range
+	if currentFlowerInterest < midPointOfInterest \
+	&& currentFlowerInterest > midPointOfInterest - (rangeOfInterest * 2):
+		plantFace = PlantFaces.SAD	
+		
+	if currentFlowerInterest < midPointOfInterest - rangeOfInterest \
+	&& currentFlowerInterest > midPointOfInterest - (rangeOfInterest * 3):
+		plantFace = PlantFaces.CLOSED
+		
+	if currentFlowerInterest < midPointOfInterest - rangeOfInterest * 2 \
+	&& currentFlowerInterest > MIN_INTEREST_LEVEL:
+		plantFace = PlantFaces.ANGRY	
+		
+		#positive range
+	if currentFlowerInterest > midPointOfInterest \
+	&& currentFlowerInterest < midPointOfInterest + (rangeOfInterest * 2):
+		plantFace = PlantFaces.TALKING
+		
+	if currentFlowerInterest > midPointOfInterest + rangeOfInterest \
+	&& currentFlowerInterest < midPointOfInterest + (rangeOfInterest * 3):
+		plantFace = PlantFaces.HAPPY
+		
+	if currentFlowerInterest > midPointOfInterest + rangeOfInterest * 2 \
+	&& currentFlowerInterest < MAX_INTEREST_LEVEL:
+		plantFace = PlantFaces.AHEGAO
+		
+	_apply_plant_face(plantFace)
+	
+func _apply_plant_face(plantFaceEnum):
+	match plantFaceEnum:
+		PlantFaces.AHEGAO:
+			flower_face_texture = load("res://assets//images//faces//ahegao.png")
+			pass
+		PlantFaces.ANGRY:
+			flower_face_texture = load("res://assets//images//faces//angry.png")
+			pass
+		PlantFaces.CLOSED:
+			flower_face_texture = load("res://assets//images//faces//closed.png")
+			pass
+		PlantFaces.DROWSEY:
+			flower_face_texture = load("res://assets//images//faces//drowsey.png")
+			pass
+		PlantFaces.HAPPY:
+			flower_face_texture = load("res://assets//images//faces//happy.png")
+			pass
+		PlantFaces.NEUTRAL:
+			flower_face_texture = load("res://assets//images//faces//neutral.png")
+			pass
+		PlantFaces.SAD:
+			flower_face_texture = load("res://assets//images//faces//sad.png")
+			pass
+		PlantFaces.SHOCK:
+			flower_face_texture = load("res://assets//images//faces//shock.png")
+			pass
+		PlantFaces.TALKING:
+			flower_face_texture = load("res://assets//images//faces//talking.png")
+			pass
+	
+	for face in flower_face_sprites:
+		face.set_texture(flower_face_texture)
+	

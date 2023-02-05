@@ -34,9 +34,9 @@ func _physics_process(delta) -> void:
 		if velocity.y < 0:
 			velocity.y = 0
 		
-		if Input.is_action_just_pressed("jump"):
-			snap = Vector3.ZERO
-			velocity.y = jump_height
+#		if Input.is_action_just_pressed("jump"):
+#			snap = Vector3.ZERO
+#			velocity.y = jump_height
 	else:
 		# Workaround for 'vertical bump' when going off platform
 		if snap != Vector3.ZERO && velocity.y != 0:

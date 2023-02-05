@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="First Person Starter"
+config/name="Erootica"
 run/main_scene="res://addons/character_controller/Levels/Main/L_Main.tscn"
 config/icon="res://icon.png"
 
@@ -93,6 +93,11 @@ equip_water_can={
 equip_fertilizer={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+equip_water_can={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

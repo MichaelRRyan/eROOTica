@@ -48,3 +48,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 
+
+
+func _fertilizer_emptied():
+	pass # Replace with function body.

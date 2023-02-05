@@ -4,7 +4,8 @@ extends Spatial
 # signals
 signal _on_food_received
 signal _on_water_received
-#signal _fertilizer_emptied
+
+signal _fertilizer_emptied
 
 #variables
 onready var brain := get_node("FlowerBrain")
@@ -58,7 +59,7 @@ func _input(delta):
 			
 		if (in_range_of_player && fertilzer_full && fertilzer_equiped ):
 			emit_signal("_on_food_received")
-			emit_signal("__fertilizer_emptied")
+			emit_signal("_fertilizer_emptied")
 			print("You fertilizer the flower")
 			fertilzer_full = false
 	

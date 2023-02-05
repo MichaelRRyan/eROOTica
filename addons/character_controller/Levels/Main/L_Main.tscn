@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Cube.tscn" type="PackedScene" id=6]
 [ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/images/composter.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/noWater.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/rose.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sunflower.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/nightshade.png" type="Texture" id=12]
@@ -18,6 +19,9 @@
 [ext_resource path="res://features/flower_character/water_can.gd" type="Script" id=17]
 [ext_resource path="res://features/time_manager/TimeManager.tscn" type="PackedScene" id=18]
 [ext_resource path="res://features/dialog_system/dialog_system.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/images/water.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/noFertilizerIcon.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/fertaliserIcon.png" type="Texture" id=22]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 1.69785, 1.35048, 0.494939 )
@@ -54,6 +58,34 @@ transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671,
 [node name="CollisionShape" type="CollisionShape" parent="Player/water_can/Area"]
 transform = Transform( 1.26557, 0, 0, 0, 1.37663, 0, 0, 0, 1.37663, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="no_water_Layer" type="CanvasLayer" parent="Player"]
+
+[node name="NoWater" type="Sprite" parent="Player/no_water_Layer"]
+position = Vector2( 61, 538 )
+scale = Vector2( 0.395969, 0.396513 )
+texture = ExtResource( 9 )
+
+[node name="water" type="CanvasLayer" parent="Player"]
+
+[node name="Water" type="Sprite" parent="Player/water"]
+position = Vector2( 61, 540 )
+scale = Vector2( 0.364436, 0.44251 )
+texture = ExtResource( 20 )
+
+[node name="no_fertilizer" type="CanvasLayer" parent="Player"]
+
+[node name="NoFertilizerIcon" type="Sprite" parent="Player/no_fertilizer"]
+position = Vector2( 172, 540 )
+scale = Vector2( 0.395969, 0.396513 )
+texture = ExtResource( 21 )
+
+[node name="fetrilizer" type="CanvasLayer" parent="Player"]
+
+[node name="FertaliserIcon" type="Sprite" parent="Player/fetrilizer"]
+position = Vector2( 172, 540 )
+scale = Vector2( 0.404428, 0.413685 )
+texture = ExtResource( 22 )
 
 [node name="ArenaGeometry" type="Spatial" parent="."]
 
@@ -208,6 +240,7 @@ text = "To select fertilizer: 1
 To take Fertilizer: Left click"
 
 [node name="TimeManager" parent="." instance=ExtResource( 18 )]
+position = Vector2( -334, 2735 )
 
 [node name="compost_bin" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1255, -2.48223, -0.28888 )
@@ -268,18 +301,23 @@ To take Fertilizer: Left click
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered_compost"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited_compost"]
+[connection signal="_fertilizer_emptied" from="Flowers/Rose" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_on_food_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Rose" to="Player/water_can" method="_water_received"]
 [connection signal="_on_water_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_water_received"]
+[connection signal="_fertilizer_emptied" from="Flowers/BellaAndDonna" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_on_food_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Player/water_can" method="_water_received"]
 [connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_water_received"]
+[connection signal="_fertilizer_emptied" from="Flowers/Poppy" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_on_food_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Poppy" to="Player/water_can" method="_water_received"]
 [connection signal="_on_water_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_water_received"]
+[connection signal="_fertilizer_emptied" from="Flowers/Sunflower" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_on_food_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Sunflower" to="Player/water_can" method="_water_received"]
 [connection signal="_on_water_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_water_received"]
+[connection signal="_fertilizer_emptied" from="Flowers/Tulip" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_on_food_received" from="Flowers/Tulip" to="Flowers/Tulip/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Tulip" to="Player/water_can" method="_water_received"]
 [connection signal="_on_water_received" from="Flowers/Tulip" to="Flowers/Tulip/FlowerBrain" method="_on_water_received"]

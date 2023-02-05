@@ -25,7 +25,7 @@ var compost_equiped: bool = false
 func _ready():
 	well_can.set_texture(emptyTexture)
 	
-func _on_Area_body_entered(body):
+func _on_Area_body_entered(_body):
 	print("can entered")
 	well_in_proximity = true;
 	
@@ -35,7 +35,7 @@ func _on_Area_body_exited(_body):
 	well_in_proximity = false;
 	
 	
-func _input(delta):
+func _input(_event):
 	if(well_in_proximity):
 		if(Input.is_action_pressed("feed") && water_equiped):
 			print("You got water from the well")

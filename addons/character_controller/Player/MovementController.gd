@@ -19,8 +19,6 @@ onready var floor_max_angle: float = deg2rad(45.0)
 onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)
 		
-#onready var well_can := get_node("water_can/CanSprite")
-
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:

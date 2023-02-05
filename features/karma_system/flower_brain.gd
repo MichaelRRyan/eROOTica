@@ -92,7 +92,7 @@ func get_familiarity():
 
 
 func get_attraction():
-	return currentFlowerInterest
+	return clamp(currentFlowerInterest, 0.0, 1.0)
 
 
 func _on_water_received():
@@ -127,7 +127,7 @@ func _decrease_health():
 	currentFlowerHealth -= flowerHealthDecrement
 	print(currentFlowerHealth)
 	
-func _process(delta):
+func _process(_delta):
 	_update_current_face()
 	
 func _update_current_face():

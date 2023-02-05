@@ -19,21 +19,39 @@ func _on_character_talked_to(character):
 		for i in _current_dialog.responses.size():
 			_interface.set_answer_dialog(i, _current_dialog.responses[i][0])
 	else:
-		_interface.display_follow_up("I can't think of anything else to say.")
+		_interface.display_follow_up("I can't think of anything to say.")
 		print_debug("RAN OUT OF DIALOG")
 
 
 #-------------------------------------------------------------------------------
 func _find_dialog(character):
 	var char_dialogs = _dialogs[character.get_name()]
+	var next_familiarity = character.get_familiarity() + 1
 	
+	var options = []
 	for dialog in char_dialogs:
-		if dialog[0] > character.get_familiarity():
-			return {
-				line = dialog[2],
-				responses = dialog.slice(3, 5),
-				familiarity = dialog[0],
-			}
+		if dialog[0] == next_familiarity:
+			options.append(dialog)
+	
+	var dialog = null
+	if options.size() == 1:
+		dialog = options[0]
+		
+	elif not options.empty():
+		var closest_dist = 1
+		
+		for option in options:
+			var dist = abs(option[1] - character.get_attraction())
+			if dist < closest_dist:
+				closest_dist = dist
+				dialog = option
+		
+	if dialog != null:
+		return {
+			line = dialog[2],
+			responses = dialog.slice(3, 5),
+			familiarity = dialog[0],
+		}
 	
 	return null
 

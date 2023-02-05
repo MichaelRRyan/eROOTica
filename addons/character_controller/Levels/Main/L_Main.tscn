@@ -386,57 +386,69 @@ transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 15.7651, 0, 12.02
 transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.20351, 0, -5.83167 )
 
 [node name="Clouds" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.28975, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732568, 0 )
 
 [node name="Sprite3D" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, 77.4981 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, 29.7547 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D2" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, 77.4981 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, 29.7547 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, 77.4935 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, 29.75 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D10" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, -70.7109 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, -31.1953 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D11" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, -70.7109 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, -31.1953 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D12" type="Sprite3D" parent="Clouds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, -70.7155 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, -31.1999 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3351, 7.93192, 53.0757 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.2294, 7.93192, 53.0757 )
 lod_max_distance = 32768.0
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D5" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3351, 7.93192, 3.54631 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.2294, 7.93192, 3.54631 )
 lod_max_distance = 32768.0
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D6" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3305, 7.99036, -46.1416 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.2248, 7.99036, -46.1416 )
 lod_max_distance = 32768.0
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D7" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9163, 7.93192, 53.0757 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.8202, 7.93192, 53.0757 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D8" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9163, 7.93192, 3.54631 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.8202, 7.93192, 3.54631 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="Sprite3D9" type="Sprite3D" parent="Clouds"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9209, 7.99036, -46.1416 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.8248, 7.99036, -46.1416 )
+render_priority = -1
 texture = ExtResource( 8 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

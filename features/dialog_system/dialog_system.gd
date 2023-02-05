@@ -6,6 +6,8 @@ onready var _interface : DialogInterface = get_node("CanvasLayer/DialogInterface
 var _current_dialog = null
 var _current_character = null
 
+signal _leaving_dialogue
+
 
 #-------------------------------------------------------------------------------
 func _on_character_talked_to(character):
@@ -48,12 +50,14 @@ func _on_DialogInterface_answer_given(answer_no):
 	else:
 		_interface.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		emit_signal("_leaving_dialogue")
 
 
 #-------------------------------------------------------------------------------
 func _on_DialogInterface_continue_pressed():
 	_interface.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	emit_signal("_leaving_dialogue")
 
 
 #-------------------------------------------------------------------------------

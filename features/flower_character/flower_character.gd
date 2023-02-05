@@ -4,11 +4,14 @@ extends Spatial
 # signals
 signal _on_food_received
 signal _on_water_received
+signal _in_dialogue
+
 
 #variables
 var position : Vector3 = Vector3(1, 1, 1)
 onready var flower := get_node("FlowerSprite")
 onready var text_box:= get_node("Textbox")
+
 
 
 export var character_name: String = ""
@@ -56,6 +59,7 @@ func _input(event):
 	
 	if event.is_action_pressed("talk") and in_range_of_player:
 		brain.talked_to()
+		emit_signal("_in_dialogue")
 
 
 func _water_can_emptied():

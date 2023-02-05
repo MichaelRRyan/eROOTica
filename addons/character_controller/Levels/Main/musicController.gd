@@ -16,3 +16,11 @@ func _play_gardening_music():
 func _play_dying_music():
 	stream = load("res://assets/audio/music/dying.wav")
 	play()
+
+
+func _in_dialogue():
+	_play_dialogue_music()
+
+
+func _leaving_dialogue():
+	_play_gardening_music()

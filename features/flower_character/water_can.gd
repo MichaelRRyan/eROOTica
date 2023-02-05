@@ -5,7 +5,7 @@ extends Spatial
 # water can
 onready var well_can := get_node("CanSprite")
 onready var can_texture: Texture = load("res://assets/images/watering_can.png")
-var emptyTexture: Texture = null
+var empty_texture: Texture = null
 var well_in_proximity: bool = false;
 var water_in_can: bool = false
 var water_equiped: bool = false
@@ -23,7 +23,7 @@ var compost_equiped: bool = false
 
 
 func _ready():
-	well_can.set_texture(emptyTexture)
+	well_can.set_texture(empty_texture)
 	
 func _on_Area_body_entered(body):
 	print("can entered")
@@ -43,12 +43,16 @@ func _input(delta):
 			water_in_can = true
 			
 	if(Input.is_action_pressed("equip_water_can") && !water_equiped):
-			
 			water_equiped = true
 			emit_signal("water_can_equiped")
 			well_can.set_texture(can_texture)
 			print("Yyou equiped the water can")
-	#if (Input.is_action_pressed("equip_water_can") && water_equiped):
+			
+	else: if (Input.is_action_pressed("equip_water_can") && water_equiped):
+		water_equiped = false
+		#emit_signal("water_can_equiped")
+		well_can.set_texture(empty_texture)
+		print("You unequiped the water can")
 		
 	
 

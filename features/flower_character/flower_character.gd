@@ -25,26 +25,28 @@ onready var brain := get_node("FlowerBrain")
 func _ready():
 	set_up_flower(texture)
 	text_box.hide()
-	brain.character_name = character_name
+	brain.set_name(character_name)
 	
 
 func set_up_flower(png_name):
 	flower.set_texture(png_name)
 
-func _on_Area_body_entered(_body):
-	text_box.show()
-	in_range_of_player = true
+func _on_Area_body_entered(body):
+	if body.is_in_group("player"):
+		text_box.show()
+		in_range_of_player = true
 
-func _on_Area_body_exited(_body):
-	text_box.hide()
-	in_range_of_player = false
+func _on_Area_body_exited(body):
+	if body.is_in_group("player"):
+		text_box.hide()
+		in_range_of_player = false
 	
 func water_can_equiped():
 	print("flower now knows the can is equiped")
 	can_be_watered = true
 	
 
-func _input(_delta):
+func _input(event):
 	
 	if(Input.is_action_pressed("feed")):
 		if(in_range_of_player && can_be_watered):
@@ -52,7 +54,7 @@ func _input(_delta):
 			print("You watered the flower")
 			can_be_watered = false
 	
-	if Input.is_action_pressed("talk") and in_range_of_player:
+	if event.is_action_pressed("talk") and in_range_of_player:
 		brain.talked_to()
 
 

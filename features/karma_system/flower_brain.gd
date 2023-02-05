@@ -3,7 +3,7 @@ extends Node2D
 signal talked_to(me)
 
 
-onready var flower_face_sprite = get_node(("../FlowerFaceSprite"))
+onready var flower_face_sprites = []
 #default
 var flower_face_texture = load("res://assets//images//faces//neutral.png")
 
@@ -63,7 +63,25 @@ func _ready():
 
 func talked_to():
 	emit_signal("talked_to", self)
-
+	
+	
+func set_name(char_name):
+	character_name = char_name
+	
+	if character_name == "Bella & Donna":
+		flower_face_sprites.append(get_node(("../BelladonnaFace1")))
+		flower_face_sprites.append(get_node(("../BelladonnaFace2")))
+	elif character_name == "Rose":
+		flower_face_sprites.append(get_node(("../RoseFace")))
+	elif character_name == "Poppy":
+		flower_face_sprites.append(get_node(("../Face")))
+		get_node("../BobbyFace").show()
+	else:
+		flower_face_sprites.append(get_node(("../Face")))
+	
+	for face in flower_face_sprites:
+		face.show()
+	
 
 func get_name():
 	return character_name
@@ -181,5 +199,6 @@ func _apply_plant_face(plantFaceEnum):
 			flower_face_texture = load("res://assets//images//faces//talking.png")
 			pass
 	
-	flower_face_sprite.set_texture(flower_face_texture)
+	for face in flower_face_sprites:
+		face.set_texture(flower_face_texture)
 	

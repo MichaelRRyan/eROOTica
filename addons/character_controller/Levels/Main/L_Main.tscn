@@ -458,3 +458,12 @@ script = ExtResource( 6 )
 
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]
+[connection signal="_in_dialogue" from="Flowers/Rose" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_food_received"]
+[connection signal="_in_dialogue" from="Flowers/BellaAndDonna" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_food_received"]
+[connection signal="_in_dialogue" from="Flowers/Poppy" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_food_received"]
+[connection signal="_in_dialogue" from="Flowers/Sunflower" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_food_received"]
+[connection signal="_leaving_dialogue" from="DialogSystem" to="AudioStreamPlayer" method="_leaving_dialogue"]

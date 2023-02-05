@@ -51,7 +51,8 @@ func _input(delta):
 			emit_signal("_on_water_received")
 			print("You watered the flower")
 			can_be_watered = false
-	if(Input.is_action_pressed("talk")):
+	
+	if Input.is_action_pressed("talk") and in_range_of_player:
 		brain.talked_to()
 
 

@@ -33,7 +33,7 @@ billboard = 2
 modulate = Color( 0.937255, 0.313726, 0.313726, 1 )
 outline_modulate = Color( 1, 0, 0, 1 )
 text = " To feed: Left click
- To talk:  press T"
+ To talk:  press E"
 
 [node name="Face" type="Sprite3D" parent="."]
 transform = Transform( 0.14526, 0, 0, 0, 0.14526, 0, 0, 0, 1, -0.0648409, 1.3973, 0.494467 )

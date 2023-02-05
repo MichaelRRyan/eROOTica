@@ -11,6 +11,7 @@ var water_in_can: bool = false
 var water_equiped: bool = false
 
 signal water_can_equiped
+signal water_can_unequiped
 signal water_can_emptied
 signal water_can_filled
 
@@ -18,7 +19,10 @@ signal water_can_filled
 onready var fertilizer_texture: Texture = load("res://assets/images/fertaliser.png")
 var compost_bin_in_proximity: bool = false;
 var compost_full: bool = false
-var compost_equiped: bool = false
+var fertilizer_equiped: bool = false
+
+signal fertilizer_equiped
+signal fertilizer_unequiped
 
 
 
@@ -42,7 +46,7 @@ func _input(delta):
 			emit_signal("water_can_filled")
 			water_in_can = true
 			
-	if(Input.is_action_pressed("equip_water_can") && !water_equiped):
+	if(Input.is_action_pressed("equip_water_can")):
 			water_equiped = true
 			emit_signal("water_can_equiped")
 			well_can.set_texture(can_texture)
@@ -50,9 +54,21 @@ func _input(delta):
 			
 	else: if (Input.is_action_pressed("equip_water_can") && water_equiped):
 		water_equiped = false
-		#emit_signal("water_can_equiped")
+		emit_signal("water_can_unequiped")
 		well_can.set_texture(empty_texture)
 		print("You unequiped the water can")
+	
+	if(Input.is_action_pressed("equip_fertilizer")):
+			
+			emit_signal("fertilizer_equiped")
+			well_can.set_texture(fertilizer_texture)
+			print("You equiped the fertilizer")
+	else: if(Input.is_action_pressed("equip_fertilizer") && fertilizer_equiped):
+			
+			emit_signal("fertilizer_unequiped")
+			well_can.set_texture(empty_texture)
+			print("You unequiped the fertilizer")
+	
 		
 	
 
@@ -61,6 +77,12 @@ func _water_received():
 	print("water can now knows its empty")
 	emit_signal("water_can_emptied") 
 	water_in_can = false
+
+
+
+
+
+
 
 
 

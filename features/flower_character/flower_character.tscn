@@ -32,6 +32,7 @@ outline_modulate = Color( 1, 0, 0, 1 )
 text = "Press E to feed"
 
 [connection signal="_on_food_received" from="." to="FlowerBrain" method="_on_food_received"]
+[connection signal="_on_water_received" from="." to="FlowerBrain" method="_on_water_received"]
 [connection signal="child_entered_tree" from="FlowerSprite" to="." method="_on_FlowerSprite_child_entered_tree"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

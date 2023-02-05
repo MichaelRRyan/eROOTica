@@ -4,9 +4,11 @@ extends Spatial
 # signals
 signal _on_food_received
 signal _on_water_received
+signal _water_emptied
 
 #variables
-var position : Vector3 = Vector3(1, 1, 1)
+onready var brain := get_node("FlowerBrain")
+
 onready var flower := get_node("FlowerSprite")
 onready var text_box:= get_node("Textbox")
 
@@ -17,8 +19,8 @@ export var texture: Texture = null
 
 var in_range_of_player: bool = false
 var can_be_watered: bool = false
-
-onready var brain := get_node("FlowerBrain")
+var fertilzer_equiped:bool = false
+var water_equiped:bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -47,10 +49,12 @@ func water_can_equiped():
 func _input(delta):
 	
 	if(Input.is_action_pressed("feed")):
-		if(in_range_of_player && can_be_watered):
+		if(in_range_of_player && can_be_watered ):
 			emit_signal("_on_water_received")
+			emit_signal("_water_emptied")
 			print("You watered the flower")
 			can_be_watered = false
+			
 	if(Input.is_action_pressed("talk")):
 		brain.talked_to()
 
@@ -63,3 +67,18 @@ func _water_can_filled():
 	can_be_watered = true
 
 
+
+
+func _water_can_equiped():
+	water_equiped = true
+
+func _water_can_unequiped():
+	water_equiped = false
+
+
+func _fertilizer_equiped():
+	fertilzer_equiped = true
+
+
+func _fertilizer_unequiped():
+	fertilzer_equiped = true

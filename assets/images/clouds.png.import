@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tulip.png-063553df3c7242ef971b8dfae16a0aff.s3tc.stex"
-path.etc2="res://.import/tulip.png-063553df3c7242ef971b8dfae16a0aff.etc2.stex"
+path.s3tc="res://.import/clouds.png-5c2b7644fb4bdd01638e3c2dc5d49f18.s3tc.stex"
+path.etc2="res://.import/clouds.png-5c2b7644fb4bdd01638e3c2dc5d49f18.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/tulip.png"
-dest_files=[ "res://.import/tulip.png-063553df3c7242ef971b8dfae16a0aff.s3tc.stex", "res://.import/tulip.png-063553df3c7242ef971b8dfae16a0aff.etc2.stex" ]
+source_file="res://assets/images/clouds.png"
+dest_files=[ "res://.import/clouds.png-5c2b7644fb4bdd01638e3c2dc5d49f18.s3tc.stex", "res://.import/clouds.png-5c2b7644fb4bdd01638e3c2dc5d49f18.etc2.stex" ]
 
 [params]
 

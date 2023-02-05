@@ -1,12 +1,12 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/character_controller/Levels/Main/Environment.tres" type="Environment" id=3]
 [ext_resource path="res://addons/character_controller/Levels/Main/L_Main.gd" type="Script" id=4]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Wall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/images/grass2.png" type="Texture" id=6]
 [ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/images/clouds.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/grassText.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/rose.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sunflower.png" type="Texture" id=11]
@@ -20,6 +20,7 @@
 [ext_resource path="res://features/dialog_system/dialog_system.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/images/hedge.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/house.png" type="Texture" id=21]
+[ext_resource path="res://features/scenery/grass_tuft.tscn" type="PackedScene" id=22]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 1.69785, 1.35048, 0.494939 )
@@ -93,24 +94,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, -20 )
 material/0 = SubResource( 8 )
 
 [node name="hedge2" type="Sprite3D" parent="ArenaGeometry/Wall1"]
-transform = Transform( 2.075, 0, -2.37762e-08, 0, 0.273, 0, 4.93355e-08, 0, 1, 0.5929, -3.3866, -0.036644 )
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, -13.94, -1.51006, -0.036644 )
+texture = ExtResource( 20 )
+
+[node name="hedge3" type="Sprite3D" parent="ArenaGeometry/Wall1"]
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, 0.0653294, -1.51006, -0.036644 )
+texture = ExtResource( 20 )
+
+[node name="hedge4" type="Sprite3D" parent="ArenaGeometry/Wall1"]
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, 14.2483, -1.51006, -0.036644 )
 texture = ExtResource( 20 )
 
 [node name="Wall2" parent="ArenaGeometry" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 20 )
 material/0 = SubResource( 9 )
 
-[node name="hedge2" type="Sprite3D" parent="ArenaGeometry/Wall2"]
-transform = Transform( 2.075, 0, -2.37762e-08, 0, 0.273, 0, 4.93355e-08, 0, 1, 0.169561, -3.3866, -0.036644 )
+[node name="hedge5" type="Sprite3D" parent="ArenaGeometry/Wall2"]
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, -13.94, -1.51006, -0.0707397 )
+texture = ExtResource( 20 )
+
+[node name="hedge6" type="Sprite3D" parent="ArenaGeometry/Wall2"]
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, 0.0653294, -1.51006, -0.0707397 )
+texture = ExtResource( 20 )
+
+[node name="hedge7" type="Sprite3D" parent="ArenaGeometry/Wall2"]
+transform = Transform( 0.731776, 0, -1.73988e-08, 0, 0.731776, 0, 2.37761e-08, 0, 1, 14.2483, -1.51006, -0.0707397 )
 texture = ExtResource( 20 )
 
 [node name="Wall3" parent="ArenaGeometry" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 5.75, 0 )
 material/0 = SubResource( 10 )
-
-[node name="hedge2" type="Sprite3D" parent="ArenaGeometry/Wall3"]
-transform = Transform( 2.075, 0, -2.37762e-08, 0, 0.273, 0, 4.93355e-08, 0, 1, -0.238333, -3.3866, -0.036644 )
-texture = ExtResource( 20 )
 
 [node name="house" type="Sprite3D" parent="ArenaGeometry/Wall3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54839e-09, 0, -0.0811825 )
@@ -118,12 +131,32 @@ layers = 3
 render_priority = 2
 texture = ExtResource( 21 )
 
+[node name="hedge11" type="Sprite3D" parent="ArenaGeometry/Wall3"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 0.731776, 0, -8.77501e-08, 0, -1, 14.6175, -1.51006, 0 )
+texture = ExtResource( 20 )
+
+[node name="hedge12" type="Sprite3D" parent="ArenaGeometry/Wall3"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 0.731776, 0, -8.77501e-08, 0, -1, 0.612144, -1.51006, 0 )
+texture = ExtResource( 20 )
+
+[node name="hedge13" type="Sprite3D" parent="ArenaGeometry/Wall3"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 0.731776, 0, -8.77501e-08, 0, -1, -13.5708, -1.51006, 0 )
+texture = ExtResource( 20 )
+
 [node name="Wall4" parent="ArenaGeometry" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.272942, 0, -1, 0, -4.37114e-08, -20.0066, 2.3634, -0.014925 )
 material/0 = SubResource( 7 )
 
-[node name="hedge" type="Sprite3D" parent="ArenaGeometry/Wall4"]
-transform = Transform( 2.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000236368, 0, 0.546 )
+[node name="hedge8" type="Sprite3D" parent="ArenaGeometry/Wall4"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 2.68107, 0, -8.77501e-08, 0, -1, 14.6026, 6.87522, 0 )
+texture = ExtResource( 20 )
+
+[node name="hedge9" type="Sprite3D" parent="ArenaGeometry/Wall4"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 2.68107, 0, -8.77501e-08, 0, -1, 0.597219, 6.87522, 0 )
+texture = ExtResource( 20 )
+
+[node name="hedge10" type="Sprite3D" parent="ArenaGeometry/Wall4"]
+transform = Transform( -0.731776, 0, 1.04822e-07, 0, 2.68107, 0, -8.77501e-08, 0, -1, -13.5857, 6.87522, 1.90735e-06 )
 texture = ExtResource( 20 )
 
 [node name="Lighting" type="Node" parent="."]
@@ -173,10 +206,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7845, -0.0879298, -16.2245
 character_name = "Sunflower"
 texture = ExtResource( 11 )
 
-[node name="Tulip" parent="Flowers" instance=ExtResource( 7 )]
-process_priority = 1
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4654, -0.0879298, -16.5264 )
-character_name = "Tulip"
+[node name="Sprite3D" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.101475, 0, 0, 0, 0.101475, 0, 0, 0, 1, 0, 0.400975, -8.43205 )
+billboard = 2
+texture = ExtResource( 14 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.0862472, 0, 0, 0, 0.0862472, 0, 0, 0, 1, -0.579358, 0.337193, -8.11908 )
+billboard = 2
+texture = ExtResource( 14 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.129897, 0, 0, 0, 0.129897, 0, 0, 0, 1, -0.567772, 0.49475, -8.74289 )
+billboard = 2
 texture = ExtResource( 14 )
 
 [node name="DialogSystem" parent="." instance=ExtResource( 19 )]
@@ -198,292 +240,202 @@ shape = SubResource( 3 )
 
 [node name="GrassSprites" type="Spatial" parent="."]
 
-[node name="Grass" type="Spatial" parent="GrassSprites"]
+[node name="GrassTuft" parent="GrassSprites" instance=ExtResource( 22 )]
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft4" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -10.6985, 0, 11.1675 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft5" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -10.4778, 0, 12.492 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft6" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -9.27573, 0, 11.8146 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft7" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -12.2928, 0, 12.3481 )
 
-[node name="Grass9" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1982, 0, 12.1309 )
+[node name="GrassTuft8" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -12.4759, 0, -0.560559 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass9"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft9" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.6947, 0, 0.428912 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass9/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft10" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.0086, 0, -0.436399 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass9/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft11" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -9.30746, 0, 1.41397 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass9/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft12" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.9461, 0, -11.0919 )
 
-[node name="Grass10" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1982, 0, -16.9308 )
+[node name="GrassTuft13" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -10.4624, 1.90735e-06, -10.9417 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass10"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft14" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -10.0297, 1.90735e-06, -9.21358 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass10/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft15" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.9417, 1.90735e-06, -13.2841 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass10/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft16" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.286, 1.90735e-06, -12.0904 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass10/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft17" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 11.0898, 1.90735e-06, -11.2819 )
 
-[node name="Grass11" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36913, 0, -16.9308 )
+[node name="GrassTuft18" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 3.96579, 1.90735e-06, -5.26118 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass11"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft19" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 4.77584, 1.90735e-06, -4.45428 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass11/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft20" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.783, 1.66893e-06, -0.613807 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass11/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft21" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 1.53562, 1.66893e-06, -0.643497 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass11/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft22" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 3.30141, 1.66893e-06, -1.38285 )
 
-[node name="Grass12" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.08102, 0, -4.40334 )
+[node name="GrassTuft23" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 3.44516, 1.66893e-06, -0.656261 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass12"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft24" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.43567, 1.66893e-06, -2.03297 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass12/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft25" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 8.81548, 1.66893e-06, 10.5337 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass12/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft26" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 9.03459, 1.66893e-06, 11.5374 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass12/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft27" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.0206, 1.66893e-06, 10.4936 )
 
-[node name="Grass13" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38571, 0, 2.38744 )
+[node name="GrassTuft28" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 7.03253, 1.66893e-06, 12.1533 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass13"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft29" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 6.26829, 1.66893e-06, 9.88643 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass13/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft30" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 13.9462, 1.66893e-06, 15.1083 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass13/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft31" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 14.0679, 1.43051e-06, 15.7644 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass13/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft32" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.449, 1.90735e-06, 7.77338 )
 
-[node name="Grass14" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69343, 0, -5.8418 )
+[node name="GrassTuft33" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.0147, 1.90735e-06, 6.97383 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass14"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft34" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.4872, 1.90735e-06, 7.97495 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass14/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft35" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.8356, 1.90735e-06, -2.27847 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass14/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft36" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.4406, 1.90735e-06, -0.960684 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass14/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft37" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.7327, 1.90735e-06, -1.51748 )
 
-[node name="Grass15" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07896, 0, 3.49718 )
+[node name="GrassTuft38" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.6133, 1.66893e-06, 0.991015 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass15"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft39" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 15.0585, 1.66893e-06, -2.59997 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass15/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft40" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 14.8665, 1.66893e-06, -10.4895 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass15/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft41" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -15.4028, 1.78814e-06, -16.5065 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass15/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft42" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -17.0462, 1.78814e-06, -15.4952 )
 
-[node name="Grass16" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4481, 0, 12.3917 )
+[node name="GrassTuft43" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -16.2029, 1.78814e-06, -15.287 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass16"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft44" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -16.9051, 1.90735e-06, -16.9213 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass16/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft45" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -17.126, 1.90735e-06, 0.822355 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass16/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="GrassTuft46" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -16.6897, 1.90735e-06, 0.489488 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass16/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="GrassTuft47" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -17.0624, 1.90735e-06, -0.351031 )
 
-[node name="Grass2" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.65735 )
+[node name="GrassTuft48" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -18.357, 1.90735e-06, 0.645234 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass2"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
+[node name="GrassTuft3" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 15.7651, 0, 12.0257 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass2/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="GrassTuft2" parent="GrassSprites" instance=ExtResource( 22 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.20351, 0, -5.83167 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass2/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="Clouds" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.28975, 0 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass2/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="Sprite3D" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, 77.4981 )
+texture = ExtResource( 8 )
 
-[node name="Grass3" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.65735 )
+[node name="Sprite3D2" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, 77.4981 )
+texture = ExtResource( 8 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass3"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -11.3483, 0, -4.52704 )
+[node name="Sprite3D3" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, 77.4935 )
+texture = ExtResource( 8 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass3/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="Sprite3D10" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5157, 7.93192, -70.7109 )
+texture = ExtResource( 8 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass3/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="Sprite3D11" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136633, 7.93192, -70.7109 )
+texture = ExtResource( 8 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass3/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="Sprite3D12" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7015, 7.99036, -70.7155 )
+texture = ExtResource( 8 )
 
-[node name="Grass5" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.02331 )
+[node name="Sprite3D4" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3351, 7.93192, 53.0757 )
+lod_max_distance = 32768.0
+texture = ExtResource( 8 )
 
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass5"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -11.3483, 0, -4.52704 )
+[node name="Sprite3D5" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3351, 7.93192, 3.54631 )
+lod_max_distance = 32768.0
+texture = ExtResource( 8 )
 
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass5/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
+[node name="Sprite3D6" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.3305, 7.99036, -46.1416 )
+lod_max_distance = 32768.0
+texture = ExtResource( 8 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass5/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
+[node name="Sprite3D7" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9163, 7.93192, 53.0757 )
+texture = ExtResource( 8 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass5/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="Sprite3D8" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9163, 7.93192, 3.54631 )
+texture = ExtResource( 8 )
 
-[node name="Grass6" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2963, 0, -5.02331 )
-
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass6"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -11.3483, 0, -4.52704 )
-
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass6/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass6/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass6/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
-
-[node name="Grass7" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2963, 0, 14.5185 )
-
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass7"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -11.3483, 0, -4.52704 )
-
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass7/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass7/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass7/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
-
-[node name="Grass8" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3189, 0, 1.72527 )
-
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass8"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -11.3483, 0, -4.52704 )
-
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass8/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass8/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass8/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
-
-[node name="Grass4" type="Spatial" parent="GrassSprites"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2905 )
-
-[node name="GrassPlant" type="Spatial" parent="GrassSprites/Grass4"]
-transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.39971, 0, 0 )
-
-[node name="Sprite3D" type="Sprite3D" parent="GrassSprites/Grass4/GrassPlant"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D3" type="Sprite3D" parent="GrassSprites/Grass4/GrassPlant"]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-texture = ExtResource( 6 )
-
-[node name="Sprite3D4" type="Sprite3D" parent="GrassSprites/Grass4/GrassPlant"]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-texture = ExtResource( 6 )
+[node name="Sprite3D9" type="Sprite3D" parent="Clouds"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.9209, 7.99036, -46.1416 )
+texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]

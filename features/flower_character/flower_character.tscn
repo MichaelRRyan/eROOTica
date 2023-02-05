@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://features/flower_character/flower_character.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/poppy.png" type="Texture" id=2]
 [ext_resource path="res://features/karma_system/flower_brain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/faces/ahegao.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.630504, 0.698266, 0.543627 )
@@ -31,6 +32,12 @@ billboard = 2
 modulate = Color( 0.937255, 0.313726, 0.313726, 1 )
 outline_modulate = Color( 1, 0, 0, 1 )
 text = "Press E to feed"
+
+[node name="FlowerFaceSprite" type="Sprite3D" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.027, 1.10881, 0.492 )
+billboard = 2
+render_priority = 2
+texture = ExtResource( 4 )
 
 [connection signal="_on_food_received" from="." to="FlowerBrain" method="_on_food_received"]
 [connection signal="child_entered_tree" from="FlowerSprite" to="." method="_on_FlowerSprite_child_entered_tree"]

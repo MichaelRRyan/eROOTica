@@ -73,6 +73,9 @@ func set_name(char_name):
 		flower_face_sprites.append(get_node(("../BelladonnaFace2")))
 	elif character_name == "Rose":
 		flower_face_sprites.append(get_node(("../RoseFace")))
+	elif character_name == "Poppy":
+		flower_face_sprites.append(get_node(("../Face")))
+		get_node("../BobbyFace").show()
 	else:
 		flower_face_sprites.append(get_node(("../Face")))
 	

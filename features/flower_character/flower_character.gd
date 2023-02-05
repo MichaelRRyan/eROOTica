@@ -56,7 +56,6 @@ func _input(event):
 	
 	if event.is_action_pressed("talk") and in_range_of_player:
 		brain.talked_to()
-		emit_signal("talked_to", self)
 
 
 func _water_can_emptied():

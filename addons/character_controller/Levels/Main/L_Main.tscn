@@ -201,5 +201,15 @@ shape = SubResource( 3 )
 
 [node name="TimeManager" parent="." instance=ExtResource( 18 )]
 
+[connection signal="water_can_emptied" from="Player/water_can" to="Flowers/Rose" method="_water_can_emptied"]
+[connection signal="water_can_emptied" from="Player/water_can" to="Flowers/BellaAndDonna" method="_water_can_emptied"]
+[connection signal="water_can_emptied" from="Player/water_can" to="Flowers/Poppy" method="_water_can_emptied"]
+[connection signal="water_can_emptied" from="Player/water_can" to="Flowers/Sunflower" method="_water_can_emptied"]
+[connection signal="water_can_emptied" from="Player/water_can" to="Flowers/Tulip" method="_water_can_emptied"]
+[connection signal="water_can_filled" from="Player/water_can" to="Flowers/Rose" method="_water_can_filled"]
+[connection signal="water_can_filled" from="Player/water_can" to="Flowers/BellaAndDonna" method="_water_can_filled"]
+[connection signal="water_can_filled" from="Player/water_can" to="Flowers/Poppy" method="_water_can_filled"]
+[connection signal="water_can_filled" from="Player/water_can" to="Flowers/Sunflower" method="_water_can_filled"]
+[connection signal="water_can_filled" from="Player/water_can" to="Flowers/Tulip" method="_water_can_filled"]
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]

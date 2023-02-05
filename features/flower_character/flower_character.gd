@@ -61,3 +61,5 @@ func _water_can_emptied():
 
 func _water_can_filled():
 	can_be_watered = true
+
+

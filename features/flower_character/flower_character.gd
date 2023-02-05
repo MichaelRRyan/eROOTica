@@ -25,7 +25,7 @@ onready var brain := get_node("FlowerBrain")
 func _ready():
 	set_up_flower(texture)
 	text_box.hide()
-	brain.character_name = character_name
+	brain.set_name(character_name)
 	
 
 func set_up_flower(png_name):

@@ -451,8 +451,3 @@ texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited"]
-[connection signal="_on_food_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_food_received"]
-[connection signal="_on_food_received" from="Flowers/Tulip" to="Flowers/Tulip/FlowerBrain" method="_on_food_received"]

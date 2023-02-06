@@ -5,7 +5,7 @@ var endOfDayTime = 20 #in seconds
 var endOfDay = false
 var dayNumber = 0;
 
-onready var directionalLight = get_node(("../Lighting/DirectionalLight"))
+onready var directionalLight = get_node(("../Garden/Lighting/DirectionalLight"))
 const START_ENERGY = 0.8
 const MID_ENERGY = 6.725
 const END_ENERGY = 0

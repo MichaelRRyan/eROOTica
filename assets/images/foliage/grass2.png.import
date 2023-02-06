@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/sunflower.png-d1062bc71e92ecee3de56f7a219cf238.s3tc.stex"
-path.etc2="res://.import/sunflower.png-d1062bc71e92ecee3de56f7a219cf238.etc2.stex"
+path.s3tc="res://.import/grass2.png-791f3ec56892c65c95753772bda24782.s3tc.stex"
+path.etc2="res://.import/grass2.png-791f3ec56892c65c95753772bda24782.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/sunflower.png"
-dest_files=[ "res://.import/sunflower.png-d1062bc71e92ecee3de56f7a219cf238.s3tc.stex", "res://.import/sunflower.png-d1062bc71e92ecee3de56f7a219cf238.etc2.stex" ]
+source_file="res://assets/images/foliage/grass2.png"
+dest_files=[ "res://.import/grass2.png-791f3ec56892c65c95753772bda24782.s3tc.stex", "res://.import/grass2.png-791f3ec56892c65c95753772bda24782.etc2.stex" ]
 
 [params]
 

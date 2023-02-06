@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
@@ -35,6 +35,7 @@ extents = Vector3( 1.69785, 1.35048, 0.494939 )
 [sub_resource type="PlaneMesh" id=5]
 
 [sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
 albedo_texture = ExtResource( 9 )
 
 [sub_resource type="SpatialMaterial" id=8]
@@ -55,11 +56,6 @@ albedo_color = Color( 1, 1, 1, 0 )
 albedo_texture = ExtResource( 20 )
 uv1_scale = Vector3( 3, 2, 1 )
 uv2_scale = Vector3( 3, 2, 1 )
-
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 2.67025, 1, 1 )
-
-[sub_resource type="CapsuleShape" id=2]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.717102, 1, 0.851346 )
@@ -205,16 +201,6 @@ light_energy = 3.569
 shadow_enabled = true
 shadow_bias = 0.05
 directional_shadow_max_distance = 250.0
-
-[node name="Area" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1.65151, 0, 0, 0, 1, 0.839161, 2.11644, 0 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11644, 0 )
-shape = SubResource( 2 )
 
 [node name="Flowers" type="Node" parent="."]
 
@@ -551,14 +537,22 @@ script = ExtResource( 6 )
 [connection signal="body_exited" from="Player/water_can/Area" to="Player/water_can" method="_on_Area_body_exited_compost"]
 [connection signal="_fertilizer_emptied" from="Flowers/Rose" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Rose" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Rose" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/BellaAndDonna" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/BellaAndDonna" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/Poppy" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Poppy" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Poppy" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/Sunflower" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Sunflower" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Sunflower" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_water_received"]
 [connection signal="_leaving_dialogue" from="DialogSystem" to="AudioStreamPlayer" method="_leaving_dialogue"]

@@ -1,9 +1,25 @@
-extends Node2D
+extends Node
 
 signal talked_to(me)
 
+onready var FLOWER_FACES = {
+	"Bella & Donna": [ 
+		get_node("../Faces/Bella"),
+		get_node("../Faces/Donna")
+	],
+	"Rose": [ 
+		get_node("../Faces/Rose"),
+	],
+	"Poppy": [ 
+		get_node("../Faces/Poppy"),
+		get_node("../Faces/Bobby"),
+	],
+	"Sunflower": [ 
+		get_node("../Faces/Sunflower"),
+	],
+}
 
-onready var flower_face_sprites = []
+var flower_face_sprites = []
 #default
 var flower_face_texture = load("res://assets//images//faces//neutral.png")
 
@@ -24,7 +40,6 @@ enum Response {
 
 #PlantFace enum for image change
 enum PlantFaces {
-	AHEGAO = 0,
 	ANGRY = 1,
 	CLOSED = 2,
 	DROWSEY = 3,
@@ -50,7 +65,7 @@ var negativeKarmaIncrease = 0.1
 
 var flowerHealthDecrement = 0.1
 
-var character_name : String = "Rose"
+var _character_name : String = "Rose"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -65,26 +80,16 @@ func talked_to():
 	emit_signal("talked_to", self)
 	
 	
-func set_name(char_name):
-	character_name = char_name
+func setup(character_name):
+	_character_name = character_name
 	
-	if character_name == "Bella & Donna":
-		flower_face_sprites.append(get_node(("../BelladonnaFace1")))
-		flower_face_sprites.append(get_node(("../BelladonnaFace2")))
-	elif character_name == "Rose":
-		flower_face_sprites.append(get_node(("../RoseFace")))
-	elif character_name == "Poppy":
-		flower_face_sprites.append(get_node(("../Face")))
-		get_node("../BobbyFace").show()
-	else:
-		flower_face_sprites.append(get_node(("../Face")))
-	
+	flower_face_sprites = FLOWER_FACES[_character_name]
 	for face in flower_face_sprites:
 		face.show()
 	
 
 func get_name():
-	return character_name
+	return _character_name
 	
 
 func get_familiarity():
@@ -163,20 +168,10 @@ func _update_current_face():
 	&& currentFlowerInterest < midPointOfInterest + (rangeOfInterest * 3):
 		plantFace = PlantFaces.HAPPY
 		
-	if currentFlowerInterest > midPointOfInterest + rangeOfInterest * 2 \
-	&& currentFlowerInterest < MAX_INTEREST_LEVEL:
-		plantFace = PlantFaces.AHEGAO
-		
 	_apply_plant_face(plantFace)
 	
 func _apply_plant_face(plantFaceEnum):
 	match plantFaceEnum:
-		PlantFaces.AHEGAO:
-			flower_face_texture = load("res://assets//images//faces//ahegao.png")
-			pass
-		PlantFaces.ANGRY:
-			flower_face_texture = load("res://assets//images//faces//angry.png")
-			pass
 		PlantFaces.CLOSED:
 			flower_face_texture = load("res://assets//images//faces//closed.png")
 			pass

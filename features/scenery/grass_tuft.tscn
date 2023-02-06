@@ -6,19 +6,18 @@
 transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -0.39971, 0, 0 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0180761 )
-shaded = true
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223409, 2.59965, -0.0320553 )
+cast_shadow = 0
+use_in_baked_light = true
 alpha_cut = 1
 texture = ExtResource( 1 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform( -0.0707107, 0, 0.707107, 0, 1, 0, -0.0707107, 0, -0.707107, -0.07, 2.6, 0.087 )
-shaded = true
+transform = Transform( -0.056758, 0, 0.788956, 0, 1, 0, -0.103922, 0, -0.317316, -0.0850076, 2.6, 0.174124 )
 alpha_cut = 1
 texture = ExtResource( 1 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="."]
-transform = Transform( -0.0707107, 0, -0.707107, 0, 1, 0, 0.0707107, 0, -0.707107, 0.124, 2.6, 0.09 )
-shaded = true
+transform = Transform( -0.0513827, 0, -0.801511, 0, 1, 0, 0.112674, 0, -0.188603, 0.123698, 2.6, 0.205946 )
 alpha_cut = 1
 texture = ExtResource( 1 )

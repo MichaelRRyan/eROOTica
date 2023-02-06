@@ -32,7 +32,7 @@ var fertilzer_full:bool = false
 func _ready():
 	set_up_flower(texture)
 	text_box.hide()
-	brain.set_name(character_name)
+	brain.setup(character_name)
 	
 
 func set_up_flower(png_name):

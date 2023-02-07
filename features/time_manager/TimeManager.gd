@@ -1,11 +1,20 @@
 extends Node2D
 
 var time = 0
-var endOfDayTime = 20   #in seconds
+var endOfDayTime = 5   #in seconds
 var timeLeft = endOfDayTime
 var fadeToBlackTime = 4
+var fadeToNormalTime = 4
 var endOfDay = false
 var dayNumber = 0;
+
+enum TIME_STATES{
+	GameTime,
+	FadeToBlackTime,
+	FadeToGameTime
+}
+
+var currentTimeStates
 
 onready var directionalLight = get_node(("../Garden/Lighting/DirectionalLight"))
 onready var colorRect = get_node(("../Player/time_left_layer/FadeToBlackRect"))
@@ -27,6 +36,7 @@ var timePaused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	currentTimeStates = TIME_STATES.GameTime
 	timeText.add_text("Time left in Day: " + str(timeLeft as int))
 	colorRect.color.a = 0
 	print("day number: " + str(dayNumber))
@@ -40,15 +50,9 @@ func _process(delta):
 	timeLeft = endOfDayTime - time
 	timeText.add_text("Time left in Day: " + str(timeLeft as int)	)
 	
-	_update_Time(delta)
+	_check_time_states(delta)
 	_manage_Lighting_with_Time()
-	_check_end_of_day(delta)
-
-func _update_Time(delta):
-	if !timePaused:
-			if !endOfDay:
-				time += delta
-				timeLeft = endOfDayTime - time
+	
 			
 func _manage_Lighting_with_Time():		
 	if directionalLight.light_energy > MID_ENERGY:
@@ -64,22 +68,39 @@ func _manage_Lighting_with_Time():
 			
 		directionalLight.rotate_x(-lightRotationAngle)
 		
-func _check_end_of_day(delta):
+func _check_time_states(delta):
 	if !endOfDay:
 		if time > endOfDayTime:
 			endOfDay = true
+			currentTimeStates = TIME_STATES.FadeToBlackTime
 			
-	if endOfDay:
-		fadeToBlackTime -= delta
-		if fadeToBlackTime > 0:			
-			colorRect.color.a += 0.005
-		else:
-			get_tree().call_group("flower_brains", "_decrease_health")
-			_reset_day()
+	match currentTimeStates:
+		TIME_STATES.GameTime:
+			if !timePaused:
+				if !endOfDay:
+					time += delta
+					timeLeft = endOfDayTime - time
+					
+		TIME_STATES.FadeToBlackTime:
+			fadeToBlackTime -= delta
+			if fadeToBlackTime > 0:			
+				colorRect.color.a += 0.005
+			else:
+				get_tree().call_group("flower_brains", "_decrease_health")
+				_reset_day()
+				currentTimeStates = TIME_STATES.FadeToGameTime
+				
+		TIME_STATES.FadeToGameTime:
+			fadeToNormalTime -= delta
+			if fadeToNormalTime > 0:
+				colorRect.color.a -= 0.005
+			else:
+				currentTimeStates = TIME_STATES.GameTime
+			
 		
 func _reset_day():
 	player.global_translation = Vector3(17,1.804,2)
-	colorRect.color.a = 0
+	fadeToNormalTime = 4
 	fadeToBlackTime = 5 
 	dayNumber+=1
 	time = 0

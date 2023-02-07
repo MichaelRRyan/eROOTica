@@ -11,7 +11,6 @@ signal _fertilizer_emptied
 
 #variables
 onready var brain := get_node("FlowerBrain")
-
 onready var flower := get_node("FlowerSprite")
 onready var text_box:= get_node("Textbox")
 
@@ -94,7 +93,7 @@ func _fertilizer_equiped():
 
 
 func _fertilizer_unequiped():
-	fertilzer_equiped = true
+	fertilzer_equiped = false
 
 
 func _fertilizer_full():

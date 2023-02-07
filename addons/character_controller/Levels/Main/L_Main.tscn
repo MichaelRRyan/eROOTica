@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://features/3d_scenery/scene_bounds.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/MotleyForcesRegular-w1rZ3.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://addons/character_controller/Levels/Main/L_Main.gd" type="Script" id=4]
 [ext_resource path="res://features/3d_scenery/well.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/character_controller/Levels/Main/musicController.gd" type="Script" id=6]
@@ -26,6 +27,10 @@ extents = Vector3( 1.69785, 1.35048, 0.494939 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.717102, 1, 0.851346 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 2
+font_data = ExtResource( 3 )
 
 [node name="L_Main" type="Spatial"]
 script = ExtResource( 4 )
@@ -84,24 +89,24 @@ texture = ExtResource( 26 )
 
 [node name="Rose" parent="Flowers" instance=ExtResource( 7 )]
 process_priority = 1
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0817, -0.0879288, -31.9206 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3888, -0.0879298, -14.8936 )
 character_name = "Rose"
 texture = ExtResource( 10 )
 
 [node name="BellaAndDonna" parent="Flowers" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9816, -0.0879298, -0.165431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13266, -0.0879298, -33.5365 )
 character_name = "Bella & Donna"
 texture = ExtResource( 12 )
 
 [node name="Poppy" parent="Flowers" instance=ExtResource( 7 )]
 process_priority = 1
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06178, -0.0879298, 17.3394 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5725, -0.0879298, 15.9623 )
 character_name = "Poppy"
 texture = ExtResource( 13 )
 
 [node name="Sunflower" parent="Flowers" instance=ExtResource( 7 )]
 process_priority = 1
-transform = Transform( 1.39589, 0, 0, 0, 1.39589, 0, 0, 0, 1, 13.1638, -0.0879308, 20.4786 )
+transform = Transform( 1.39589, 0, 0, 0, 1.39589, 0, 0, 0, 1, 12.2705, -0.0879308, 20.0512 )
 character_name = "Sunflower"
 texture = ExtResource( 11 )
 
@@ -114,24 +119,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45323, -4.76837e-07, -1.163
 position = Vector2( -334, 2735 )
 
 [node name="compost_bin" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1255, -2.48223, -0.28888 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5738, 0.097296, -12.2337 )
 
 [node name="Sprite3D" type="Sprite3D" parent="compost_bin"]
-transform = Transform( 0.198302, 0, 0, 0, 0.198302, 0, 0, 0, 0.963727, -5.52153, 3.83911, 18.8012 )
+transform = Transform( 0.198302, 0, 0, 0, 0.198302, 0, 0, 0, 0.963727, 0, 1.021, 0 )
 billboard = 2
 texture = ExtResource( 27 )
 
 [node name="CollisionShape" type="CollisionShape" parent="compost_bin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63118, 3.90584, 19.1554 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.088, 0 )
 shape = SubResource( 3 )
 
 [node name="lablel" type="Label3D" parent="compost_bin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 50.6546, -5.56641, 4.16322, 18.9717 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 50.6546, 0, 1.345, 0 )
 billboard = 2
-modulate = Color( 0.713726, 0.811765, 0.156863, 1 )
+modulate = Color( 0.0784314, 0.435294, 0.105882, 1 )
+outline_modulate = Color( 1, 1, 1, 1 )
 text = "To select fertilizer: 2 
 To take Fertilizer: Left click
 "
+font = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )

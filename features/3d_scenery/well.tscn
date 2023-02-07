@@ -15,6 +15,7 @@ font_data = ExtResource( 2 )
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 0.198302, 0, 0, 0, 0.198302, 0, 0, 0, 0.963727, 0.0271799, 1.61152, -0.047147 )
 billboard = 2
+alpha_cut = 1
 render_priority = 2
 texture = ExtResource( 1 )
 

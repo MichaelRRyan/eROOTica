@@ -1,7 +1,7 @@
 extends Node2D
 
-var time = 20
-var endOfDayTime = 3   #in seconds
+var time = 0
+var endOfDayTime = 20   #in seconds
 var timeLeft = endOfDayTime
 var fadeToBlackTime = 4
 var endOfDay = false
@@ -23,7 +23,7 @@ var	middleToEndDay = false;
 
 var lightRotationAngle = (endOfDayTime / 400000.0)
 
-var pausedInDialogue = false
+var timePaused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,19 +40,34 @@ func _process(delta):
 	timeLeft = endOfDayTime - time
 	timeText.add_text("Time left in Day: " + str(timeLeft as int)	)
 	
-	
-	
-	if !pausedInDialogue:
-		if !endOfDay:
-			time += delta
-			timeLeft = endOfDayTime - time
-	
+	_update_Time(delta)
 	_manage_Lighting_with_Time()
-	
+	_check_end_of_day(delta)
+
+func _update_Time(delta):
+	if !timePaused:
+			if !endOfDay:
+				time += delta
+				timeLeft = endOfDayTime - time
+			
+func _manage_Lighting_with_Time():		
+	if directionalLight.light_energy > MID_ENERGY:
+		startToMiddleDay = false;
+		middleToEndDay = true
+		
+	if(!timePaused):
+		if startToMiddleDay:
+			directionalLight.light_energy += energyIncrease
+				
+		if middleToEndDay:					
+			directionalLight.light_energy += energyDecrease
+			
+		directionalLight.rotate_x(-lightRotationAngle)
+		
+func _check_end_of_day(delta):
 	if !endOfDay:
 		if time > endOfDayTime:
 			endOfDay = true
-			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement
 			
 	if endOfDay:
 		fadeToBlackTime -= delta
@@ -61,21 +76,6 @@ func _process(delta):
 		else:
 			get_tree().call_group("flower_brains", "_decrease_health")
 			_reset_day()
-#	pass
-
-func _manage_Lighting_with_Time():		
-	if directionalLight.light_energy > MID_ENERGY:
-		startToMiddleDay = false;
-		middleToEndDay = true
-		
-	if(!pausedInDialogue):
-		if startToMiddleDay:
-			directionalLight.light_energy += energyIncrease
-				
-		if middleToEndDay:					
-			directionalLight.light_energy += energyDecrease
-			
-		directionalLight.rotate_x(-lightRotationAngle)
 		
 func _reset_day():
 	player.global_translation = Vector3(17,1.804,2)
@@ -91,10 +91,10 @@ func _reset_day():
 	print("day number: " + str(dayNumber))
 	
 func _pause_time_dependencies():
-	pausedInDialogue = true
+	timePaused = true
 	
 func _unpause_time_dependencies():
-	pausedInDialogue = false
+	timePaused = false
 	
 func getRemainingTimeLeft():
 	return endOfDayTime - time

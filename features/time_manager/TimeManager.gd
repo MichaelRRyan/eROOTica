@@ -1,7 +1,7 @@
 extends Node2D
 
-var time = 0
-var endOfDayTime = 20   #in seconds
+var time = 20
+var endOfDayTime = 3   #in seconds
 var timeLeft = endOfDayTime
 var fadeToBlackTime = 4
 var endOfDay = false
@@ -10,6 +10,7 @@ var dayNumber = 0;
 onready var directionalLight = get_node(("../Garden/Lighting/DirectionalLight"))
 onready var colorRect = get_node(("../Player/time_left_layer/FadeToBlackRect"))
 onready var timeText = get_node("../Player/time_left_layer/TimeLeftLabel")
+onready var player = get_node("../Player")
 
 const START_ENERGY = 0.8
 const MID_ENERGY = 6.725
@@ -77,6 +78,7 @@ func _manage_Lighting_with_Time():
 		directionalLight.rotate_x(-lightRotationAngle)
 		
 func _reset_day():
+	player.global_translation = Vector3(17,1.804,2)
 	colorRect.color.a = 0
 	fadeToBlackTime = 5 
 	dayNumber+=1

@@ -5,8 +5,12 @@
 [ext_resource path="res://addons/character_controller/Player/Sprint.gd" type="Script" id=3]
 
 [node name="Player" groups=["player"] instance=ExtResource( 1 )]
+speed = 4
+acceleration = 4
+deceleration = 20
 
 [node name="Head" parent="." index="1" instance=ExtResource( 2 )]
 
 [node name="Sprint" type="Node" parent="." index="2"]
 script = ExtResource( 3 )
+sprint_speed = 8

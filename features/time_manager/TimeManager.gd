@@ -1,11 +1,16 @@
 extends Node2D
 
 var time = 0
-var endOfDayTime = 20 #in seconds
+var endOfDayTime = 20   #in seconds
+var timeLeft = endOfDayTime
+var fadeToBlackTime = 4
 var endOfDay = false
 var dayNumber = 0;
 
 onready var directionalLight = get_node(("../Garden/Lighting/DirectionalLight"))
+onready var colorRect = get_node(("../Player/time_left_layer/FadeToBlackRect"))
+onready var timeText = get_node("../Player/time_left_layer/TimeLeftLabel")
+
 const START_ENERGY = 0.8
 const MID_ENERGY = 6.725
 const END_ENERGY = 0
@@ -21,17 +26,25 @@ var pausedInDialogue = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timeText.add_text("Time left in Day: " + str(timeLeft as int))
+	colorRect.color.a = 0
 	print("day number: " + str(dayNumber))
-	directionalLight.light_energy = 0.1
 	directionalLight.rotation_degrees.x = -1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	
+	timeText.clear()
+	timeLeft = endOfDayTime - time
+	timeText.add_text("Time left in Day: " + str(timeLeft as int)	)
+	
+	
+	
 	if !pausedInDialogue:
 		if !endOfDay:
 			time += delta
+			timeLeft = endOfDayTime - time
 	
 	_manage_Lighting_with_Time()
 	
@@ -41,8 +54,12 @@ func _process(delta):
 			#flowerBrain.currentFlowerHealth -= flowerHealthDecrement
 			
 	if endOfDay:
-		get_tree().call_group("flower_brains", "_decrease_health")
-		_reset_day()
+		fadeToBlackTime -= delta
+		if fadeToBlackTime > 0:			
+			colorRect.color.a += 0.005
+		else:
+			get_tree().call_group("flower_brains", "_decrease_health")
+			_reset_day()
 #	pass
 
 func _manage_Lighting_with_Time():		
@@ -60,6 +77,8 @@ func _manage_Lighting_with_Time():
 		directionalLight.rotate_x(-lightRotationAngle)
 		
 func _reset_day():
+	colorRect.color.a = 0
+	fadeToBlackTime = 5 
 	dayNumber+=1
 	time = 0
 	endOfDay = false

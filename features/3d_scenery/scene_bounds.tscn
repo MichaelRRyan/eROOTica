@@ -1294,8 +1294,8 @@ texture = ExtResource( 11 )
 environment = ExtResource( 12 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 0.0976002, 0.995226, 0, -0.995226, 0.0976002, 0, 10.031, 0 )
-light_energy = 3.456
+transform = Transform( 1, 0, 0, 0, 0.0976002, 0.995226, 0, -0.995226, 0.0976002, 0, 26.095, 0 )
+light_energy = 0.0
 shadow_enabled = true
 shadow_bias = 0.05
 directional_shadow_max_distance = 250.0

@@ -29,9 +29,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	
-	if Input.is_action_just_pressed("jump"):
-		pausedInDialogue = !pausedInDialogue
-	
 	if !pausedInDialogue:
 		if !endOfDay:
 			time += delta
@@ -77,3 +74,6 @@ func _pause_time_dependencies():
 	
 func _unpause_time_dependencies():
 	pausedInDialogue = false
+	
+func getRemainingTimeLeft():
+	return endOfDayTime - time

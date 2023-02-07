@@ -2,6 +2,7 @@ extends Node
 
 onready var _dialogs = get_node("Dialogs").dialogs
 onready var _interface : DialogInterface = get_node("CanvasLayer/DialogInterface")
+onready var _time_manager = get_node("../TimeManager")
 
 var _current_dialog = null
 var _current_character = null
@@ -15,6 +16,7 @@ func _on_character_talked_to(character):
 	_interface.show()
 	_interface.set_character_name(character.get_name())
 	_current_dialog = _find_dialog(character)
+	_time_manager._pause_time_dependencies()
 	
 	if _current_dialog:
 		_interface.set_character_dialog(_current_dialog.line)
@@ -69,6 +71,8 @@ func _on_DialogInterface_answer_given(answer_no):
 		_interface.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		emit_signal("_leaving_dialogue")
+		_time_manager._unpause_time_dependencies()
+		
 
 
 #-------------------------------------------------------------------------------
@@ -76,6 +80,8 @@ func _on_DialogInterface_continue_pressed():
 	_interface.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	emit_signal("_leaving_dialogue")
+	_time_manager._unpause_time_dependencies()
+	
 
 
 #-------------------------------------------------------------------------------

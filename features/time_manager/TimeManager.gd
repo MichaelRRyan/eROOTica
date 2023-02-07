@@ -22,7 +22,7 @@ var pausedInDialogue = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("day number: " + str(dayNumber))
-	directionalLight.light_energy = 0
+	directionalLight.light_energy = 0.1
 	directionalLight.rotation_degrees.x = -1
 
 

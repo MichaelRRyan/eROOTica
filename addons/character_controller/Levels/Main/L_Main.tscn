@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://features/3d_scenery/scene_bounds.tscn" type="PackedScene" id=2]
@@ -25,6 +25,11 @@
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 1.69785, 1.35048, 0.494939 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 26
+extra_spacing_top = 24
+font_data = ExtResource( 3 )
+
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.717102, 1, 0.851346 )
 
@@ -33,10 +38,11 @@ outline_size = 2
 font_data = ExtResource( 3 )
 
 [node name="L_Main" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0.0354118, 0.00837803 )
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.998035, 0, 0.0626511, 0, 1, 0, -0.0626511, 0, 0.998035, 16.5357, 1.8041, 1.98119 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17, 1.804, 2 )
 
 [node name="water_can" type="Spatial" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09807, 0.00627375, -0.00327158 )
@@ -82,6 +88,24 @@ texture = ExtResource( 25 )
 position = Vector2( 188.664, 65.0527 )
 scale = Vector2( 0.404428, 0.413685 )
 texture = ExtResource( 26 )
+
+[node name="time_left_layer" type="CanvasLayer" parent="Player"]
+
+[node name="FadeToBlackRect" type="ColorRect" parent="Player/time_left_layer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="TimeLeftLabel" type="RichTextLabel" parent="Player/time_left_layer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -283.0
+margin_bottom = 74.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+text = "Time Until Next Day:"
 
 [node name="Garden" parent="." instance=ExtResource( 2 )]
 
@@ -143,6 +167,7 @@ font = SubResource( 5 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
 volume_db = -1.286
+stream_paused = true
 script = ExtResource( 6 )
 
 [connection signal="fertilizer_equiped" from="Player/water_can" to="Flowers/Rose" method="_fertilizer_equiped"]

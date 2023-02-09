@@ -19,8 +19,6 @@ onready var FLOWER_FACES = {
 	],
 }
 
-onready var flower_body = get_node("../FlowerSprite")
-
 var FLOWER_BODIES_TEXTURES = {
 	"Bella & Donna": [ 
 		"res://assets/images/nightshade.png",
@@ -49,6 +47,8 @@ enum PLANT_HEALTH_STATES{
 	WILTING = 1,
 	WILTED = 2,
 }
+
+onready var flower_body = get_node("../FlowerSprite")
 
 var flower_face_sprites = []
 var flower_body_textures = []
@@ -174,6 +174,7 @@ func _decrease_health():
 func _process(_delta):
 	_update_current_face()
 	_update_current_plant_body()
+	#test code for all flowers
 	if Input.is_action_just_pressed("jump"):
 		currentFlowerHealth -= 0.1
 	
@@ -225,6 +226,10 @@ func _update_current_plant_body():
 		
 	if currentFlowerHealth <= 0:
 		plantHealth = PLANT_HEALTH_STATES.WILTED
+		flower_face_sprites = FLOWER_FACES[_character_name]
+		for face in flower_face_sprites:
+			face.hide()
+		
 		
 	_apply_plant_body(plantHealth)
 		

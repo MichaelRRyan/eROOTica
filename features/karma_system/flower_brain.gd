@@ -19,8 +19,41 @@ onready var FLOWER_FACES = {
 	],
 }
 
+onready var flower_body = get_node("../FlowerSprite")
+
+var FLOWER_BODIES_TEXTURES = {
+	"Bella & Donna": [ 
+		"res://assets/images/nightshade.png",
+		"res://assets/images/nightshade-wilting.png",
+		"res://assets/images/nightshade-wilted.png",
+	],
+	"Rose": [ 
+		"res://assets/images/rose.png",
+		"res://assets/images/rose-wilting.png",
+		"res://assets/images/rose-wilted.png",
+	],
+	"Poppy": [ 
+		"res://assets/images/poppy.png",
+		"res://assets/images/poppy-wilting.png",
+		"res://assets/images/poppy-wilted.png",
+	],
+	"Sunflower": [ 
+		"res://assets/images/sunflower.png",
+		"res://assets/images/sunflower-wilting.png",
+		"res://assets/images/sunflower-wilted.png",
+	],
+}
+
+enum PLANT_HEALTH_STATES{
+	HEALTHY = 0,
+	WILTING = 1,
+	WILTED = 2,
+}
+
 var flower_face_sprites = []
-#default
+var flower_body_textures = []
+
+var body_texture
 var flower_face_texture = load("res://assets//images//faces//neutral.png")
 
 #Constants
@@ -86,6 +119,12 @@ func setup(character_name):
 	flower_face_sprites = FLOWER_FACES[_character_name]
 	for face in flower_face_sprites:
 		face.show()
+		
+	flower_body_textures = FLOWER_BODIES_TEXTURES[_character_name]
+
+	body_texture = flower_body_textures[PLANT_HEALTH_STATES.WILTED]
+	flower_body.set_texture(load(body_texture))
+	
 	
 
 func get_name():

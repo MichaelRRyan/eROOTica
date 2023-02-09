@@ -173,6 +173,9 @@ func _decrease_health():
 	
 func _process(_delta):
 	_update_current_face()
+	_update_current_plant_body()
+	if Input.is_action_just_pressed("jump"):
+		currentFlowerHealth -= 0.1
 	
 func _update_current_face():
 
@@ -208,6 +211,26 @@ func _update_current_face():
 		plantFace = PlantFaces.HAPPY
 		
 	_apply_plant_face(plantFace)
+	
+func _update_current_plant_body():
+	var midPointOfHealth = MAX_INTEREST_LEVEL / 2.0
+	var plantHealth = PLANT_HEALTH_STATES.HEALTHY
+	
+	if currentFlowerHealth >= midPointOfHealth:
+		plantHealth = PLANT_HEALTH_STATES.HEALTHY
+		
+	if currentFlowerHealth < midPointOfHealth \
+	&& currentFlowerHealth > 0:
+		plantHealth = PLANT_HEALTH_STATES.WILTING
+		
+	if currentFlowerHealth <= 0:
+		plantHealth = PLANT_HEALTH_STATES.WILTED
+		
+	_apply_plant_body(plantHealth)
+		
+func _apply_plant_body(plantHealthEnum):
+		flower_body.set_texture(load(flower_body_textures[plantHealthEnum]))
+		
 	
 func _apply_plant_face(plantFaceEnum):
 	match plantFaceEnum:

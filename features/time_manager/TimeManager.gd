@@ -1,7 +1,7 @@
 extends Node2D
 
 var time = 0
-var endOfDayTime = 120  #in seconds
+var endOfDayTime = 5  #in seconds
 var timeLeft = endOfDayTime
 var fadeToBlackTime = 4
 var fadeToNormalTime = 4
@@ -96,6 +96,7 @@ func _check_time_states(delta):
 				colorRect.color.a -= 0.005
 			else:
 				currentTimeStates = TIME_STATES.GameTime
+				colorRect.color.a = 0
 			
 		
 func _reset_day():

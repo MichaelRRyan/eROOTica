@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://features/3d_scenery/scene_bounds.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/character_controller/Levels/Main/musicController.gd" type="Script" id=6]
 [ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
 [ext_resource path="res://features/3d_scenery/well.gd" type="Script" id=8]
+[ext_resource path="res://features/3d_scenery/compost_bin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/images/rose.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sunflower.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/nightshade.png" type="Texture" id=12]
@@ -20,7 +21,6 @@
 [ext_resource path="res://assets/images/water.png" type="Texture" id=24]
 [ext_resource path="res://assets/images/noFertilizerIcon.png" type="Texture" id=25]
 [ext_resource path="res://assets/images/fertaliserIcon.png" type="Texture" id=26]
-[ext_resource path="res://assets/images/composter.png" type="Texture" id=27]
 [ext_resource path="res://assets/images/noWater.png" type="Texture" id=28]
 
 [sub_resource type="BoxShape" id=4]
@@ -33,19 +33,12 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="CapsuleShape" id=7]
 
-[sub_resource type="CapsuleShape" id=8]
-radius = 1.35609
-
 [sub_resource type="DynamicFont" id=9]
 outline_size = 2
 font_data = ExtResource( 3 )
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.717102, 1, 0.851346 )
-
-[sub_resource type="DynamicFont" id=5]
-outline_size = 2
-font_data = ExtResource( 3 )
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1, 1.3087, 1 )
 
 [node name="L_Main" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0.0354118, 0.00837803 )
@@ -151,14 +144,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45323, -4.76837e-07, -1.163
 script = ExtResource( 8 )
 
 [node name="Area" type="Area" parent="well"]
+transform = Transform( 0.949411, 0, 0, 0, 0.949411, 0, 0, 0, 0.949411, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="well/Area"]
-transform = Transform( 1.47079, -0.00313217, -0.00371573, 0.00371993, 0.0019692, 1.47079, -0.00312718, -1.47079, 0.00197712, -0.0182161, 1.59859, 0.0620546 )
+transform = Transform( 1.33414, -0.00284116, -0.00337051, 0.00337431, 0.00178625, 1.33414, -0.00283664, -1.33414, 0.00179342, -0.0182161, 1.59859, 0.0620546 )
 shape = SubResource( 7 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="well"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0824698, 1.43894, 0.065891 )
-shape = SubResource( 8 )
 
 [node name="label2" type="Label3D" parent="well"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0470875, 2.60147, -0.107719 )
@@ -174,27 +164,14 @@ font = SubResource( 9 )
 [node name="TimeManager" parent="." instance=ExtResource( 18 )]
 position = Vector2( -334, 2735 )
 
-[node name="compost_bin" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5738, 0.097296, -12.2337 )
+[node name="compost_bin" parent="." instance=ExtResource( 9 )]
 
-[node name="Sprite3D" type="Sprite3D" parent="compost_bin"]
-transform = Transform( 0.198302, 0, 0, 0, 0.198302, 0, 0, 0, 0.963727, 0, 1.021, 0 )
-billboard = 2
-texture = ExtResource( 27 )
+[node name="bins_area_of_interaction" type="Area" parent="compost_bin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.886672, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="compost_bin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.088, 0 )
-shape = SubResource( 3 )
-
-[node name="lablel" type="Label3D" parent="compost_bin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 50.6546, 0, 1.345, 0 )
-billboard = 2
-modulate = Color( 0.0784314, 0.435294, 0.105882, 1 )
-outline_modulate = Color( 1, 1, 1, 1 )
-text = "To select fertilizer: 2 
-To take Fertilizer: Left click
-"
-font = SubResource( 5 )
+[node name="CollisionShape" type="CollisionShape" parent="compost_bin/bins_area_of_interaction"]
+transform = Transform( 0.968187, 0, -0.250228, 0, 1, 0, 0.250228, 0, 0.968187, 0, 0, 0 )
+shape = SubResource( 10 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
@@ -232,18 +209,30 @@ script = ExtResource( 6 )
 [connection signal="water_can_unequiped" from="Player/water_can" to="Flowers/Sunflower" method="_water_can_unequiped"]
 [connection signal="_fertilizer_emptied" from="Flowers/Rose" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Rose" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Rose" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Rose" to="Flowers/Rose/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/BellaAndDonna" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/BellaAndDonna" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/BellaAndDonna" to="Flowers/BellaAndDonna/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/Poppy" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Poppy" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Poppy" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Poppy" to="Flowers/Poppy/FlowerBrain" method="_on_water_received"]
 [connection signal="_fertilizer_emptied" from="Flowers/Sunflower" to="Player/water_can" method="_fertilizer_emptied"]
 [connection signal="_in_dialogue" from="Flowers/Sunflower" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_on_food_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_food_received"]
 [connection signal="_on_water_received" from="Flowers/Sunflower" to="Player/water_can" method="_water_received"]
+[connection signal="_on_water_received" from="Flowers/Sunflower" to="Flowers/Sunflower/FlowerBrain" method="_on_water_received"]
 [connection signal="_leaving_dialogue" from="DialogSystem" to="AudioStreamPlayer" method="_leaving_dialogue"]
-[connection signal="body_entered" from="well/Area" to="Player/water_can" method="_on_Area_body_entered_well"]
-[connection signal="body_entered" from="well/Area" to="well" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="well/Area" to="Player/water_can" method="_on_Area_body_exited_well"]
-[connection signal="body_exited" from="well/Area" to="well" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="well/Area" to="Player/water_can" method="_on_Area_body_entered"]
+[connection signal="body_entered" from="well/Area" to="well" method="player_in_proximity_to_well"]
+[connection signal="body_exited" from="well/Area" to="Player/water_can" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="well/Area" to="well" method="player_exited_proximity_of_well"]
+[connection signal="body_entered" from="compost_bin/bins_area_of_interaction" to="Player/water_can" method="_on_bins_area_of_interaction_body_entered"]
+[connection signal="body_entered" from="compost_bin/bins_area_of_interaction" to="compost_bin" method="player_in_proximity"]
+[connection signal="body_exited" from="compost_bin/bins_area_of_interaction" to="Player/water_can" method="_on_bins_area_of_interaction_body_exited"]
+[connection signal="body_exited" from="compost_bin/bins_area_of_interaction" to="compost_bin" method="player_left_proximity"]

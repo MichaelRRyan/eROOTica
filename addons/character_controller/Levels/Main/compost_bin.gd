@@ -1,10 +1,21 @@
 extends StaticBody
-signal _in_proximity_to_bin
+onready var compost_label:= get_node("lablel")
+
+
+func _ready():
+	compost_label.hide()
+	
+	
+	
 
 
 
 
 
 
-func _on_Area_body_entered(body):
-	print("work")
+func player_in_proximity(body):
+	compost_label.show()
+
+
+func player_left_proximity(body):
+	compost_label.hide()

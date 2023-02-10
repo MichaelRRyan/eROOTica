@@ -47,9 +47,7 @@ func _on_Area_body_exited(body):
 		text_box.hide()
 		in_range_of_player = false
 	
-func water_can_equiped():
-	print("flower now knows the can is equiped")
-	can_be_watered = true
+
 	
 
 func _input(event):
@@ -73,28 +71,35 @@ func _input(event):
 		emit_signal("_in_dialogue")
 
 
-func _water_can_emptied():
-	can_be_watered = false
 
 
+
+
+	
+#status of supplies
 func _water_can_filled():
 	can_be_watered = true
 
+func _fertilizer_full():
+	fertilzer_full = true
 
+#func _water_can_emptied():
+#	can_be_watered = false
+
+
+
+# status of what player has equiped
 func _water_can_equiped():
 	water_equiped = true
+	fertilzer_equiped = false
 
 func _water_can_unequiped():
 	water_equiped = false
 
-
 func _fertilizer_equiped():
 	fertilzer_equiped = true
-
+	water_equiped = false
 
 func _fertilizer_unequiped():
 	fertilzer_equiped = false
 
-
-func _fertilizer_full():
-	fertilzer_full = true

@@ -70,12 +70,6 @@ func _input(event):
 		brain.talked_to()
 		emit_signal("_in_dialogue")
 
-
-
-
-
-
-	
 #status of supplies
 func _water_can_filled():
 	can_be_watered = true

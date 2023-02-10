@@ -88,7 +88,8 @@ func _input(_event):
 		print("You unequiped the fertilizer")
 		fertilizer_equiped = false
 	
-	
+
+# signals to 
 func _water_received():
 	print("water can now knows its empty")
 	emit_signal("water_can_emptied") 
@@ -103,19 +104,23 @@ func _fertilizer_emptied():
 
 
 
-# proximity to areas of interaction
-func _on_Area_body_entered(well):
+# whether in range of interactions with with compost bin/ well
+func well_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	print("entering well")
 	well_in_proximity = true
 
-func _on_Area_body_exited(well):
+func well_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	print("exiting  well")
 	well_in_proximity = false
 
-func _on_bins_area_of_interaction_body_entered(compost_bin):
+func compost_bin_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	compost_bin_in_proximity = true
 	print("entering area of bin")
 
-func _on_bins_area_of_interaction_body_exited(compost_bin):
+func compost_bin_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	compost_bin_in_proximity = false
 	print("exiting area of bin")
+
+
+
+

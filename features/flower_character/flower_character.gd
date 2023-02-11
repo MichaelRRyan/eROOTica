@@ -6,12 +6,8 @@ signal _on_food_received
 signal _on_water_received
 signal _in_dialogue
 
-
-signal _fertilizer_emptied
-
 #variables
 onready var brain := get_node("FlowerBrain")
-
 onready var flower := get_node("FlowerSprite")
 onready var text_box:= get_node("Textbox")
 
@@ -22,7 +18,7 @@ export var texture: Texture = null
 
 
 var in_range_of_player: bool = false
-var can_be_watered: bool = false
+var water_can_full: bool = false
 var water_equiped:bool = false
 var fertilzer_equiped:bool = false
 var fertilzer_full:bool = false
@@ -48,24 +44,22 @@ func _on_Area_body_exited(body):
 		text_box.hide()
 		in_range_of_player = false
 	
-func water_can_equiped():
-	print("flower now knows the can is equiped")
-	can_be_watered = true
+
 	
 
 func _input(event):
 	
 	if(Input.is_action_pressed("feed")):
-		if(in_range_of_player && can_be_watered && water_equiped ):
+		if(in_range_of_player && water_can_full && water_equiped ):
 			emit_signal("_on_water_received")
-			emit_signal("_water_emptied")
+			emit_signal("_water_can_emptied_from_individual_flower")
 			print("You watered the flower")
-			can_be_watered = false
+			water_can_full = false
 
 			
 		if (in_range_of_player && fertilzer_full && fertilzer_equiped ):
 			emit_signal("_on_food_received")
-			emit_signal("_fertilizer_emptied")
+			emit_signal("_fertilizer_emptied_from_individual_flower")
 			print("You fertilizer the flower")
 			fertilzer_full = false
 	
@@ -74,28 +68,42 @@ func _input(event):
 		emit_signal("_in_dialogue")
 
 
-func _water_can_emptied():
-	can_be_watered = false
 
 
-func _water_can_filled():
-	can_be_watered = true
+# signal from other flowers on status of resources
+func _water_can_filled_from_flowerbed():
+	water_can_full = true
+	print("indovidual flower knows water is full")
+
+func _water_can_emptied_from_flowerbed():
+	water_can_full = false
+	print("indovidual flower knows water is empty")
+
+func _fertilizer_is_full_from_flowerbed():
+	fertilzer_full = true
+	print("indovidual flower knows fetilizer is full")
+
+func _fertilizer_is_empty_from_flowerbed():
+	fertilzer_full = false
+	print("indovidual flower knows fertilizer is empty")
 
 
-func _water_can_equiped():
-	water_equiped = true
 
-func _water_can_unequiped():
+# signal from other flowers on status of player equipment
+func _fertilizer_equiped_from_flowerbed():
+	print("indovidual flower knows fertilizer is equiped")
+	fertilzer_equiped = true
 	water_equiped = false
 
+func _fertilizer_unequiped_from_flowerbed():
+	print("indovidual flower knows fertilizer is unequiped")
+	fertilzer_equiped = false
+	
+func _water_can_equiped_from_flowerbed():
+	print("indovidual flower knows water is equiped")
+	water_equiped = true
+	fertilzer_equiped = false
 
-func _fertilizer_equiped():
-	fertilzer_equiped = true
-
-
-func _fertilizer_unequiped():
-	fertilzer_equiped = true
-
-
-func _fertilizer_full():
-	fertilzer_full = true
+func _water_can_unequiped_from_flowerbed():
+	print("indovidual flower knows water is unequiped")
+	water_equiped = false

@@ -1,16 +1,19 @@
 extends StaticBody
 
-onready var compost_label:= get_node("lablel")
+onready var well_label:= get_node("lablel")
+signal in_proximity_to_well
+signal out_of_proximity_to_well
+
+
 
 
 func _ready():
-	compost_label.hide()
-
-
+	well_label.hide()
+	
 
 func area_shape_entered_by_player(area_rid, area, area_shape_index, local_shape_index):
-	compost_label.show()
+	well_label.show()
 
 
 func area_shape_exited_by_player(area_rid, area, area_shape_index, local_shape_index):
-	compost_label.hide()
+	well_label.hide()

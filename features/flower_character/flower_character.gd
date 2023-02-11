@@ -6,6 +6,9 @@ signal _on_food_received
 signal _on_water_received
 signal _in_dialogue
 
+signal _water_can_emptied_from_individual_flower
+signal _fertilizer_emptied_from_individual_flower
+
 #variables
 onready var brain := get_node("FlowerBrain")
 onready var flower := get_node("FlowerSprite")

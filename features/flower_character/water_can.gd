@@ -24,7 +24,6 @@ var water_equiped: bool = false
 signal water_can_equiped_from_can
 signal water_can_unequiped_from_can
 
-signal water_can_emptied_from_can
 signal water_can_filled_from_can
 
 # fertilizer
@@ -38,7 +37,6 @@ signal fertilizer_equiped_from_can
 signal fertilizer_unequiped_from_can
 
 signal fertilizer_full_from_can
-signal fertiizser_emptied_from_can
 
 
 

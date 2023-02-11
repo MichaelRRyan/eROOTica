@@ -21,8 +21,8 @@ var well_in_proximity: bool = false;
 var water_in_can: bool = false
 var water_equiped: bool = false
 
-signal water_can_equiped
-signal water_can_unequiped
+signal water_can_equiped_from_can
+signal water_can_unequiped_from_can
 
 signal water_can_emptied_from_can
 signal water_can_filled_from_can
@@ -34,8 +34,8 @@ var fertilizer_full: bool = false
 var fertilizer_equiped: bool = false
 
 
-signal fertilizer_equiped
-signal fertilizer_unequiped
+signal fertilizer_equiped_from_can
+signal fertilizer_unequiped_from_can
 
 signal fertilizer_full_from_can
 signal fertiizser_emptied_from_can
@@ -69,24 +69,24 @@ func _input(_event):
 	if(Input.is_action_pressed("equip_water_can") && !water_equiped):
 		water_equiped = true
 		fertilizer_equiped = false
-		emit_signal("water_can_equiped")
+		emit_signal("water_can_equiped_from_can")
 		print("You equiped the water can")
 		equipable_object.set_texture(can_texture)
 			
 	else: if (Input.is_action_pressed("equip_water_can") && water_equiped):
 		water_equiped = false
-		emit_signal("water_can_unequiped")
+		emit_signal("water_can_unequiped_from_can")
 		equipable_object.set_texture(empty_texture)
 		print("You unequiped the water can")
 	
 	if(Input.is_action_pressed("equip_fertilizer")&&!fertilizer_equiped):
-		emit_signal("fertilizer_equiped")
+		emit_signal("fertilizer_equiped_from_can")
 		equipable_object.set_texture(fertilizer_texture)
 		print("You equiped the fertilizer")
 		fertilizer_equiped = true
 		water_equiped = false
 	else: if(Input.is_action_pressed("equip_fertilizer") && fertilizer_equiped):
-		emit_signal("fertilizer_unequiped")
+		emit_signal("fertilizer_unequiped_from_can")
 		equipable_object.set_texture(empty_texture)
 		print("You unequiped the fertilizer")
 		fertilizer_equiped = false

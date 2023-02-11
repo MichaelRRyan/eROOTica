@@ -1,19 +1,17 @@
 extends Node
-# fertilizer signals will signal to both all the flowers and player that fertilizeris 
-# empty/full and can/ can't be used
+
+
+# signals to flowers whether resource is full or not
 signal _fertilizer_is_full_from_flowerbed
 signal _fertilizer_is_empty_from_flowerbed
-
 signal _water_can_filled_from_flowerbed
 signal _water_can_emptied_from_flowerbed
 
-func _ready():
-	pass # Replace with function body.
-
-
-
-
-
+# signals to flower whether resource is equiped
+signal _fertilizer_equiped_from_flowerbed
+signal _fertilizer_unequiped_from_flowerbed
+signal _water_can_equiped_from_flowerbed
+signal _water_can_unequiped_from_flowerbed
 
 
 func _water_can_filled_from_can():
@@ -34,3 +32,23 @@ func _fertilizer_full_from_can():
 func _fertilizer_emptied_from_individual_flower():
 	print("flower bed knows fertilizer is empty")
 	emit_signal("_fertilizer_is_empty_from_flowerbed")
+
+
+func _fertilizer_equiped_from_can():
+	print("flower bed knows fertilizer is equiped")
+	emit_signal("_fertilizer_equiped_from_flowerbed")
+
+
+func _fertilizer_unequiped_from_can():
+	print("flower bed knows fertilizer is unequiped")
+	emit_signal("_fertilizer_unequiped_from_flowerbed")
+
+
+func _water_can_equiped_from_can():
+	print("flower bed knows water is equiped")
+	emit_signal("_water_can_equiped_from_flowerbed")
+
+
+func _water_can_unequiped_from_can():
+	print("flower bed knows water is unequiped")
+	emit_signal("_water_can_unequiped_from_flowerbed")

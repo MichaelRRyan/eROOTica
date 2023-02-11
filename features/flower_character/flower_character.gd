@@ -6,8 +6,9 @@ signal _on_food_received
 signal _on_water_received
 signal _in_dialogue
 
-
+# let all the flowers know they can't be watered
 signal _fertilizer_emptied
+signal _water_can_emptied
 
 #variables
 onready var brain := get_node("FlowerBrain")
@@ -77,8 +78,7 @@ func _water_can_filled():
 func _fertilizer_full():
 	fertilzer_full = true
 
-#func _water_can_emptied():
-#	can_be_watered = false
+
 
 
 
@@ -97,3 +97,13 @@ func _fertilizer_equiped():
 func _fertilizer_unequiped():
 	fertilzer_equiped = false
 
+
+# flower bed 
+func _fertilizer_is_full():
+	fertilzer_full = true
+	print("flower1 know about full fertilizer")
+
+
+func _fertilizer_is_empty():
+	fertilzer_full = false
+	print("flower1 know about empty fertilizer")

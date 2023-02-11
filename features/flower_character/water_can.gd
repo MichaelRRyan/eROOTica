@@ -124,3 +124,7 @@ func compost_bin_area_shape_exited(area_rid, area, area_shape_index, local_shape
 
 
 
+
+
+func _water_can_emptied():
+	water_in_can = false

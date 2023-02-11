@@ -23,8 +23,9 @@ var water_equiped: bool = false
 
 signal water_can_equiped
 signal water_can_unequiped
-signal water_can_emptied
-signal water_can_filled
+
+signal water_can_emptied_from_can
+signal water_can_filled_from_can
 
 # fertilizer
 
@@ -35,8 +36,10 @@ var fertilizer_equiped: bool = false
 
 signal fertilizer_equiped
 signal fertilizer_unequiped
-signal fertilizer_full
-signal fertilizer_empty
+
+signal fertilizer_full_from_can
+signal fertiizser_emptied_from_can
+
 
 
 
@@ -50,7 +53,7 @@ func _input(_event):
 	if(well_in_proximity):
 		if(Input.is_action_pressed("feed") && water_equiped):
 			print("You got water from the well")
-			emit_signal("water_can_filled")
+			emit_signal("water_can_filled_from_can")
 			water_drop_icon.show()
 			no_water_drop_icon.hide()
 			water_in_can = true
@@ -89,13 +92,8 @@ func _input(_event):
 		fertilizer_equiped = false
 	
 
-# signals to 
-func _water_received():
-	print("water can now knows its empty")
-	emit_signal("water_can_emptied") 
-	water_in_can = false
-	no_water_drop_icon.show()
-	water_drop_icon.hide()
+
+	
 
 func _fertilizer_emptied():
 	fertilizer_icon.hide()
@@ -122,9 +120,10 @@ func compost_bin_area_shape_exited(area_rid, area, area_shape_index, local_shape
 	print("exiting area of bin")
 
 
-
-
-
-
-func _water_can_emptied():
+# flower bed
+func _water_can_emptied_from_flowerbed():
+	print("water can now knows its empty")
+	emit_signal("water_can_emptied") 
 	water_in_can = false
+	no_water_drop_icon.show()
+	water_drop_icon.hide()

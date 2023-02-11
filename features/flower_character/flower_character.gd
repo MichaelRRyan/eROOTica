@@ -7,8 +7,8 @@ signal _on_water_received
 signal _in_dialogue
 
 # let all the flowers know they can't be watered
-signal _fertilizer_emptied
-signal _water_can_emptied
+signal _fertilizer_emptied_from_individual_flower
+signal _water_can_emptied_from_individual_flower
 
 #variables
 onready var brain := get_node("FlowerBrain")
@@ -22,7 +22,7 @@ export var texture: Texture = null
 
 
 var in_range_of_player: bool = false
-var can_be_watered: bool = false
+var water_can_full: bool = false
 var water_equiped:bool = false
 var fertilzer_equiped:bool = false
 var fertilzer_full:bool = false
@@ -54,11 +54,11 @@ func _on_Area_body_exited(body):
 func _input(event):
 	
 	if(Input.is_action_pressed("feed")):
-		if(in_range_of_player && can_be_watered && water_equiped ):
+		if(in_range_of_player && water_can_full && water_equiped ):
 			emit_signal("_on_water_received")
-			emit_signal("_water_emptied")
+			emit_signal("_water_can_emptied_from_individual_flower")
 			print("You watered the flower")
-			can_be_watered = false
+			water_can_full = false
 
 			
 		if (in_range_of_player && fertilzer_full && fertilzer_equiped ):
@@ -71,12 +71,6 @@ func _input(event):
 		brain.talked_to()
 		emit_signal("_in_dialogue")
 
-#status of supplies
-func _water_can_filled():
-	can_be_watered = true
-
-func _fertilizer_full():
-	fertilzer_full = true
 
 
 
@@ -98,12 +92,25 @@ func _fertilizer_unequiped():
 	fertilzer_equiped = false
 
 
+
+
 # flower bed 
 func _fertilizer_is_full():
 	fertilzer_full = true
 	print("flower1 know about full fertilizer")
 
-
 func _fertilizer_is_empty():
 	fertilzer_full = false
 	print("flower1 know about empty fertilizer")
+
+	
+
+# signal from other flowers
+func _water_can_filled_from_flowerbed():
+	water_can_full = true
+	print("indovidual flower knows water is full")
+
+
+func _water_can_emptied_from_flowerbed():
+	water_can_full = false
+	print("indovidual flower knows water is empty")

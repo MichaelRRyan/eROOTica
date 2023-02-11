@@ -61,7 +61,7 @@ func _input(_event):
 	if(compost_bin_in_proximity):
 		if(Input.is_action_pressed("feed") && fertilizer_equiped):
 			print("You got compost from bin")
-			emit_signal("fertilizer_full")
+			emit_signal("fertilizer_full_from_can")
 			fertilizer_full = true
 			no_fertilizer_icon.hide()
 			fertilizer_icon.show()
@@ -93,13 +93,6 @@ func _input(_event):
 	
 
 
-	
-
-func _fertilizer_emptied():
-	fertilizer_icon.hide()
-	no_fertilizer_icon.show()
-	fertilizer_full = false
-
 
 
 # whether in range of interactions with with compost bin/ well
@@ -127,3 +120,9 @@ func _water_can_emptied_from_flowerbed():
 	water_in_can = false
 	no_water_drop_icon.show()
 	water_drop_icon.hide()
+
+
+func _fertilizer_is_empty_from_flowerbed():
+	fertilizer_icon.hide()
+	no_fertilizer_icon.show()
+	fertilizer_full = false

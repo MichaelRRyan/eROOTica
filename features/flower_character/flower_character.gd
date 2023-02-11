@@ -63,7 +63,7 @@ func _input(event):
 			
 		if (in_range_of_player && fertilzer_full && fertilzer_equiped ):
 			emit_signal("_on_food_received")
-			emit_signal("_fertilizer_emptied")
+			emit_signal("_fertilizer_emptied_from_individual_flower")
 			print("You fertilizer the flower")
 			fertilzer_full = false
 	
@@ -94,15 +94,6 @@ func _fertilizer_unequiped():
 
 
 
-# flower bed 
-func _fertilizer_is_full():
-	fertilzer_full = true
-	print("flower1 know about full fertilizer")
-
-func _fertilizer_is_empty():
-	fertilzer_full = false
-	print("flower1 know about empty fertilizer")
-
 	
 
 # signal from other flowers
@@ -114,3 +105,13 @@ func _water_can_filled_from_flowerbed():
 func _water_can_emptied_from_flowerbed():
 	water_can_full = false
 	print("indovidual flower knows water is empty")
+
+
+func _fertilizer_is_full_from_flowerbed():
+	fertilzer_full = true
+	print("indovidual flower knows fetilizer is full")
+
+
+func _fertilizer_is_empty_from_flowerbed():
+	fertilzer_full = false
+	print("indovidual flower knows fertilizer is empty")

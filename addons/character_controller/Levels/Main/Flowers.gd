@@ -24,3 +24,13 @@ func _water_can_filled_from_can():
 func _water_can_emptied_from_individual_flower():
 	print("flower bed knows water has been used on an individual flower")
 	emit_signal("_water_can_emptied_from_flowerbed")
+
+
+func _fertilizer_full_from_can():
+	print("flower bed knows fertilizer is full")
+	emit_signal("_fertilizer_is_full_from_flowerbed")
+
+
+func _fertilizer_emptied_from_individual_flower():
+	print("flower bed knows fertilizer is empty")
+	emit_signal("_fertilizer_is_empty_from_flowerbed")

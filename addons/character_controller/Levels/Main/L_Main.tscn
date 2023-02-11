@@ -108,27 +108,27 @@ text = "Time Until Next Day:"
 
 [node name="Garden" parent="." instance=ExtResource( 2 )]
 
-[node name="Flowers" type="Node" parent="."]
+[node name="Flower_bed" type="Node" parent="."]
 script = ExtResource( 14 )
 
-[node name="Rose" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Rose" parent="Flower_bed" instance=ExtResource( 7 )]
 process_priority = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3888, -0.0879298, -14.8936 )
 character_name = "Rose"
 texture = ExtResource( 10 )
 
-[node name="BellaAndDonna" parent="Flowers" instance=ExtResource( 7 )]
+[node name="BellaAndDonna" parent="Flower_bed" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13266, -0.0879298, -33.5365 )
 character_name = "Bella & Donna"
 texture = ExtResource( 12 )
 
-[node name="Poppy" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Poppy" parent="Flower_bed" instance=ExtResource( 7 )]
 process_priority = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5725, -0.0879298, 15.9623 )
 character_name = "Poppy"
 texture = ExtResource( 13 )
 
-[node name="Sunflower" parent="Flowers" instance=ExtResource( 7 )]
+[node name="Sunflower" parent="Flower_bed" instance=ExtResource( 7 )]
 process_priority = 1
 transform = Transform( 1.39589, 0, 0, 0, 1.39589, 0, 0, 0, 1, 12.2705, -0.0879308, 20.0512 )
 character_name = "Sunflower"
@@ -163,50 +163,50 @@ shape = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00917, 0 )
 shape = SubResource( 8 )
 
-[connection signal="fertilizer_equiped_from_can" from="Player/water_can" to="Flowers" method="_fertilizer_equiped_from_can"]
-[connection signal="fertilizer_full_from_can" from="Player/water_can" to="Flowers" method="_fertilizer_full_from_can"]
-[connection signal="fertilizer_unequiped_from_can" from="Player/water_can" to="Flowers" method="_fertilizer_unequiped_from_can"]
-[connection signal="water_can_equiped_from_can" from="Player/water_can" to="Flowers" method="_water_can_equiped_from_can"]
-[connection signal="water_can_filled_from_can" from="Player/water_can" to="Flowers" method="_water_can_filled_from_can"]
-[connection signal="water_can_unequiped_from_can" from="Player/water_can" to="Flowers" method="_water_can_unequiped_from_can"]
-[connection signal="_fertilizer_equiped_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_fertilizer_equiped_from_flowerbed"]
-[connection signal="_fertilizer_equiped_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_fertilizer_equiped_from_flowerbed"]
-[connection signal="_fertilizer_equiped_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_fertilizer_equiped_from_flowerbed"]
-[connection signal="_fertilizer_equiped_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_fertilizer_equiped_from_flowerbed"]
-[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flowers" to="Player/water_can" method="_fertilizer_is_empty_from_flowerbed"]
-[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_fertilizer_is_empty_from_flowerbed"]
-[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_fertilizer_is_empty_from_flowerbed"]
-[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_fertilizer_is_empty_from_flowerbed"]
-[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_fertilizer_is_empty_from_flowerbed"]
-[connection signal="_fertilizer_is_full_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_fertilizer_is_full_from_flowerbed"]
-[connection signal="_fertilizer_is_full_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_fertilizer_is_full_from_flowerbed"]
-[connection signal="_fertilizer_is_full_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_fertilizer_is_full_from_flowerbed"]
-[connection signal="_fertilizer_is_full_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_fertilizer_is_full_from_flowerbed"]
-[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_fertilizer_unequiped_from_flowerbed"]
-[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_fertilizer_unequiped_from_flowerbed"]
-[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_fertilizer_unequiped_from_flowerbed"]
-[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_fertilizer_unequiped_from_flowerbed"]
-[connection signal="_water_can_emptied_from_flowerbed" from="Flowers" to="Player/water_can" method="_water_can_emptied_from_flowerbed"]
-[connection signal="_water_can_emptied_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_water_can_emptied_from_flowerbed"]
-[connection signal="_water_can_emptied_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_water_can_emptied_from_flowerbed"]
-[connection signal="_water_can_emptied_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_water_can_emptied_from_flowerbed"]
-[connection signal="_water_can_emptied_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_water_can_emptied_from_flowerbed"]
-[connection signal="_water_can_equiped_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_water_can_equiped_from_flowerbed"]
-[connection signal="_water_can_equiped_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_water_can_equiped_from_flowerbed"]
-[connection signal="_water_can_equiped_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_water_can_equiped_from_flowerbed"]
-[connection signal="_water_can_equiped_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_water_can_equiped_from_flowerbed"]
-[connection signal="_water_can_filled_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_water_can_filled_from_flowerbed"]
-[connection signal="_water_can_filled_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_water_can_filled_from_flowerbed"]
-[connection signal="_water_can_filled_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_water_can_filled_from_flowerbed"]
-[connection signal="_water_can_filled_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_water_can_filled_from_flowerbed"]
-[connection signal="_water_can_unequiped_from_flowerbed" from="Flowers" to="Flowers/Rose" method="_water_can_unequiped_from_flowerbed"]
-[connection signal="_water_can_unequiped_from_flowerbed" from="Flowers" to="Flowers/BellaAndDonna" method="_water_can_unequiped_from_flowerbed"]
-[connection signal="_water_can_unequiped_from_flowerbed" from="Flowers" to="Flowers/Poppy" method="_water_can_unequiped_from_flowerbed"]
-[connection signal="_water_can_unequiped_from_flowerbed" from="Flowers" to="Flowers/Sunflower" method="_water_can_unequiped_from_flowerbed"]
-[connection signal="_in_dialogue" from="Flowers/Rose" to="AudioStreamPlayer" method="_in_dialogue"]
-[connection signal="_in_dialogue" from="Flowers/BellaAndDonna" to="AudioStreamPlayer" method="_in_dialogue"]
-[connection signal="_in_dialogue" from="Flowers/Poppy" to="AudioStreamPlayer" method="_in_dialogue"]
-[connection signal="_in_dialogue" from="Flowers/Sunflower" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="fertilizer_equiped_from_can" from="Player/water_can" to="Flower_bed" method="_fertilizer_equiped_from_can"]
+[connection signal="fertilizer_full_from_can" from="Player/water_can" to="Flower_bed" method="_fertilizer_full_from_can"]
+[connection signal="fertilizer_unequiped_from_can" from="Player/water_can" to="Flower_bed" method="_fertilizer_unequiped_from_can"]
+[connection signal="water_can_equiped_from_can" from="Player/water_can" to="Flower_bed" method="_water_can_equiped_from_can"]
+[connection signal="water_can_filled_from_can" from="Player/water_can" to="Flower_bed" method="_water_can_filled_from_can"]
+[connection signal="water_can_unequiped_from_can" from="Player/water_can" to="Flower_bed" method="_water_can_unequiped_from_can"]
+[connection signal="_fertilizer_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_fertilizer_equiped_from_flowerbed"]
+[connection signal="_fertilizer_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_fertilizer_equiped_from_flowerbed"]
+[connection signal="_fertilizer_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_fertilizer_equiped_from_flowerbed"]
+[connection signal="_fertilizer_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_fertilizer_equiped_from_flowerbed"]
+[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flower_bed" to="Player/water_can" method="_fertilizer_is_empty_from_flowerbed"]
+[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_fertilizer_is_empty_from_flowerbed"]
+[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_fertilizer_is_empty_from_flowerbed"]
+[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_fertilizer_is_empty_from_flowerbed"]
+[connection signal="_fertilizer_is_empty_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_fertilizer_is_empty_from_flowerbed"]
+[connection signal="_fertilizer_is_full_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_fertilizer_is_full_from_flowerbed"]
+[connection signal="_fertilizer_is_full_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_fertilizer_is_full_from_flowerbed"]
+[connection signal="_fertilizer_is_full_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_fertilizer_is_full_from_flowerbed"]
+[connection signal="_fertilizer_is_full_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_fertilizer_is_full_from_flowerbed"]
+[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_fertilizer_unequiped_from_flowerbed"]
+[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_fertilizer_unequiped_from_flowerbed"]
+[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_fertilizer_unequiped_from_flowerbed"]
+[connection signal="_fertilizer_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_fertilizer_unequiped_from_flowerbed"]
+[connection signal="_water_can_emptied_from_flowerbed" from="Flower_bed" to="Player/water_can" method="_water_can_emptied_from_flowerbed"]
+[connection signal="_water_can_emptied_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_water_can_emptied_from_flowerbed"]
+[connection signal="_water_can_emptied_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_water_can_emptied_from_flowerbed"]
+[connection signal="_water_can_emptied_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_water_can_emptied_from_flowerbed"]
+[connection signal="_water_can_emptied_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_water_can_emptied_from_flowerbed"]
+[connection signal="_water_can_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_water_can_equiped_from_flowerbed"]
+[connection signal="_water_can_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_water_can_equiped_from_flowerbed"]
+[connection signal="_water_can_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_water_can_equiped_from_flowerbed"]
+[connection signal="_water_can_equiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_water_can_equiped_from_flowerbed"]
+[connection signal="_water_can_filled_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_water_can_filled_from_flowerbed"]
+[connection signal="_water_can_filled_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_water_can_filled_from_flowerbed"]
+[connection signal="_water_can_filled_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_water_can_filled_from_flowerbed"]
+[connection signal="_water_can_filled_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_water_can_filled_from_flowerbed"]
+[connection signal="_water_can_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Rose" method="_water_can_unequiped_from_flowerbed"]
+[connection signal="_water_can_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/BellaAndDonna" method="_water_can_unequiped_from_flowerbed"]
+[connection signal="_water_can_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Poppy" method="_water_can_unequiped_from_flowerbed"]
+[connection signal="_water_can_unequiped_from_flowerbed" from="Flower_bed" to="Flower_bed/Sunflower" method="_water_can_unequiped_from_flowerbed"]
+[connection signal="_in_dialogue" from="Flower_bed/Rose" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_in_dialogue" from="Flower_bed/BellaAndDonna" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_in_dialogue" from="Flower_bed/Poppy" to="AudioStreamPlayer" method="_in_dialogue"]
+[connection signal="_in_dialogue" from="Flower_bed/Sunflower" to="AudioStreamPlayer" method="_in_dialogue"]
 [connection signal="_leaving_dialogue" from="DialogSystem" to="AudioStreamPlayer" method="_leaving_dialogue"]
 [connection signal="area_shape_entered" from="well/area_of_interaction" to="Player/water_can" method="well_area_shape_entered"]
 [connection signal="area_shape_entered" from="well/area_of_interaction" to="well" method="area_shape_entered_by_player"]

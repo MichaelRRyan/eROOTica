@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://resources/dialog_interface_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/images/ui/textbox.png" type="Texture" id=1]
+[ext_resource path="res://features/dialog_system/dialog_interface_theme.tres" type="Theme" id=2]
 [ext_resource path="res://features/dialog_system/dialog_interface.gd" type="Script" id=3]
 [ext_resource path="res://features/dialog_system/answer_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/MotleyForcesRegular-w1rZ3.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
 
 [node name="DialogInterface" type="Control"]
 anchor_right = 1.0
@@ -14,26 +22,39 @@ margin_bottom = -20.0
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
 
-[node name="DialogPanel" type="Panel" parent="."]
+[node name="DialogPanel" type="TextureRect" parent="."]
 anchor_top = 0.7
 anchor_right = 0.632
 anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
 
 [node name="Label" type="RichTextLabel" parent="DialogPanel"]
-anchor_left = 0.04
-anchor_top = 0.299
+anchor_left = 0.057
+anchor_top = 0.333
 anchor_right = 0.96
 anchor_bottom = 0.9
+custom_colors/default_color = Color( 0.0470588, 0.415686, 0.0901961, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "This is a test. I don't like you."
 
-[node name="NamePanel" type="Panel" parent="."]
-anchor_top = 0.706
-anchor_right = 0.258
+[node name="NamePanel" type="TextureRect" parent="."]
+anchor_top = 0.7
+anchor_right = 0.249
 anchor_bottom = 0.774
+margin_left = -13.0
+margin_top = -32.0
+margin_right = -13.0
+margin_bottom = -32.0
+rect_scale = Vector2( 1.50108, 1.65519 )
+texture = ExtResource( 1 )
+expand = true
 
 [node name="Name" type="Label" parent="NamePanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.854902, 0.188235, 0.376471, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Rose"
 align = 1
 valign = 1
@@ -43,16 +64,25 @@ anchor_left = 0.651
 anchor_top = 0.311
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 custom_constants/separation = 20
 
 [node name="Answer1" parent="Answers" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 343.0
+margin_bottom = 115.0
 
 [node name="Answer2" parent="Answers" instance=ExtResource( 4 )]
+margin_left = 0.0
 margin_top = 135.0
+margin_right = 343.0
 margin_bottom = 250.0
 
 [node name="Answer3" parent="Answers" instance=ExtResource( 4 )]
+margin_left = 0.0
 margin_top = 270.0
+margin_right = 343.0
 margin_bottom = 385.0
 
 [node name="ContinueBox" type="VBoxContainer" parent="."]
@@ -63,10 +93,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 20
 
-[node name="Continue" type="Button" parent="ContinueBox"]
+[node name="Continue" type="TextureButton" parent="ContinueBox"]
 margin_right = 343.0
 margin_bottom = 167.0
 size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="ContinueBox/Continue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "Continue..."
+align = 1
+valign = 1
 
 [connection signal="pressed" from="ContinueBox/Continue" to="." method="_on_Continue_pressed"]

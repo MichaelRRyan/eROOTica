@@ -1,0 +1,1729 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/images/foliage/tree1.png" type="Texture" id=1]
+[ext_resource path="res://addons/character_controller/Levels/Main/Geometry/Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/grassText.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/foliage/tree3.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/house.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/sunflower.png" type="Texture" id=6]
+[ext_resource path="res://features/3d_scenery/hedge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/images/tulip.png" type="Texture" id=8]
+[ext_resource path="res://features/3d_scenery/round_bush.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/images/foliage/tree2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/clouds.png" type="Texture" id=11]
+[ext_resource path="res://addons/character_controller/Levels/Main/Environment.tres" type="Environment" id=12]
+[ext_resource path="res://features/scenery/grass_tuft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/images/nightshade.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/rose.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/poppy.png" type="Texture" id=16]
+
+[sub_resource type="PlaneMesh" id=5]
+size = Vector2( 4, 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+params_specular_mode = 4
+albedo_color = Color( 0.866667, 0.909804, 0.662745, 1 )
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 8, 8, 1 )
+
+[node name="ArenaGeometry" type="Spatial"]
+
+[node name="Floor1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -3.82683 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Hedges" type="Node" parent="."]
+
+[node name="Hedge1" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.757895, 0, 0.652376, 0, 1, 0, -0.652376, 0, 0.757895, 15.6942, 0.0167828, 23.801 )
+
+[node name="Hedge17" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.0172779, 0, 0.99985, 0, 1, 0, -0.99985, 0, 0.0172779, 20.0753, 0.0167828, 12.8514 )
+
+[node name="Hedge18" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.0172779, 0, 0.99985, 0, 1, 0, -0.99985, 0, 0.0172779, 20.3416, 0.0167823, -0.705109 )
+
+[node name="Hedge19" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.313744, 0, 0.949507, 0, 1, 0, -0.949507, 0, 0.313744, 21.2231, 0.0167823, -14.4587 )
+
+[node name="Hedge2" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.946834, 0, -0.32172, 0, 1, 0, 0.32172, 0, 0.946834, 5.06386, 0, 26.3825 )
+
+[node name="Hedge3" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.984631, 0, 0.174645, 0, 1, 0, -0.174645, 0, 0.984631, -8.14663, -9.53674e-07, 25.2483 )
+
+[node name="Hedge4" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.864196, 0, -0.503156, 0, 1, 0, 0.503156, 0, 0.864196, -20.8523, 0, 23.6832 )
+
+[node name="Hedge5" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.324908, 0, -0.945746, 0, 1, 0, 0.945746, 0, 0.324908, -28.7757, 0, 14.0317 )
+
+[node name="Hedge6" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( 0.0281659, 0, -0.999603, 0, 1, 0, 0.999603, 0, 0.0281659, -31.0226, 0, 0.809326 )
+
+[node name="Hedge9" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.197623, 0, -0.980278, 0, 1, 0, 0.980278, 0, -0.197623, -30.0302, 0, -12.7629 )
+
+[node name="Hedge11" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.488987, 0, -0.872291, 0, 1, 0, 0.872291, 0, -0.488987, -25.4416, 0, -25.3488 )
+
+[node name="Hedge12" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.903066, 0, -0.429503, 0, 1, 0, 0.429503, 0, -0.903066, -16.4717, 9.53674e-07, -33.9484 )
+
+[node name="Hedge13" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.998431, 0, -0.0559959, 0, 1, 0, 0.0559959, 0, -0.998431, -3.48442, 9.53674e-07, -37.3625 )
+
+[node name="Hedge14" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.924267, 0, 0.381748, 0, 1, 0, -0.381748, 0, -0.924267, 11.9722, 9.53674e-07, -35.5774 )
+
+[node name="Hedge15" parent="Hedges" instance=ExtResource( 7 )]
+transform = Transform( -0.391052, 0, 0.920368, 0, 1, 0, -0.920368, 0, -0.391052, 20.7075, 1.90735e-06, -26.9102 )
+
+[node name="house" type="Sprite3D" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.9188, 5.75, 2.63123e-13 )
+layers = 3
+render_priority = 1
+texture = ExtResource( 5 )
+
+[node name="ShortHedges" type="Node" parent="."]
+
+[node name="Hedge7" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( 0.976904, 0, -0.213678, 0, 1, 0, 0.213678, 0, 0.976904, 15.8209, -1.23853, -8.02903 )
+
+[node name="Hedge8" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( 0.966676, 0, 0.256002, 0, 1, 0, -0.256002, 0, 0.966676, 3.96853, -1.23854, -8.08818 )
+
+[node name="Hedge16" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( 0.400077, 0, 0.916482, 0, 1, 0, -0.916482, 0, 0.400077, 3.47738, -1.25532, -32.6218 )
+
+[node name="Hedge20" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( 0.400077, 0, 0.916482, 0, 1, 0, -0.916482, 0, 0.400077, -2.04428, -1.25532, -20.2642 )
+
+[node name="Hedge21" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( -0.297892, 0, 0.9546, 0, 1, 0, -0.9546, 0, -0.297892, -24.2797, -1.25532, -26.806 )
+
+[node name="Hedge22" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( -0.694407, 0, 0.719582, 0, 1, 0, -0.719582, 0, -0.694407, -18.2547, -1.25531, -16.3379 )
+
+[node name="Hedge10" parent="ShortHedges" instance=ExtResource( 7 )]
+transform = Transform( -0.886131, 0, 0.463435, 0, 1, 0, -0.463435, 0, -0.886131, -9.38547, -1.25531, 6.42996 )
+
+[node name="Foliage" type="Node" parent="."]
+
+[node name="Trees" type="Node" parent="Foliage"]
+
+[node name="Tree" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.0840558, 0, -0.983716, 0, 0.467682, 0, 0.460067, 0, -0.179729, -23.2036, 7.92028, -27.4707 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree20" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.440296, 0, -0.337176, 0, 0.467682, 0, 0.157691, 0, 0.941441, -23.2036, 7.92028, -27.4707 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree21" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.491247, 0, -0.217132, 0, 0.624193, 0, 0.054479, 0, -1.20867, -4.13536, 10.3598, -36.2898 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree22" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.0135788, 0, -1.09824, 0, 0.624193, 0, 0.464082, 0, -0.019837, -4.13536, 10.3598, -36.2898 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree23" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.146867, 0, -1.14536, 0, 0.624193, 0, 0.471934, 0, 0.442929, 19.5747, 10.3598, -26.5814 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree24" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.458202, 0, 0.189289, 0, 0.624193, 0, -0.074886, 0, 1.08199, 19.5747, 10.3598, -26.5814 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree37" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.344096, 0, -0.572495, 0, 0.458253, 0, 0.157792, 0, 1.24843, 4.32717, 9.1556, -38.999 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree38" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.214641, 0, 0.723341, 0, 0.458253, 0, -0.335123, 0, 0.463289, 4.32717, 9.1556, -38.999 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree33" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.493049, 0, 0.0858592, 0, 0.624193, 0, -0.034557, 0, 1.22501, 11.9182, 10.3598, -37.9671 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree34" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.242421, 0, 0.936798, 0, 0.624193, 0, -0.395966, 0, -0.573532, 11.9182, 10.3598, -37.9671 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree35" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.493049, 0, 0.0858592, 0, 0.534701, 0, -0.034557, 0, 1.22501, 23.6608, 9.54352, -16.318 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree36" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.242421, 0, 0.936798, 0, 0.534701, 0, -0.395966, 0, -0.573532, 23.6608, 9.54352, -16.318 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree39" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.589291, 0, -0.752174, 0, 0.921719, 0, 0.510294, 0, 0.868616, 21.6457, 14.9261, -34.0897 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree40" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.360749, 0, 1.13015, 0, 0.921719, 0, -0.307957, 0, 1.32389, 21.6457, 14.9261, -34.0897 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 1 )
+
+[node name="Tree7" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.392093, 0, -0.545093, 0, 0.467682, 0, 0.254931, 0, -0.838375, -25.7274, 7.92028, -19.9012 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 10 )
+
+[node name="Tree19" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.15965, 0, -0.939931, 0, 0.467682, 0, 0.439589, 0, 0.341365, -25.7274, 7.92028, -19.9012 )
+alpha_cut = 1
+render_priority = 1
+texture = ExtResource( 10 )
+
+[node name="Tree5" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.441041, 0, -0.332688, 0, 0.467682, 0, 0.155592, 0, 0.943037, 2.14416, 7.92028, 27.3215 )
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree8" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.238814, 0, 0.859798, 0, 0.467682, 0, -0.402112, 0, -0.510633, -2.01047, 7.92028, 20.9468 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree18" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.456106, 0, -0.221106, 0, 0.467682, 0, 0.103407, 0, -0.975249, -2.01047, 7.92028, 20.9468 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree25" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.238814, 0, 0.859798, 0, 0.467682, 0, -0.402112, 0, -0.510633, 21.5732, 7.92028, -7.97809 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree26" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.456106, 0, -0.221106, 0, 0.467682, 0, 0.103407, 0, -0.975249, 21.5732, 7.92028, -7.97809 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree27" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.363292, 0, 0.629754, 0, 0.553972, 0, -0.348866, 0, 0.920117, 21.9329, 9.31679, 9.80231 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree28" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.168364, 0, 0.932953, 0, 0.553972, 0, -0.516829, 0, -0.426419, 21.9329, 9.31679, 9.80231 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree29" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.187641, 0, -1.08889, 0, 0.553972, 0, 0.467418, 0, 0.239844, 18.497, 9.31679, 26.6696 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree30" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.496966, 0, 0.519335, 0, 0.553972, 0, -0.220191, 0, 0.884605, 18.497, 9.31679, 26.6696 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 4 )
+
+[node name="Tree9" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.134786, 0, -0.928018, 0, 0.393287, 0, 0.412355, 0, 0.303341, -1.35753, 7.50137, 6.7491 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree10" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.453991, 0, -0.191188, 0, 0.393287, 0, 0.0820541, 0, -1.05781, -1.35753, 7.50137, 6.7491 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree31" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.40729, 0, -0.336216, 0, 0.393287, 0, 0.149394, 0, -0.91662, 2.3385, 7.50137, -8.84534 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree32" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.0981787, 0, 1.05032, 0, 0.393287, 0, -0.450779, 0, -0.228758, 2.3385, 7.50137, -8.84534 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree11" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.160182, 0, -0.985171, 0, 0.471244, 0, 0.490047, 0, 0.322023, -11.2712, 7.9323, 3.83629 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree12" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.469996, 0, -0.153895, 0, 0.471244, 0, 0.084947, 0, -0.851473, -11.2712, 7.9323, 3.83629 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree13" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.160182, 0, -0.985171, 0, 0.471244, 0, 0.490047, 0, 0.322023, -15.888, 7.9323, -12.012 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree14" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.469996, 0, -0.153895, 0, 0.471244, 0, 0.084947, 0, -0.851473, -15.888, 7.9323, -12.012 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree15" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.364231, -0.000132256, 0.733547, -0.000191662, 0.471244, 0.000795667, -0.364883, -0.000379566, 0.732236, -32.8562, 7.9323, 0.473046 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree16" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.288732, -0.000132256, -0.689256, 0.000387477, 0.471244, 0.000227856, 0.380456, -0.000379566, 0.523083, -32.8562, 7.9323, 0.473046 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree6" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( 0.441041, 0, -0.332688, 0, 0.467682, 0, 0.155592, 0, 0.943037, -22.1166, 7.92028, 23.774 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Tree17" type="Sprite3D" parent="Foliage/Trees"]
+transform = Transform( -0.120761, 0, -0.966088, 0, 0.467682, 0, 0.451822, 0, -0.258212, -22.1166, 7.92028, 23.774 )
+alpha_cut = 1
+render_priority = -1
+texture = ExtResource( 1 )
+
+[node name="Bushes" type="Node" parent="Foliage"]
+
+[node name="RoundBush" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 1.1303, 0, 0, 0, 1, 0, 0, 0, 1, 17.9059, 7.15256e-07, -6.74991 )
+
+[node name="RoundBush2" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.803898, 0, -0.793195, 0, 1, 0, 0.635496, 0, 1.00339, 14.0586, 0, -7.01184 )
+
+[node name="RoundBush41" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.986637, 0, -0.287989, 0, 1, 0, 0.276866, 0, -1.02627, 17.1721, 0, -9.84755 )
+
+[node name="RoundBush42" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.03183, 0, -0.946374, 0, 1.478, 0, 0.775312, 0, -1.25949, 15.2667, 9.53674e-07, -31.9948 )
+
+[node name="RoundBush3" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.46333, 0, -0.0977318, 0, 1, 0, 0.134209, 0, -1.06561, -0.879491, 0, -6.48879 )
+
+[node name="RoundBush11" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.27754, 0, -0.528756, 0, 1, 0, 0.726106, 0, -0.930319, -3.99914, 4.76837e-07, 9.55293 )
+
+[node name="RoundBush20" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.46165, 0, 0.110234, 0, 1.1784, 0, -0.151377, 0, -1.06439, -9.95832, 9.53674e-07, 7.24217 )
+
+[node name="RoundBush27" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.09866, 0, 0.797921, 0, 1.29528, 0, -0.951672, 0, -0.92116, -24.165, 9.53674e-07, 20.404 )
+
+[node name="RoundBush28" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.394252, 0, 1.14999, 0, 1.06136, 0, -1.12388, 0, 0.403409, -27.3397, 1.19209e-06, 16.4807 )
+
+[node name="RoundBush29" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.394252, 0, 1.14999, 0, 1.06136, 0, -1.12388, 0, 0.403409, -29.7219, 2.14577e-06, 1.71531 )
+
+[node name="RoundBush30" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.33686, 0, 0.723918, 0, 1.43483, 0, -0.777091, 0, -1.24539, -25.539, 2.6226e-06, 1.24668 )
+
+[node name="RoundBush12" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.624252, 0, -1.367, 0, 1.15383, 0, 1.39439, 0, 0.337667, -0.914858, 1.43051e-06, 6.03586 )
+
+[node name="RoundBush22" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 1.43911, 0, 0.472656, 0, 1.15383, 0, -0.512824, 0, 1.32639, -1.0837, 1.43051e-06, 23.9834 )
+
+[node name="RoundBush25" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.965448, 0, -1.09129, 0, 1.15383, 0, 1.18403, 0, 0.889826, 11.3407, 1.43051e-06, 26.3387 )
+
+[node name="RoundBush26" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.813551, 0, -1.19183, 0, 1.15383, 0, 1.29312, 0, -0.749826, 18.9283, 1.43051e-06, 19.7274 )
+
+[node name="RoundBush33" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 1.13826, 0, -0.00281529, 0, 1.35594, 0, 0.00227581, 0, 1.40808, 19.0429, 0.0043993, 8.38696 )
+
+[node name="RoundBush34" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.37105, 0, 0.8002, 0, 0.793669, 0, -0.736516, 0, 0.403134, 15.3383, 0.0043993, 7.41105 )
+
+[node name="RoundBush39" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.432996, 0, 0.76258, 0, 0.793669, 0, -0.70189, 0, -0.470435, 21.8263, 0.00439835, -17.4866 )
+
+[node name="RoundBush43" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.0746593, 0, -1.14497, 0, 1.01677, 0, 1.04524, 0, -0.0817823, 18.4575, 0.00439882, -29.3452 )
+
+[node name="RoundBush35" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.05044, 0, -0.24539, 0, 1.28999, 0, 0.22185, 0, -1.1619, 12.4848, 0.0043993, 7.07931 )
+
+[node name="RoundBush23" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.0119179, 0, 0.962858, 0, 0.882084, 0, -0.996009, 0, 0.0115213, -2.4422, 1.43051e-06, 20.6842 )
+
+[node name="RoundBush24" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.521788, 0, 0.892588, 0, 1.1479, 0, -0.92665, 0, -0.502608, -1.75639, 1.90735e-06, 12.4372 )
+
+[node name="RoundBush13" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.858537, 0, -1.00546, 0, 1.12561, 0, 1.16866, 0, -0.911645, -14.1979, 1.43051e-06, 2.6833 )
+
+[node name="RoundBush4" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.883183, 0, 0.218513, 0, 1.10649, 0, -0.19902, 0, -1.13163, -4.67458, 0, -14.0759 )
+
+[node name="RoundBush6" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.583545, 0, -0.903692, 0, 1.10649, 0, 0.692168, 0, -0.71531, -14.3131, 0, -10.4145 )
+
+[node name="RoundBush21" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.193803, 0, 0.617736, 0, 0.700817, 0, -0.729039, 0, -0.164215, -15.0635, 2.38419e-07, -8.29168 )
+
+[node name="RoundBush7" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.890094, 0, 0.175448, 0, 1.10649, 0, -0.165389, 0, -1.1391, -22.7264, -2.38419e-07, -24.7224 )
+
+[node name="RoundBush44" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.602153, 0, -0.68629, 0, 0.915364, 0, 0.585378, 0, -0.705957, -12.2691, -2.38419e-07, -25.322 )
+
+[node name="RoundBush45" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.729006, 0, 0.0631152, 0, 0.796953, 0, -0.0560725, 0, -0.820569, -10.544, -2.38419e-07, -22.8475 )
+
+[node name="RoundBush47" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.122358, 0, -0.702331, 0, 0.639489, 0, 0.573794, 0, 0.149768, -9.64794, 7.15256e-07, -20.4506 )
+
+[node name="RoundBush46" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.232408, 0, 0.896867, 0, 0.915996, 0, -0.693239, 0, -0.300674, -13.4812, 0.000391006, -22.5668 )
+
+[node name="RoundBush8" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.792511, 0, 0.0122384, 0, 0.828408, 0, 0.0163956, 0, 1.1123, -21.6627, -2.38419e-07, -30.3399 )
+
+[node name="RoundBush18" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.369816, 0, -1.0189, 0, 1.06727, 0, 0.701127, 0, 0.537427, -10.5689, -2.38419e-07, -35.327 )
+
+[node name="RoundBush19" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.786553, 0, 0.108818, 0, 0.812402, 0, -0.0983723, 0, 0.870075, -7.91459, -2.38419e-07, -36.4238 )
+
+[node name="RoundBush37" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.733227, 0, -0.333183, 0, 0.812402, 0, 0.301199, 0, 0.811087, -2.60192, -2.38419e-07, -22.6845 )
+
+[node name="RoundBush14" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.49988, 0, 0.840643, 0, 0.972538, 0, -0.615193, 0, -0.72848, -28.4715, -1.19209e-06, -16.2043 )
+
+[node name="RoundBush31" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.867078, 0, -0.241119, 0, 0.94053, 0, 0.189891, 0, -1.10099, -29.9833, -1.19209e-06, -8.62286 )
+
+[node name="RoundBush32" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.951533, 0, 0.46778, 0, 1.12684, 0, -0.374074, 0, -1.18989, -30.0164, -7.15256e-07, -5.08549 )
+
+[node name="RoundBush15" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 1.00427, 0, -0.189383, 0, 1.10793, 0, -0.264288, 0, 0.977515, -24.9879, -1.66893e-06, -18.8626 )
+
+[node name="RoundBush16" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( 0.110159, 0, 0.976459, 0, 0.774595, 0, -0.822417, 0, 0.130793, -21.7164, -1.66893e-06, -17.7421 )
+
+[node name="RoundBush17" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.778044, 0, -0.342372, 0, 0.774595, 0, 0.288361, 0, -0.923774, -19.453, -1.66893e-06, -19.2284 )
+
+[node name="RoundBush5" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.24415, 0, 0.307822, 0, 1.40871, 0, -0.220582, 0, -1.25422, 6.80084, -9.53674e-07, -35.397 )
+
+[node name="RoundBush36" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.22309, 0, -0.324208, 0, 1.40871, 0, 0.317205, 0, -1.25009, 0.663765, -9.53674e-07, -22.5712 )
+
+[node name="RoundBush38" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.846493, 0, -0.958799, 0, 1.40871, 0, 0.93809, 0, -0.865181, 21.7082, -9.53674e-07, -20.9733 )
+
+[node name="RoundBush40" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.581854, 0, -1.14637, 0, 1.40871, 0, 1.12161, 0, -0.594699, 20.2243, -1.90735e-06, -12.0914 )
+
+[node name="RoundBush9" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -0.788842, 0, 1.05924, 0, 1.40871, 0, -0.987062, 0, -0.738814, 1.21261, -9.53674e-07, -37.5372 )
+
+[node name="RoundBush10" parent="Foliage/Bushes" instance=ExtResource( 9 )]
+transform = Transform( -1.25967, 0, -0.0170303, 0, 1.40871, 0, 0.0989439, 0, -1.29133, 2.40538, -9.53674e-07, -33.7631 )
+
+[node name="Flowers" type="Node" parent="Foliage"]
+
+[node name="Sunflowers" type="Node" parent="Foliage/Flowers"]
+
+[node name="Sunflower1" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.180475, 0, -0.209465, 0, 0.184569, 0, 0.0386607, 0, 0.977816, 7.47631, 0.750292, -8.0185 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Sunflower2" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.283757, 0, -0.209465, 0, 0.290194, 0, 0.0607856, 0, 0.977816, 6.35408, 1.09563, -7.11406 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Sunflower21" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.172518, 0, 0.371572, 0, 0.184344, 0, -0.0775509, 0, 0.826592, 2.55359, 0.694681, 9.15427 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Sunflower22" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.520676, 0, 0.371572, 0, 0.556367, 0, -0.234056, 0, 0.826592, 1.39041, 2.01664, 10.9764 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Sunflower23" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.13324, 0, 0.371572, 0, 0.142374, 0, -0.0598945, 0, 0.826592, 13.845, 0.556557, 10.8054 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Sunflower24" type="Sprite3D" parent="Foliage/Flowers/Sunflowers"]
+transform = Transform( 0.253262, 0, 0.371572, 0, 0.270623, 0, -0.113847, 0, 0.826592, 1.49933, 1.02397, 12.922 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 6 )
+
+[node name="Belladonnas" type="Node" parent="Foliage/Flowers"]
+
+[node name="Belladonna3" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.143047, 0, 0, 0, 0.143047, 0, 0, 0, 1, -19.6618, 0.550385, -15.2378 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna4" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.163871, 0, 0, 0, 0.163871, 0, 0, 0, 1, -18.8408, 0.620551, -15.7002 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna5" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -18.5764, 0.691048, -14.6917 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna23" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.225923, 0, 0, 0, 0.225923, 0, 0, 0, 1, -26.1651, 0.830299, -14.479 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna24" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.188194, 0, 0, 0, 0.188194, 0, 0, 0, 1, -25.1469, 0.707058, -15.3769 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna21" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.295027, 0, 0, 0, 0.295027, 0, 0, 0, 1, -17.3148, 1.05846, -9.34328 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna25" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.295027, 0, 0, 0, 0.295027, 0, 0, 0, 1, -13.3156, 1.05846, -7.68656 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna26" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.143694, 0, 0, 0, 0.143694, 0, 0, 0, 1, -12.6555, 0.563273, -7.9602 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna22" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.218825, 0, 0, 0, 0.218825, 0, 0, 0, 1, -17.2385, 0.763274, -10.4322 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna6" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, 0.857025, 0.691048, -30.214 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna11" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, 0.156066, 0.691048, -31.0724 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna12" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -4.13752, 0.691048, -20.1757 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna13" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -3.85527, 0.691048, -18.66 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna14" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -5.21379, 0.691048, -17.6115 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna15" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -13.5625, 0.691048, -32.4293 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna20" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.265604, 0, 0, 0, 0.265604, 0, 0, 0, 1, -15.1943, 0.997303, -32.7813 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna16" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.157788, 0, 0, 0, 0.157788, 0, 0, 0, 1, -20.2384, 0.581657, -23.4558 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna17" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.13894, 0, 0, 0, 0.13894, 0, 0, 0, 1, -19.115, 0.517982, -22.3219 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna18" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.204776, 0, 0, 0, 0.204776, 0, 0, 0, 1, -15.0337, 0.691048, -15.3815 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna19" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.241897, 0, 0, 0, 0.241897, 0, 0, 0, 1, -15.9733, 0.757982, -16.0366 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna7" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.18456, 0, 0, 0, 0.18456, 0, 0, 0, 1, -2.83277, 0.722301, -35.4437 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna8" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.122496, 0, 0, 0, 0.122496, 0, 0, 0, 1, -4.52402, 0.405373, -34.9715 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna9" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.162968, 0, 0, 0, 0.162968, 0, 0, 0, 1, -2.13019, 0.613364, -34.0565 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Belladonna10" type="Sprite3D" parent="Foliage/Flowers/Belladonnas"]
+transform = Transform( 0.155565, 0, 0, 0, 0.155565, 0, 0, 0, 1, -5.87706, 0.626595, -34.2802 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 14 )
+
+[node name="Tulips" type="Node" parent="Foliage/Flowers"]
+
+[node name="SmallTulip1" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0922515, 0, 0.416566, 0, 0.101475, 0, -0.0422711, 0, 0.909105, 4.02991, 0.400975, -6.93817 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip2" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0784078, 0, 0.416566, 0, 0.0862472, 0, -0.0359277, 0, 0.909105, 3.45055, 0.337193, -6.6252 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip3" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.11809, 0, 0.416566, 0, 0.129897, 0, -0.0541107, 0, 0.909105, 3.46213, 0.49475, -7.24901 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip4" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 10.9777, 0.397037, -7.74164 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip5" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0782629, 0, -0.546919, 0, 0.108896, 0, 0.0530559, 0, 1.02065, 10.2976, 0.316505, -7.56681 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip6" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.117872, 0, -0.546919, 0, 0.164009, 0, 0.0799075, 0, 1.02065, 10.4861, 0.515437, -8.27946 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip7" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0929389, 0, 0.401452, 0, 0.101475, 0, -0.0407374, 0, 0.91588, 9.96627, 0.400975, -8.58702 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip8" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0789921, 0, 0.401452, 0, 0.0862472, 0, -0.0346241, 0, 0.91588, 9.76027, 0.337193, -7.96159 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip9" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.11897, 0, 0.401452, 0, 0.129897, 0, -0.0521474, 0, 0.91588, 9.34015, 0.49475, -8.42286 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip10" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0829533, 0, -0.9412, 0, 0.164009, 0, 0.115749, 0, 0.674527, 3.23211, 0.515437, 24.5373 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip11" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.101293, 0, 0.0598465, 0, 0.101475, 0, -0.00607292, 0, 0.998208, 3.75156, 0.400974, 24.8455 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip12" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0860926, 0, 0.0598464, 0, 0.0862472, 0, -0.0051616, 0, 0.998207, 3.9583, 0.337192, 24.2203 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip13" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.129664, 0, 0.0598465, 0, 0.129897, 0, -0.00777388, 0, 0.998207, 4.37788, 0.494749, 24.6821 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip14" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0829533, 0, -0.9412, 0, 0.164009, 0, 0.115749, 0, 0.674527, 12.6796, 0.515437, 22.693 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip15" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.101293, 0, 0.0598465, 0, 0.101475, 0, -0.00607292, 0, 0.998208, 13.9944, 0.400974, 23.2268 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip16" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.0860926, 0, 0.0598464, 0, 0.0862472, 0, -0.0051616, 0, 0.998207, 13.901, 0.337192, 22.1904 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="SmallTulip17" type="Sprite3D" parent="Foliage/Flowers/Tulips"]
+transform = Transform( 0.129664, 0, 0.0598465, 0, 0.129897, 0, -0.00777388, 0, 0.998207, 15.1161, 0.492379, 20.7115 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 8 )
+
+[node name="Roses" type="Node" parent="Foliage/Flowers"]
+
+[node name="Rose" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0805496, 0, -0.478428, 0, 0.112078, 0, 0.0624234, 0, 1.02065, 12.4098, 0.453431, -9.61886 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose2" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.122389, 0, -0.726934, 0, 0.170294, 0, 0.0624234, 0, 1.02065, 13.5836, 0.66855, -9.85765 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose3" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0626272, 0, -0.371977, 0, 0.0871404, 0, 0.0624234, 0, 1.02065, 14.3113, 0.345037, -10.6724 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose4" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.130793, 0, -0.776851, 0, 0.181988, 0, 0.0624234, 0, 1.02065, 19.5366, 0.732182, -15.3015 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose5" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0582135, 0, -0.345762, 0, 0.0809991, 0, 0.0624234, 0, 1.02065, 17.5524, 0.319122, -20.8507 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose8" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0570557, 0, -0.338885, 0, 0.0793881, 0, 0.0624234, 0, 1.02065, 15.0894, 0.293036, -27.4639 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose9" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.113651, 0, -0.675034, 0, 0.158135, 0, 0.0624234, 0, 1.02065, 14.7595, 0.624577, -28.1412 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose10" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 13.2544, 0.517825, -28.4486 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose11" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 7.51391, 0.517825, -31.4831 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose12" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 5.28292, 0.517825, -30.6633 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose13" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.151629, 0, -0.900609, 0, 0.210979, 0, 0.0624234, 0, 1.02065, 6.0885, 0.861846, -31.429 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose14" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.056151, 0, -0.333511, 0, 0.0781294, 0, 0.0624234, 0, 1.02065, 3.0885, 0.328872, -29.429 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose15" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 2.43829, 0.517825, -27.0177 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose16" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 3.87894, 0.517825, -22.5779 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose17" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0525677, 0, -0.312228, 0, 0.0731435, 0, 0.0624234, 0, 1.02065, 3.07281, 0.229302, -21.077 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose18" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, -2.07253, 0.517825, -15.2102 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose25" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, -5.56825, 0.517825, -5.9153 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose26" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.105273, 0, -0.62527, 0, 0.146478, 0, 0.0624234, 0, 1.02065, -5.79002, 0.595761, -11.1931 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose27" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0816505, 0, -0.484967, 0, 0.11361, 0, 0.0624234, 0, 1.02065, -4.20624, 0.453148, -4.84781 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose29" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.068816, 0, -0.408735, 0, 0.0957515, 0, 0.0624234, 0, 1.02065, -4.97826, 0.375229, -7.19702 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose28" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.114888, 0, -0.682385, 0, 0.166429, 0, 0.0708557, 0, 1.15852, -7.17115, 0.644828, -12.8965 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose19" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.137358, 0, -0.815844, 0, 0.191122, 0, 0.0624234, 0, 1.02065, -0.93452, 0.716872, -19.6404 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose20" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, -0.569795, 0.517825, -18.5829 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose21" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0597275, 0, -0.354754, 0, 0.0831057, 0, 0.0624234, 0, 1.02065, -0.165723, 0.36407, -19.4237 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose22" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.111637, 0, -0.663071, 0, 0.168957, 0, 0.0678984, 0, 1.11017, 0.758919, 0.573772, -9.27489 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose23" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0795445, 0, -0.472458, 0, 0.110679, 0, 0.0624234, 0, 1.02065, 1.70999, 0.423854, -9.52618 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose24" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 7.99234, 0.517825, -10.044 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose6" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.0669782, 0, -0.39782, 0, 0.0931945, 0, 0.0624234, 0, 1.02065, 18.514, 0.31758, -20.2592 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Rose7" type="Sprite3D" parent="Foliage/Flowers/Roses"]
+transform = Transform( 0.092081, 0, -0.546919, 0, 0.128123, 0, 0.0624234, 0, 1.02065, 18.1574, 0.597943, -21.4808 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 15 )
+
+[node name="Poppies" type="Node" parent="Foliage/Flowers"]
+
+[node name="Poppy" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -4.92064, 0.468748, 13.2734 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy3" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -6.12318, 0.468748, 12.5635 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy4" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -10.5618, 0.468748, 10.7521 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy5" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -14.4916, 0.468748, 16.3771 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy6" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.141406, 0, 0.207462, 0, 0.151099, 0, -0.113847, 0, 0.826592, -14.0303, 0.583212, 17.2618 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy7" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.185628, 0, 0.272342, 0, 0.198352, 0, -0.113847, 0, 0.826592, -13.171, 0.767681, 15.1683 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy8" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.108984, 0, 0.159894, 0, 0.116454, 0, -0.113847, 0, 0.826592, -13.3801, 0.435659, 17.855 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy9" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.108984, 0, 0.159894, 0, 0.116454, 0, -0.113847, 0, 0.826592, -11.7602, 0.435659, 16.2773 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy13" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.108984, 0, 0.159894, 0, 0.116454, 0, -0.113847, 0, 0.826592, -8.45797, 0.435659, 23.2712 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy14" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.150419, 0, 0.220686, 0, 0.16073, 0, -0.113847, 0, 0.826592, -9.45937, 0.623019, 23.9212 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy15" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.104427, 0, 0.153209, 0, 0.111585, 0, -0.113847, 0, 0.826592, -10.1321, 0.417193, 23.3825 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy16" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.154439, 0, 0.226584, 0, 0.165025, 0, -0.113847, 0, 0.826592, -18.3492, 0.639117, 22.4745 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy18" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.12128, 0, 0.177935, 0, 0.129594, 0, -0.113847, 0, 0.826592, -19.2134, 0.489129, 22.7674 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy19" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.12128, 0, 0.177935, 0, 0.129594, 0, -0.113847, 0, 0.826592, -17.7995, 0.489129, 23.9629 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy20" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.138733, 0, 0.203541, 0, 0.148243, 0, -0.113847, 0, 0.826592, -21.0355, 0.531239, 18.5656 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy21" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.138733, 0, 0.203541, 0, 0.148243, 0, -0.113847, 0, 0.826592, -25.1549, 0.599723, 13.7163 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy22" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.110068, 0, 0.161485, 0, 0.117613, 0, -0.113847, 0, 0.826592, -24.3723, 0.457886, 14.0809 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy23" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.0762306, 0, 0.111841, 0, 0.0863988, 0, -0.0859212, 0, 0.623835, -25.3428, 0.334527, 12.844 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy24" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.0921584, 0, 0.13521, 0, 0.104451, 0, -0.0859212, 0, 0.623835, -24.438, 0.373, 4.49371 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy25" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.107573, 0, 0.157825, 0, 0.121922, 0, -0.0859212, 0, 0.623835, -25.1748, 0.457323, 4.95961 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy27" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.107573, 0, 0.157825, 0, 0.121922, 0, -0.0859212, 0, 0.623835, -15.1641, 0.457323, 6.75834 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy28" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.147639, 0, 0.216608, 0, 0.167332, 0, -0.0859212, 0, 0.623835, -16.2036, 0.630387, 6.76791 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy29" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.191156, 0, 0.280454, 0, 0.19482, 0, -0.0859212, 0, 0.623835, -14.0393, 0.758092, 7.59205 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy30" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.191156, 0, 0.280454, 0, 0.19482, 0, -0.0859212, 0, 0.623835, -25.7772, 0.758093, -4.75156 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy31" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.146742, 0, 0.215292, 0, 0.149555, 0, -0.0859212, 0, 0.623835, -24.718, 0.577234, -4.31654 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy32" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.146742, 0, 0.215292, 0, 0.149555, 0, -0.0859212, 0, 0.623835, -26.462, 0.577234, -6.15507 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy43" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.0324094, 0, -0.675756, 0, 0.19482, 0, 0.207058, 0, -0.105724, -15.5242, 0.758093, -1.39491 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy44" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.00815543, 0, -0.640172, 0, 0.149555, 0, 0.169851, 0, -0.160312, -16.4671, 0.577234, -0.745114 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy45" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.00815543, 0, -0.640172, 0, 0.149555, 0, 0.169851, 0, -0.160312, -13.9745, 0.577234, -1.20215 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy33" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.146742, 0, 0.215292, 0, 0.149555, 0, -0.0859212, 0, 0.623835, -22.4544, 0.577234, 0.0675499 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy26" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.149534, 0, 0.219388, 0, 0.16948, 0, -0.0952906, 0, 0.691862, -26.4757, 0.629139, 5.41882 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy17" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.0659661, 0, 0.0967817, 0, 0.075924, 0, -0.0853571, 0, 0.619739, -19.8076, 0.291176, 21.8203 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy10" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.140891, 0, 0.206708, 0, 0.150549, 0, -0.113847, 0, 0.826592, -12.4241, 0.570614, 18.0978 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy11" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.108984, 0, 0.159894, 0, 0.116454, 0, -0.113847, 0, 0.826592, -14.2849, 0.435659, 18.2915 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy12" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.127867, 0, 0.1876, 0, 0.136632, 0, -0.113847, 0, 0.826592, -12.1339, 0.495056, 15.3866 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy2" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.158177, 0, 0.232068, 0, 0.16902, 0, -0.113847, 0, 0.826592, -5.46152, 0.622313, 12.6859 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy34" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -9.33707, 0.468748, 3.32248 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy35" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.112232, 0, 0.164661, 0, 0.119926, 0, -0.113847, 0, 0.826592, -10.5396, 0.468748, 2.61264 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy36" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.158177, 0, 0.232068, 0, 0.16902, 0, -0.113847, 0, 0.826592, -9.87795, 0.622313, 2.73497 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy37" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.00212103, 0, -0.703776, 0, 0.119926, 0, 0.159852, 0, -0.463753, -6.21389, 0.468748, 5.24525 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy38" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( 0.00212103, 0, -0.703776, 0, 0.119926, 0, 0.159852, 0, -0.463753, -4.86379, 0.468748, 4.88858 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy39" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.0301671, 0, -0.751147, 0, 0.16902, 0, 0.192538, 0, -0.415798, -5.41581, 0.622313, 5.27334 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy40" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.0618715, 0, 0.826281, 0, 0.119926, 0, -0.147408, 0, 0.166215, -4.24085, 0.468748, 3.20431 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy41" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.0618715, 0, 0.826281, 0, 0.119926, 0, -0.147408, 0, 0.166215, -5.3589, 0.468748, 4.04094 )
+flip_h = true
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Poppy42" type="Sprite3D" parent="Foliage/Flowers/Poppies"]
+transform = Transform( -0.0441856, 0, 0.852228, 0, 0.16902, 0, -0.189812, 0, 0.104002, -4.9913, 0.622313, 3.47736 )
+billboard = 2
+alpha_cut = 1
+texture = ExtResource( 16 )
+
+[node name="Clouds" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732568, 0 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1.65756, 0, 0, 0, 1.65756, 0, 0, 0, 1, -0.434967, 7.93192, 35.228 )
+render_priority = -5
+texture = ExtResource( 11 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Clouds"]
+transform = Transform( 1.70428, 0, 0, 0, 1.70428, 0, 0, 0, 1, -1.60762, 7.93192, -43.9621 )
+render_priority = -5
+texture = ExtResource( 11 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Clouds"]
+transform = Transform( -7.6961e-08, 0, -1, 0, 1.76066, 0, 1.76066, 0, -4.37114e-08, -39.3379, 7.99036, -4.68984 )
+lod_max_distance = 32768.0
+render_priority = -5
+texture = ExtResource( 11 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Clouds"]
+transform = Transform( -7.65629e-08, 0, -1, 0, 1.75156, 0, 1.75156, 0, -4.37114e-08, 40.6273, 7.93192, -1.63895 )
+render_priority = -5
+texture = ExtResource( 11 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = ExtResource( 12 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 0.0976002, 0.995226, 0, -0.995226, 0.0976002, -0.700223, 7.46612, -1.8141 )
+shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 1 )
+shadow_bias = 0.05
+directional_shadow_max_distance = 250.0
+
+[node name="GrassSprites" type="Spatial" parent="."]
+
+[node name="GrassTuft" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 5.17228, -4.76837e-07, -7.87819 )
+
+[node name="GrassTuft4" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.6337, 0, 10.3496 )
+
+[node name="GrassTuft5" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -9.90679, 0, 11.6007 )
+
+[node name="GrassTuft6" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -8.55534, 0, 10.5523 )
+
+[node name="GrassTuft7" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.4713, 0, 11.599 )
+
+[node name="GrassTuft8" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -7.9652, 0, 5.0436 )
+
+[node name="GrassTuft9" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.926579, 0, 0.858325, 0, 0.338474, 0, -1.54998, 0, 0.513107, -11.0325, 0, 0.638922 )
+
+[node name="GrassTuft10" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.0086, 0, -0.436399 )
+
+[node name="GrassTuft11" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -5.60048, 0, 6.29885 )
+
+[node name="GrassTuft12" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.9169, 0, -11.7967 )
+
+[node name="GrassTuft13" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -10.9609, 1.90735e-06, -10.5915 )
+
+[node name="GrassTuft14" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -11.2824, 1.90735e-06, -9.27096 )
+
+[node name="GrassTuft49" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -13.2231, 1.90735e-06, -7.82598 )
+
+[node name="GrassTuft50" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -6.9889, 1.90735e-06, -12.0884 )
+
+[node name="GrassTuft51" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -7.4648, 1.90735e-06, -13.6751 )
+
+[node name="GrassTuft15" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 16.7867, 1.90735e-06, -14.4632 )
+
+[node name="GrassTuft16" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.7944, 1.90735e-06, -10.4005 )
+
+[node name="GrassTuft17" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 9.69574, 1.90735e-06, -10.7186 )
+
+[node name="GrassTuft18" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 0.917744, 2.14577e-06, -4.19919 )
+
+[node name="GrassTuft19" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 7.77692, 1.90735e-06, -8.52336 )
+
+[node name="GrassTuft96" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.357304, 0, 0.98023, 0, 0.338474, 0, -1.77012, 0, 0.197863, 3.4871, 2.14577e-06, -8.8907 )
+
+[node name="GrassTuft97" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.72431, 0, 0.297041, 0, 0.338474, 0, -0.536403, 0, -0.954865, 6.27926, 1.90735e-06, -9.46789 )
+
+[node name="GrassTuft98" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.72431, 0, 0.297041, 0, 0.338474, 0, -0.536403, 0, -0.954865, 5.12385, 1.90735e-06, -9.39949 )
+
+[node name="GrassTuft99" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.79566, 0, -0.105952, 0, 0.338474, 0, 0.19133, 0, -0.994371, 5.93738, 1.90735e-06, -9.927 )
+
+[node name="GrassTuft100" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.79566, 0, -0.105952, 0, 0.338474, 0, 0.19133, 0, -0.994371, 16.3184, 2.38419e-06, -13.1399 )
+
+[node name="GrassTuft101" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.79566, 0, -0.105952, 0, 0.338474, 0, 0.19133, 0, -0.994371, 19.253, 2.38419e-06, -15.7957 )
+
+[node name="GrassTuft102" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.765828, 0, -0.905621, 0, 0.338474, 0, 1.63539, 0, -0.424089, 19.4131, 2.38419e-06, -16.8572 )
+
+[node name="GrassTuft103" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.765828, 0, -0.905621, 0, 0.338474, 0, 1.63539, 0, -0.424089, 19.9677, 2.38419e-06, -24.3152 )
+
+[node name="GrassTuft104" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.765828, 0, -0.905621, 0, 0.338474, 0, 1.63539, 0, -0.424089, 18.8883, 2.38419e-06, -25.44 )
+
+[node name="GrassTuft105" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.80524, 0, 0.0252348, 0, 0.338474, 0, -0.0455695, 0, -0.999682, 19.6615, 1.90735e-06, -25.3786 )
+
+[node name="GrassTuft106" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.623753, 0, -0.938451, 0, 0.338474, 0, 1.69467, 0, -0.345413, 17.1639, 2.38419e-06, -26.3285 )
+
+[node name="GrassTuft107" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.623753, 0, -0.938451, 0, 0.338474, 0, 1.69467, 0, -0.345413, 16.5761, 2.38419e-06, -27.3389 )
+
+[node name="GrassTuft108" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.623753, 0, -0.938451, 0, 0.338474, 0, 1.69467, 0, -0.345413, 14.8521, 2.38419e-06, -28.6188 )
+
+[node name="GrassTuft109" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.623753, 0, -0.938451, 0, 0.338474, 0, 1.69467, 0, -0.345413, 11.3959, 2.14577e-06, -34.7031 )
+
+[node name="GrassTuft110" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.21834, 0, -0.738114, 0, 0.338474, 0, 1.3329, 0, 0.674676, 9.85868, 2.14577e-06, -33.8358 )
+
+[node name="GrassTuft111" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.637427, 0, -0.935629, 0, 0.338474, 0, 1.68958, 0, 0.352985, 11.2157, 2.38419e-06, -32.7384 )
+
+[node name="GrassTuft112" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.6565, 0, -0.398173, 0, 0.338474, 0, 0.719028, 0, 0.91731, 5.32188, 2.38419e-06, -31.8382 )
+
+[node name="GrassTuft113" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.69399, 0, 0.346444, 0, 0.338474, 0, -0.625616, 0, 0.93807, 3.42698, 2.86102e-06, -30.1012 )
+
+[node name="GrassTuft114" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.40176, 0, 0.630432, 0, 0.338474, 0, -1.13845, 0, 0.776244, 2.21905, 0.132902, -26.2939 )
+
+[node name="GrassTuft115" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.40176, 0, 0.630432, 0, 0.338474, 0, -1.13845, 0, 0.776244, 2.91297, 0.132901, -25.6184 )
+
+[node name="GrassTuft116" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.6406, 0, 0.417867, 0, 0.338474, 0, -0.754592, 0, 0.908508, -2.10816, 0.102086, -18.1861 )
+
+[node name="GrassTuft117" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.6406, 0, 0.417867, 0, 0.338474, 0, -0.754592, 0, 0.908508, -1.61888, 0.102086, -17.4598 )
+
+[node name="GrassTuft118" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.08132, 0, 0.800899, 0, 0.338474, 0, -1.44628, 0, -0.5988, -2.42496, 0.102086, -16.5924 )
+
+[node name="GrassTuft119" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.08132, 0, 0.800899, 0, 0.338474, 0, -1.44628, 0, -0.5988, -0.627549, 0.102086, -10.4073 )
+
+[node name="GrassTuft120" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.08132, 0, 0.800899, 0, 0.338474, 0, -1.44628, 0, -0.5988, -6.81765, 0.102086, -17.0166 )
+
+[node name="GrassTuft121" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.65148, 0, -0.404519, 0, 0.338474, 0, 0.730489, 0, -0.914529, -4.43574, 0.102086, -18.247 )
+
+[node name="GrassTuft122" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.65148, 0, -0.404519, 0, 0.338474, 0, 0.730489, 0, -0.914529, -1.33961, 0.102086, -26.7045 )
+
+[node name="GrassTuft123" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.65148, 0, -0.404519, 0, 0.338474, 0, 0.730489, 0, -0.914529, 0.0129981, 0.102086, -28.4367 )
+
+[node name="GrassTuft124" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.65148, 0, -0.404519, 0, 0.338474, 0, 0.730489, 0, -0.914529, -0.670002, 0.102085, -29.2751 )
+
+[node name="GrassTuft142" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.65148, 0, -0.404519, 0, 0.338474, 0, 0.730489, 0, -0.914529, -3.54077, 0.102086, -19.6539 )
+
+[node name="GrassTuft125" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.915002, 0, -0.862125, 0, 0.338474, 0, 1.55684, 0, 0.506696, -1.79003, 0.102086, -33.4116 )
+
+[node name="GrassTuft126" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.67636, 0, -0.371805, 0, 0.338474, 0, 0.671413, 0, 0.92831, -5.15168, 0.102086, -35.286 )
+
+[node name="GrassTuft127" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.67636, 0, -0.371805, 0, 0.338474, 0, 0.671413, 0, 0.92831, -8.53116, 0.102086, -33.6093 )
+
+[node name="GrassTuft128" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.685229, 0, -0.925209, 0, 0.338474, 0, 1.67076, 0, 0.379456, -7.89235, 0.102086, -33.7929 )
+
+[node name="GrassTuft129" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.57837, 0, -0.485847, 0, 0.338474, 0, 0.877353, 0, 0.874043, -13.7884, 0.102086, -33.5884 )
+
+[node name="GrassTuft130" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.57837, 0, -0.485847, 0, 0.338474, 0, 0.877353, 0, 0.874043, -15.1255, 0.102086, -33.7498 )
+
+[node name="GrassTuft131" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.57837, 0, -0.485847, 0, 0.338474, 0, 0.877353, 0, 0.874043, -14.5933, 0.102086, -33.1529 )
+
+[node name="GrassTuft132" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.57837, 0, -0.485847, 0, 0.338474, 0, 0.877353, 0, 0.874043, -17.0787, 0.102086, -32.4094 )
+
+[node name="GrassTuft133" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.78733, 0, 0.142732, 0, 0.338474, 0, -0.257749, 0, 0.989761, -19.3893, 0.102086, -31.677 )
+
+[node name="GrassTuft134" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.32964, 0, 0.676644, 0, 0.338474, 0, -1.2219, 0, 0.736309, -19.9546, 0.102085, -27.3961 )
+
+[node name="GrassTuft135" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.274334, 0, 0.988393, 0, 0.338474, 0, -1.78486, 0, 0.151916, -20.3638, 0.102085, -26.0672 )
+
+[node name="GrassTuft136" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.274334, 0, 0.988393, 0, 0.338474, 0, -1.78486, 0, 0.151916, -21.2603, 0.102085, -22.1594 )
+
+[node name="GrassTuft20" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.67159, 0, 0.378342, 0, 0.338474, 0, -0.683217, 0, 0.925666, 0.991574, 0.0996547, 2.795 )
+
+[node name="GrassTuft21" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.38316, 0, -0.642908, 0, 0.338474, 0, 1.16098, 0, 0.765943, 1.53096, 1.66893e-06, 3.54548 )
+
+[node name="GrassTuft22" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.79834, 0, 0.0909454, 0, 0.338474, 0, -0.164231, 0, 0.995856, 3.44472, 1.43051e-06, -5.93406 )
+
+[node name="GrassTuft23" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.55861, 0, -0.505025, 0, 0.338474, 0, 0.911984, 0, 0.863105, 6.06057, 1.66893e-06, -7.76105 )
+
+[node name="GrassTuft24" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.73027, 0, 0.286224, 0, 0.338474, 0, -0.516868, 0, 0.958163, -0.774591, 1.66893e-06, 2.48796 )
+
+[node name="GrassTuft25" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.3086, 1.66893e-06, 10.3604 )
+
+[node name="GrassTuft26" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 11.7899, 1.43051e-06, 10.3237 )
+
+[node name="GrassTuft27" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 10.3461, 1.66893e-06, 9.23294 )
+
+[node name="GrassTuft28" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.69208, 1.43051e-06, 7.40384 )
+
+[node name="GrassTuft55" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.394331, 0, 0, 0, 1.16503, 0.78299, 1.43051e-06, 12.4621 )
+
+[node name="GrassTuft56" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.36254, 0, 0.764572, 0, 0.394331, 0, -1.1851, 0, 0.879044, 0.623995, -0.017944, 13.8316 )
+
+[node name="GrassTuft57" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.36254, 0, 0.764572, 0, 0.394331, 0, -1.1851, 0, 0.879044, 0.616323, 1.43051e-06, 20.6266 )
+
+[node name="GrassTuft58" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, 1.49624, 1.43051e-06, 21.1867 )
+
+[node name="GrassTuft59" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, 2.77014, 1.43051e-06, 24.7217 )
+
+[node name="GrassTuft60" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, 7.24651, 1.43051e-06, 26.7125 )
+
+[node name="GrassTuft61" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, 7.53145, 1.66893e-06, 25.7631 )
+
+[node name="GrassTuft62" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.49985, 0, 0.748653, 0, 0.505815, 0, -1.0057, 0, -1.11651, -5.5952, 0.100362, 24.0008 )
+
+[node name="GrassTuft63" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.468991, 0, -1.69419, 0, -0.403255, -5.21845, -0.0889428, 21.9443 )
+
+[node name="GrassTuft64" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.28188, 0, 0.46247, 0, -1.69419, 0, -0.472935, -6.97149, 1.66893e-06, 23.8823 )
+
+[node name="GrassTuft65" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.31284, 0, 0.799943, 0, 0.394331, 0, -1.23993, 0, -0.846982, -4.71315, 1.66893e-06, 19.351 )
+
+[node name="GrassTuft66" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.133261, 0, 1.16185, 0, 0.394331, 0, -1.8009, 0, -0.0859734, -10.8347, 1.66893e-06, 24.4685 )
+
+[node name="GrassTuft74" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.133261, 0, 1.16185, 0, 0.394331, 0, -1.8009, 0, -0.0859734, -24.2531, 1.19209e-06, 15.1774 )
+
+[node name="GrassTuft75" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.80125, 0, 0.0827896, 0, 0.394331, 0, -0.128326, 0, -1.16208, -21.5443, 1.19209e-06, 16.192 )
+
+[node name="GrassTuft76" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.80125, 0, 0.0938384, 0, 0.446958, 0, -0.128326, 0, -1.31717, -29.3814, 1.66893e-06, 5.98394 )
+
+[node name="GrassTuft82" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.39821, 0, 0.835671, 0, 0.446958, 0, -1.1428, 0, -1.02245, -28.821, 1.43051e-06, -2.45565 )
+
+[node name="GrassTuft83" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.79733, 0, 0.127919, 0, 0.446958, 0, -0.174931, 0, -1.3143, -26.0242, 1.66893e-06, -2.84488 )
+
+[node name="GrassTuft84" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.31745, 0, 1.01507, 0, 0.50981, 0, -1.58333, 0, -0.844614, -27.7564, 1.66893e-06, -7.10269 )
+
+[node name="GrassTuft85" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.89833, 0, 0.512461, 0, 0.50981, 0, -0.799349, 0, -1.21701, -29.3764, 0.0310256, -11.9307 )
+
+[node name="GrassTuft139" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.798905, 0, 1.55226, 0, 0.671341, 0, -1.73264, 0, 0.715734, -29.3317, 0.0310256, -12.9758 )
+
+[node name="GrassTuft140" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.798905, 0, 1.55226, 0, 0.671341, 0, -1.73264, 0, 0.715734, -29.036, 0.0310256, -10.971 )
+
+[node name="GrassTuft138" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.31745, 0, 1.01507, 0, 0.50981, 0, -1.58333, 0, -0.844614, -27.3807, 1.66893e-06, -13.7394 )
+
+[node name="GrassTuft141" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.15721, 0, 1.01507, 0, 0.447803, 0, -1.39075, 0, -0.844614, -26.9501, 1.43051e-06, -11.2958 )
+
+[node name="GrassTuft86" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -2.02279, 0, 0.249068, 0, 0.50981, 0, -0.388503, 0, -1.29681, -28.7198, 1.66893e-06, -13.6171 )
+
+[node name="GrassTuft87" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -2.02279, 0, 0.199299, 0, 0.40794, 0, -0.388503, 0, -1.03768, -27.9446, 1.54972e-06, -10.6312 )
+
+[node name="GrassTuft88" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -2.02279, 0, 0.199299, 0, 0.40794, 0, -0.388503, 0, -1.03768, -24.3188, 1.54972e-06, -14.8821 )
+
+[node name="GrassTuft89" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.786284, 0, -0.825113, 0, 0.363709, 0, 1.427, 0, 0.454641, -19.2259, 1.54972e-06, -15.3495 )
+
+[node name="GrassTuft90" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.425452, 0, -0.909391, 0, 0.363709, 0, 1.57276, 0, -0.246003, -17.3726, 1.54972e-06, -14.041 )
+
+[node name="GrassTuft91" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.425452, 0, -0.909391, 0, 0.363709, 0, 1.57276, 0, -0.246003, -18.165, 1.54972e-06, -13.6246 )
+
+[node name="GrassTuft92" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.425452, 0, -0.909391, 0, 0.363709, 0, 1.57276, 0, -0.246003, -17.9422, 2.02656e-06, -9.9024 )
+
+[node name="GrassTuft93" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.45895, 0, -0.419367, 0, 0.363709, 0, 0.725277, 0, -0.843588, -17.1193, 2.5034e-06, -8.40373 )
+
+[node name="GrassTuft94" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.491996, 0, -0.898099, 0, 0.363709, 0, 1.55323, 0, 0.28448, -17.6114, 2.5034e-06, -10.835 )
+
+[node name="GrassTuft95" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.491996, 0, -0.898099, 0, 0.363709, 0, 1.55323, 0, 0.28448, -15.2826, 2.5034e-06, -6.05612 )
+
+[node name="GrassTuft80" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.80125, 0, 0.0827896, 0, 0.394331, 0, -0.128326, 0, -1.16208, -28.3819, 1.66893e-06, 5.46473 )
+
+[node name="GrassTuft81" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.80125, 0, 0.0827896, 0, 0.394331, 0, -0.128326, 0, -1.16208, -29.3469, 1.66893e-06, 7.96971 )
+
+[node name="GrassTuft77" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.893668, 0, 1.01236, 0, 0.394331, 0, -1.56919, 0, -0.576551, -27.8348, 1.19209e-06, 11.6919 )
+
+[node name="GrassTuft78" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.398079, 0, 1.13637, 0, 0.394331, 0, -1.7614, 0, 0.256821, -28.0613, 1.19209e-06, 10.0566 )
+
+[node name="GrassTuft79" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.77475, 0, 1.32202, 0, 0.495377, 0, -1.63118, 0, -0.62791, -26.9413, 0.0106294, 12.473 )
+
+[node name="GrassTuft67" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, -13.9265, 1.66893e-06, 25.2108 )
+
+[node name="GrassTuft68" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.58098, 0, 0.745214, 0, 0.521971, 0, -0.872638, 0, -1.35012, -12.4696, 1.66893e-06, 23.8685 )
+
+[node name="GrassTuft69" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.62705, 0, 0.83939, 0, 0.654912, 0, -0.783394, 0, -1.74334, -16.0628, 1.66893e-06, 24.9595 )
+
+[node name="GrassTuft73" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -1.62705, 0, 0.83939, 0, 0.654912, 0, -0.783394, 0, -1.74334, -23.0433, 1.66893e-06, 16.6174 )
+
+[node name="GrassTuft70" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.651883, 0, 1.08647, 0, 0.394331, 0, -1.68405, 0, 0.420563, -17.1039, 1.66893e-06, 24.5405 )
+
+[node name="GrassTuft71" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.625055, 0, 1.09301, 0, 0.394331, 0, -1.69419, 0, -0.403255, -16.0493, 1.66893e-06, 23.8753 )
+
+[node name="GrassTuft72" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.751155, 0, 1.36021, 0, 0.506274, 0, -1.64218, 0, 0.622178, -14.4332, 1.66893e-06, 24.1863 )
+
+[node name="GrassTuft29" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.00841, 1.90735e-06, 11.2488 )
+
+[node name="GrassTuft30" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 16.9466, 1.66893e-06, 15.8794 )
+
+[node name="GrassTuft31" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 16.8563, 1.66893e-06, 14.1065 )
+
+[node name="GrassTuft53" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 13.1578, 1.66893e-06, 11.9052 )
+
+[node name="GrassTuft54" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 14.388, 1.66893e-06, 13.2613 )
+
+[node name="GrassTuft32" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.449, 1.90735e-06, 7.77338 )
+
+[node name="GrassTuft33" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.0147, 1.90735e-06, 6.97383 )
+
+[node name="GrassTuft34" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.4872, 1.90735e-06, 7.97495 )
+
+[node name="GrassTuft35" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.8356, 1.90735e-06, -2.27847 )
+
+[node name="GrassTuft36" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.4406, 1.90735e-06, -0.960684 )
+
+[node name="GrassTuft37" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 18.7327, 1.90735e-06, -1.51748 )
+
+[node name="GrassTuft38" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 17.2535, 1.66893e-06, 5.32144 )
+
+[node name="GrassTuft137" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.100961, 0, 0.998436, 0, 0.338474, 0, -1.803, 0, -0.0559086, 14.7868, 1.66893e-06, 4.59487 )
+
+[node name="GrassTuft39" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 15.0585, 1.66893e-06, -2.59997 )
+
+[node name="GrassTuft40" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 14.6583, 1.66893e-06, -12.3753 )
+
+[node name="GrassTuft41" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -15.9908, 1.54972e-06, -17.8038 )
+
+[node name="GrassTuft42" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.634625, 0, 0.936213, 0, 0.338474, 0, -1.69063, 0, 0.351433, -17.3318, 1.78814e-06, -17.9649 )
+
+[node name="GrassTuft43" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -16.2029, 1.78814e-06, -15.287 )
+
+[node name="GrassTuft44" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.12748, 0, 0.781139, 0, 0.338474, 0, -1.4106, 0, 0.624357, -16.9051, 1.90735e-06, -16.9213 )
+
+[node name="GrassTuft52" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( -0.366105, 0, 0.979233, 0, 0.338474, 0, -1.76832, 0, -0.202736, -14.5172, 1.90735e-06, -13.2031 )
+
+[node name="GrassTuft45" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 0.703791, 0, 0.920927, 0, 0.338474, 0, -1.66303, 0, 0.389735, -18.0763, 1.90735e-06, 1.8239 )
+
+[node name="GrassTuft46" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -15.4042, 1.90735e-06, -0.769805 )
+
+[node name="GrassTuft47" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -17.1374, 1.90735e-06, -0.683225 )
+
+[node name="GrassTuft48" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, -18.357, 1.90735e-06, 0.645234 )
+
+[node name="GrassTuft3" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 15.7651, 0, 12.0257 )
+
+[node name="GrassTuft2" parent="GrassSprites" instance=ExtResource( 13 )]
+transform = Transform( 1.80582, 0, 0, 0, 0.338474, 0, 0, 0, 1, 2.28075, 0, -5.7113 )

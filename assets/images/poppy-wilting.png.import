@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/grass1.png-cd63f1c2c3ad280c9136d6ddb9b0cba2.s3tc.stex"
-path.etc2="res://.import/grass1.png-cd63f1c2c3ad280c9136d6ddb9b0cba2.etc2.stex"
+path.s3tc="res://.import/poppy-wilting.png-0a475b0461b8a1cf173d94212d9b2903.s3tc.stex"
+path.etc2="res://.import/poppy-wilting.png-0a475b0461b8a1cf173d94212d9b2903.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/grass1.png"
-dest_files=[ "res://.import/grass1.png-cd63f1c2c3ad280c9136d6ddb9b0cba2.s3tc.stex", "res://.import/grass1.png-cd63f1c2c3ad280c9136d6ddb9b0cba2.etc2.stex" ]
+source_file="res://assets/images/poppy-wilting.png"
+dest_files=[ "res://.import/poppy-wilting.png-0a475b0461b8a1cf173d94212d9b2903.s3tc.stex", "res://.import/poppy-wilting.png-0a475b0461b8a1cf173d94212d9b2903.etc2.stex" ]
 
 [params]
 

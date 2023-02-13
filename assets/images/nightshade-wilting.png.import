@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/grass2.png-8dc743d5f46686d61893ef19b47994cb.s3tc.stex"
-path.etc2="res://.import/grass2.png-8dc743d5f46686d61893ef19b47994cb.etc2.stex"
+path.s3tc="res://.import/nightshade-wilting.png-7884cecdfd0ec0b73f2aa9782e238c4c.s3tc.stex"
+path.etc2="res://.import/nightshade-wilting.png-7884cecdfd0ec0b73f2aa9782e238c4c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/grass2.png"
-dest_files=[ "res://.import/grass2.png-8dc743d5f46686d61893ef19b47994cb.s3tc.stex", "res://.import/grass2.png-8dc743d5f46686d61893ef19b47994cb.etc2.stex" ]
+source_file="res://assets/images/nightshade-wilting.png"
+dest_files=[ "res://.import/nightshade-wilting.png-7884cecdfd0ec0b73f2aa9782e238c4c.s3tc.stex", "res://.import/nightshade-wilting.png-7884cecdfd0ec0b73f2aa9782e238c4c.etc2.stex" ]
 
 [params]
 

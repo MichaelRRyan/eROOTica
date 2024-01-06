@@ -1,6 +1,6 @@
-extends StaticBody
+extends StaticBody3D
 
-onready var well_label:= get_node("lablel")
+@onready var well_label:= get_node("lablel")
 signal in_proximity_to_well
 signal out_of_proximity_to_well
 

@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/seductive.wav-193b4caecdcc71826316948b831bffcf.sample"
+type="AudioStreamWAV"
+uid="uid://b1tgxyb68hqr"
+path="res://.godot/imported/seductive.wav-193b4caecdcc71826316948b831bffcf.sample"
 
 [deps]
 
 source_file="res://assets/audio/music/seductive.wav"
-dest_files=[ "res://.import/seductive.wav-193b4caecdcc71826316948b831bffcf.sample" ]
+dest_files=["res://.godot/imported/seductive.wav-193b4caecdcc71826316948b831bffcf.sample"]
 
 [params]
 

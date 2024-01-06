@@ -1,6 +1,6 @@
-extends StaticBody
+extends StaticBody3D
 
-onready var compost_label:= get_node("lablel")
+@onready var compost_label:= get_node("lablel")
 
 
 func _ready():

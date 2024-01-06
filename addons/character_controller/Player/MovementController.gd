@@ -1,22 +1,20 @@
-extends KinematicBody
+extends CharacterBody3D
 class_name MovementController
 
 
-export var gravity_multiplier := 3.0
-export var speed := 10
-export var acceleration := 8
-export var deceleration := 10
-export(float, 0.0, 1.0, 0.05) var air_control := 0.3
-export var jump_height := 10
+@export var gravity_multiplier := 3.0
+@export var speed := 10
+@export var acceleration := 8
+@export var deceleration := 10
+@export var air_control := 0.3 # (float, 0.0, 1.0, 0.05)
+@export var jump_height := 10
 var direction := Vector3()
 var input_axis := Vector2()
-var velocity := Vector3()
 var snap := Vector3()
-var up_direction := Vector3.UP
 var stop_on_slope := true
-onready var floor_max_angle: float = deg2rad(45.0)
+
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") 
+@onready var gravity = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)
 		
 
@@ -29,7 +27,7 @@ func _physics_process(delta) -> void:
 	direction_input()
 	
 	if is_on_floor():
-		snap = -get_floor_normal() - get_floor_velocity() * delta
+	#	snap = -get_floor_normal() - get_floor_velocity() * delta
 		
 		# Workaround for sliding down after jump on slope
 		if velocity.y < 0:
@@ -49,8 +47,7 @@ func _physics_process(delta) -> void:
 	
 	accelerate(delta)
 	
-	velocity = move_and_slide_with_snap(velocity, snap, up_direction, 
-			stop_on_slope, 4, floor_max_angle)
+	move_and_slide()
 
 
 func direction_input() -> void:
@@ -69,7 +66,7 @@ func direction_input() -> void:
 
 
 func accelerate(delta: float) -> void:
-	# Using only the horizontal velocity, interpolate towards the input.
+	# Using only the horizontal velocity, sample towards the input.
 	var temp_vel := velocity
 	temp_vel.y = 0
 	
@@ -84,7 +81,7 @@ func accelerate(delta: float) -> void:
 	if not is_on_floor():
 		temp_accel *= air_control
 	
-	temp_vel = temp_vel.linear_interpolate(target, temp_accel * delta)
+	temp_vel = temp_vel.lerp(target, temp_accel * delta)
 	
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z

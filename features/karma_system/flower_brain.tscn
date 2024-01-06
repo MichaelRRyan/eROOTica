@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://c678xjqdtbg33"]
 
-[ext_resource path="res://features/karma_system/flower_brain.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://features/karma_system/flower_brain.gd" id="1"]
 
 [node name="FlowerBrain" type="Node" groups=["flower_brains"]]
-script = ExtResource( 1 )
+script = ExtResource("1")

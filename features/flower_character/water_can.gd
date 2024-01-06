@@ -1,20 +1,20 @@
-extends Spatial
+extends Node3D
 
 # water can/ fertiliser
-onready var equipable_object := get_node("CanSprite")
+@onready var equipable_object := get_node("CanSprite")
 
 # textures
-onready var fertilizer_texture: Texture = load("res://assets/images/fertaliser.png")
-onready var can_texture: Texture = load("res://assets/images/watering_can.png")
-var empty_texture: Texture = null
+@onready var fertilizer_texture: Texture2D = load("res://assets/images/fertaliser.png")
+@onready var can_texture: Texture2D = load("res://assets/images/watering_can.png")
+var empty_texture: Texture2D = null
 
 
 
 # UI icons
-onready var no_water_drop_icon:= get_node("../no_water_Layer")
-onready var water_drop_icon:= get_node("../water")
-onready var no_fertilizer_icon:= get_node("../no_fertilizer/NoFertilizerIcon")
-onready var fertilizer_icon:= get_node("../fetrilizer")
+@onready var no_water_drop_icon:= get_node("../no_water_Layer")
+@onready var water_drop_icon:= get_node("../water")
+@onready var no_fertilizer_icon:= get_node("../no_fertilizer/NoFertilizerIcon")
+@onready var fertilizer_icon:= get_node("../fetrilizer")
 
 
 var well_in_proximity: bool = false;

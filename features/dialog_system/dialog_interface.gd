@@ -5,9 +5,9 @@ signal answer_given(answer_no)
 signal continue_pressed()
 
 
-onready var name_label = get_node("NamePanel/Name")
-onready var character_dialog = get_node("DialogPanel/Label")
-onready var answers = [
+@onready var name_label = get_node("NamePanel/Name")
+@onready var character_dialog = get_node("DialogPanel/Label")
+@onready var answers = [
 	get_node("Answers/Answer1"),
 	get_node("Answers/Answer2"),
 	get_node("Answers/Answer3"),
@@ -17,7 +17,7 @@ onready var answers = [
 #-------------------------------------------------------------------------------
 func _ready():
 	for i in answers.size():
-		answers[i].connect("pressed", self, "_on_AnswerButton_pressed", [i])
+		answers[i].connect("pressed",Callable(self,"_on_AnswerButton_pressed").bind(i))
 
 
 #-------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ func _on_AnswerButton_pressed(button_no : int):
 
 
 #-------------------------------------------------------------------------------
-func show():
+func display():
 	visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

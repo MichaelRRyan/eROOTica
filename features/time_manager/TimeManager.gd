@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var time = 0
 var endOfDayTime = 240 #in seconds
@@ -16,10 +16,10 @@ enum TIME_STATES{
 
 var currentTimeStates
 
-onready var directionalLight = get_node(("../Garden/Lighting/DirectionalLight"))
-onready var colorRect = get_node(("../Player/time_left_layer/FadeToBlackRect"))
-onready var timeText = get_node("../Player/time_left_layer/TimeLeftLabel")
-onready var player = get_node("../Player")
+@onready var directionalLight = get_node(("../Lighting/DirectionalLight3D"))
+@onready var colorRect = get_node(("../Player/time_left_layer/FadeToBlackRect"))
+@onready var timeText = get_node("../Player/time_left_layer/TimeLeftLabel")
+@onready var player = get_node("../Player")
 
 const START_ENERGY = 0.8
 const MID_ENERGY = 6.725

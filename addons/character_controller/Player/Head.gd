@@ -1,11 +1,10 @@
-extends Spatial
+extends Node3D
 
 
-export(NodePath) var cam_path := NodePath("Camera")
-onready var cam: Camera = get_node(cam_path)
+@onready var cam: Camera3D = get_node("Camera3D")
 
-export var mouse_sensitivity := 2.0
-export var y_limit := 90.0
+@export var mouse_sensitivity := 2.0
+@export var y_limit := 90.0
 var mouse_axis := Vector2()
 var rot := Vector3()
 
@@ -13,7 +12,7 @@ var rot := Vector3()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mouse_sensitivity = mouse_sensitivity / 1000
-	y_limit = deg2rad(y_limit)
+	y_limit = deg_to_rad(y_limit)
 
 
 # Called when there is an input event

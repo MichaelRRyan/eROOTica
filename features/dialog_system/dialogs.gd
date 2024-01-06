@@ -58,7 +58,7 @@ var dialogs = {
 	],
 	"Bella & Donna": [
 		[ 1, 0.5, "Bella: hello there\nDonna: Hello... My name is Donna\nBella: and I’m Bella. We’re sisters, and story tellers.\nDonna: It’s nice to see you again, farmer.", 
-			[ "Have we met before? I don’t recognize you...", NEUT, "Bella: Hehe... you’re not the only one.\nDonna: a lot of people don’t know who we are... You could say we live in the shadows" ], 
+			[ "Have we met before? I don’t _recognize you...", NEUT, "Bella: Hehe... you’re not the only one.\nDonna: a lot of people don’t know who we are... You could say we live in the shadows" ], 
 			[ "You two look a bit creepy...", BAD, "Donna: That’s not very nice, you know, farmer...\nBella: Have your parents never taught you any manners? You shouldn’t be rude to a plant’s face like that." ], 
 			[ "I like your aesthetic.", GOOD, "Bella: why thank you, farmer...\nDonna: Even with our purple flower, we’re still as pretty as ever!\nBella: I’d like to think that’s part of our charm." ]
 		],

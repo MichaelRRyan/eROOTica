@@ -1,8 +1,9 @@
 extends Node
+class_name FlowerBrain
 
 signal talked_to(me)
 
-onready var FLOWER_FACES = {
+@onready var FLOWER_FACES = {
 	"Bella & Donna": [ 
 		get_node("../Faces/Bella"),
 		get_node("../Faces/Donna")
@@ -48,7 +49,7 @@ enum PLANT_HEALTH_STATES{
 	WILTED = 2,
 }
 
-onready var flower_body = get_node("../FlowerSprite")
+@onready var flower_body = get_node("../FlowerSprite")
 
 var flower_face_sprites = []
 var flower_body_textures = []
@@ -104,12 +105,12 @@ var _character_name : String = "Rose"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var systems = get_tree().get_nodes_in_group("dialog_system")
-	if systems and !systems.empty():
+	if systems and !systems.is_empty():
 		var dialog_system = systems.front()
-		var _r = connect("talked_to", dialog_system, "_on_character_talked_to")
+		var _r = connect("talked_to",Callable(dialog_system,"_on_character_talked_to"))
 	
 
-func talked_to():
+func talk():
 	emit_signal("talked_to", self)
 	
 	
@@ -127,7 +128,7 @@ func setup(character_name):
 	
 	
 
-func get_name():
+func get_flower_name():
 	return _character_name
 	
 

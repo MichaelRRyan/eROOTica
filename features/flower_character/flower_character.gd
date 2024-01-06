@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 
 # signals
@@ -10,14 +10,14 @@ signal _water_can_emptied_from_individual_flower
 signal _fertilizer_emptied_from_individual_flower
 
 #variables
-onready var brain := get_node("FlowerBrain")
-onready var flower := get_node("FlowerSprite")
-onready var text_box:= get_node("Textbox")
+@onready var brain : FlowerBrain = get_node("FlowerBrain")
+@onready var flower := get_node("FlowerSprite")
+@onready var text_box:= get_node("Textbox")
 
 
 
-export var character_name: String = ""
-export var texture: Texture = null
+@export var character_name: String = ""
+@export var texture: Texture2D = null
 
 
 var in_range_of_player: bool = false
@@ -67,7 +67,7 @@ func _input(event):
 			fertilzer_full = false
 	
 	if event.is_action_pressed("talk") and in_range_of_player:
-		brain.talked_to()
+		brain.talked()
 		emit_signal("_in_dialogue")
 
 

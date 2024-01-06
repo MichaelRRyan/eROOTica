@@ -1,167 +1,169 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=3 uid="uid://t3o14qacukah"]
 
-[ext_resource path="res://addons/character_controller/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://features/3d_scenery/scene_bounds.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/fonts/MotleyForcesRegular-w1rZ3.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://addons/character_controller/Levels/Main/L_Main.gd" type="Script" id=4]
-[ext_resource path="res://features/3d_scenery/well.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/character_controller/Levels/Main/musicController.gd" type="Script" id=6]
-[ext_resource path="res://features/flower_character/flower_character.tscn" type="PackedScene" id=7]
-[ext_resource path="res://features/3d_scenery/well.gd" type="Script" id=8]
-[ext_resource path="res://features/3d_scenery/compost_bin.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/images/rose.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/sunflower.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/nightshade.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/poppy.png" type="Texture" id=13]
-[ext_resource path="res://addons/character_controller/Levels/Main/Flowers.gd" type="Script" id=14]
-[ext_resource path="res://assets/images/watering_can.png" type="Texture" id=16]
-[ext_resource path="res://features/flower_character/water_can.gd" type="Script" id=17]
-[ext_resource path="res://features/time_manager/TimeManager.tscn" type="PackedScene" id=18]
-[ext_resource path="res://features/dialog_system/dialog_system.tscn" type="PackedScene" id=19]
-[ext_resource path="res://assets/audio/music/seductive.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/images/water.png" type="Texture" id=24]
-[ext_resource path="res://assets/images/noFertilizerIcon.png" type="Texture" id=25]
-[ext_resource path="res://assets/images/fertaliserIcon.png" type="Texture" id=26]
-[ext_resource path="res://assets/images/noWater.png" type="Texture" id=28]
+[ext_resource type="Script" path="res://gameplay/gameplay.gd" id="1_amsks"]
+[ext_resource type="PackedScene" uid="uid://cb4qubeitt327" path="res://addons/character_controller/Player/Player.tscn" id="2_vkgbg"]
+[ext_resource type="Script" path="res://features/flower_character/water_can.gd" id="3_k4g4b"]
+[ext_resource type="Texture2D" uid="uid://b3pcdg5rusllr" path="res://assets/images/watering_can.png" id="4_wje38"]
+[ext_resource type="Texture2D" uid="uid://d0c4yijg17viu" path="res://assets/images/noWater.png" id="5_7uq8c"]
+[ext_resource type="Texture2D" uid="uid://c3w6fub21sjsq" path="res://assets/images/water.png" id="6_0pxjs"]
+[ext_resource type="Texture2D" uid="uid://cf1y72l5brptb" path="res://assets/images/noFertilizerIcon.png" id="7_iqhse"]
+[ext_resource type="Texture2D" uid="uid://bb3q5sgy5kixe" path="res://assets/images/fertaliserIcon.png" id="8_yl0w6"]
+[ext_resource type="PackedScene" uid="uid://8mpmxvxow1ck" path="res://features/3d_scenery/scene_bounds.tscn" id="9_qkhhl"]
+[ext_resource type="Script" path="res://features/flower_character/Flowers.gd" id="10_g5kqj"]
+[ext_resource type="PackedScene" uid="uid://bm6pnna67cdcb" path="res://features/flower_character/flower_character.tscn" id="11_1sbph"]
+[ext_resource type="Texture2D" uid="uid://pcs2yt0nywi2" path="res://assets/images/rose.png" id="12_smrf4"]
+[ext_resource type="Texture2D" uid="uid://hjbm851sks4d" path="res://assets/images/nightshade.png" id="13_wg6l8"]
+[ext_resource type="Texture2D" uid="uid://116ffapkuibb" path="res://assets/images/poppy.png" id="14_3jvxb"]
+[ext_resource type="Texture2D" uid="uid://c6686af8dgjju" path="res://assets/images/sunflower.png" id="15_ousfq"]
+[ext_resource type="PackedScene" uid="uid://bjxea184dmh58" path="res://features/dialog_system/dialog_system.tscn" id="16_5qouh"]
+[ext_resource type="PackedScene" uid="uid://bpy26e1hfhmhc" path="res://features/time_manager/TimeManager.tscn" id="17_7rf46"]
+[ext_resource type="AudioStream" uid="uid://b1tgxyb68hqr" path="res://assets/audio/music/seductive.wav" id="18_7m1d7"]
+[ext_resource type="Script" path="res://features/3d_scenery/musicController.gd" id="19_fqfxw"]
+[ext_resource type="PackedScene" uid="uid://dd2dlcv86tv4p" path="res://features/3d_scenery/well.tscn" id="20_rsny0"]
+[ext_resource type="Script" path="res://features/3d_scenery/well.gd" id="21_onpa1"]
+[ext_resource type="PackedScene" path="res://features/3d_scenery/compost_bin.tscn" id="22_s68j6"]
+[ext_resource type="Environment" uid="uid://rbuna3sgvug2" path="res://gameplay/Environment.tres" id="23_tpbai"]
 
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 1.69785, 1.35048, 0.494939 )
+[sub_resource type="BoxShape3D" id="4"]
+size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="DynamicFont" id=6]
-size = 26
-extra_spacing_top = 24
-font_data = ExtResource( 3 )
+[sub_resource type="BoxShape3D" id="7"]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape3D" id="8"]
 
-[sub_resource type="BoxShape" id=8]
+[node name="Gameplay" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0.0354118, 0.00837803)
+script = ExtResource("1_amsks")
 
-[node name="L_Main" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0.0354118, 0.00837803 )
-script = ExtResource( 4 )
+[node name="Player" parent="." instance=ExtResource("2_vkgbg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17, 1.804, 2)
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17, 1.804, 2 )
-
-[node name="water_can" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09807, 0.00627375, -0.00327158 )
-script = ExtResource( 17 )
+[node name="water_can" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09807, 0.00627375, -0.00327158)
+script = ExtResource("3_k4g4b")
 
 [node name="CanSprite" type="Sprite3D" parent="Player/water_can"]
-transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.46109, 0.132571, -0.587582 )
+transform = Transform3D(0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.46109, 0.132571, -0.587582)
 billboard = 1
 render_priority = 100
-texture = ExtResource( 16 )
+texture = ExtResource("4_wje38")
 
-[node name="Area" type="Area" parent="Player/water_can"]
-transform = Transform( 0.144273, 0, 0, 0, 0.144273, 0, 0, 0, -0.455551, 6.67671, 0.58053, -0.958136 )
+[node name="Area3D" type="Area3D" parent="Player/water_can"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 6.67671, 0.58053, -0.958136)
 
-[node name="CollisionShape" type="CollisionShape" parent="Player/water_can/Area"]
-transform = Transform( 1.26557, 0, 0, 0, 1.37663, 0, 0, 0, 1.37663, 0, 0, 0 )
-shape = SubResource( 4 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/water_can/Area3D"]
+shape = SubResource("4")
 
 [node name="no_water_Layer" type="CanvasLayer" parent="Player"]
 
-[node name="NoWater" type="Sprite" parent="Player/no_water_Layer"]
-position = Vector2( 61.3954, 61.3764 )
-scale = Vector2( 0.395969, 0.396513 )
-texture = ExtResource( 28 )
+[node name="NoWater" type="Sprite2D" parent="Player/no_water_Layer"]
+position = Vector2(61.3954, 61.3764)
+scale = Vector2(0.395969, 0.396513)
+texture = ExtResource("5_7uq8c")
 
 [node name="water" type="CanvasLayer" parent="Player"]
 
-[node name="Water" type="Sprite" parent="Player/water"]
-position = Vector2( 61.3954, 62.3765 )
-scale = Vector2( 0.364436, 0.44251 )
-texture = ExtResource( 24 )
+[node name="Water" type="Sprite2D" parent="Player/water"]
+position = Vector2(61.3954, 62.3765)
+scale = Vector2(0.364436, 0.44251)
+texture = ExtResource("6_0pxjs")
 
 [node name="no_fertilizer" type="CanvasLayer" parent="Player"]
 
-[node name="NoFertilizerIcon" type="Sprite" parent="Player/no_fertilizer"]
-position = Vector2( 188.664, 65.0527 )
-scale = Vector2( 0.395969, 0.396513 )
-texture = ExtResource( 25 )
+[node name="NoFertilizerIcon" type="Sprite2D" parent="Player/no_fertilizer"]
+position = Vector2(188.664, 65.0527)
+scale = Vector2(0.395969, 0.396513)
+texture = ExtResource("7_iqhse")
 
 [node name="fetrilizer" type="CanvasLayer" parent="Player"]
 
-[node name="FertaliserIcon" type="Sprite" parent="Player/fetrilizer"]
-position = Vector2( 188.664, 65.0527 )
-scale = Vector2( 0.404428, 0.413685 )
-texture = ExtResource( 26 )
+[node name="FertaliserIcon" type="Sprite2D" parent="Player/fetrilizer"]
+position = Vector2(188.664, 65.0527)
+scale = Vector2(0.404428, 0.413685)
+texture = ExtResource("8_yl0w6")
 
 [node name="time_left_layer" type="CanvasLayer" parent="Player"]
 
 [node name="FadeToBlackRect" type="ColorRect" parent="Player/time_left_layer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color(0, 0, 0, 0)
 
 [node name="TimeLeftLabel" type="RichTextLabel" parent="Player/time_left_layer"]
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -283.0
-margin_bottom = 74.0
+offset_left = -283.0
+offset_bottom = 74.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 6 )
 text = "Time Until Next Day:"
 
-[node name="Garden" parent="." instance=ExtResource( 2 )]
+[node name="Garden" parent="." instance=ExtResource("9_qkhhl")]
 
 [node name="Flower_bed" type="Node" parent="."]
-script = ExtResource( 14 )
+script = ExtResource("10_g5kqj")
 
-[node name="Rose" parent="Flower_bed" instance=ExtResource( 7 )]
+[node name="Rose" parent="Flower_bed" instance=ExtResource("11_1sbph")]
 process_priority = 1
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3888, -0.0879298, -14.8936 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3888, -0.0879298, -14.8936)
 character_name = "Rose"
-texture = ExtResource( 10 )
+texture = ExtResource("12_smrf4")
 
-[node name="BellaAndDonna" parent="Flower_bed" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13266, -0.0879298, -33.5365 )
+[node name="BellaAndDonna" parent="Flower_bed" instance=ExtResource("11_1sbph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13266, -0.0879298, -33.5365)
 character_name = "Bella & Donna"
-texture = ExtResource( 12 )
+texture = ExtResource("13_wg6l8")
 
-[node name="Poppy" parent="Flower_bed" instance=ExtResource( 7 )]
+[node name="Poppy" parent="Flower_bed" instance=ExtResource("11_1sbph")]
 process_priority = 1
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5725, -0.0879298, 15.9623 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5725, -0.0879298, 15.9623)
 character_name = "Poppy"
-texture = ExtResource( 13 )
+texture = ExtResource("14_3jvxb")
 
-[node name="Sunflower" parent="Flower_bed" instance=ExtResource( 7 )]
+[node name="Sunflower" parent="Flower_bed" instance=ExtResource("11_1sbph")]
 process_priority = 1
-transform = Transform( 1.39589, 0, 0, 0, 1.39589, 0, 0, 0, 1, 12.2705, -0.0879308, 20.0512 )
+transform = Transform3D(1.39589, 0, 0, 0, 1.39589, 0, 0, 0, 1, 12.2705, -0.0879308, 20.0512)
 character_name = "Sunflower"
-texture = ExtResource( 11 )
+texture = ExtResource("15_ousfq")
 
-[node name="DialogSystem" parent="." instance=ExtResource( 19 )]
+[node name="DialogSystem" parent="." instance=ExtResource("16_5qouh")]
 
-[node name="TimeManager" parent="." instance=ExtResource( 18 )]
-position = Vector2( -334, 2735 )
+[node name="TimeManager" parent="." instance=ExtResource("17_7rf46")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 23 )
+stream = ExtResource("18_7m1d7")
 volume_db = -1.286
-stream_paused = true
-script = ExtResource( 6 )
+script = ExtResource("19_fqfxw")
 
-[node name="well" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45323, -4.76837e-07, -1.16353 )
-script = ExtResource( 8 )
+[node name="well" parent="." instance=ExtResource("20_rsny0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45323, -4.76837e-07, -1.16353)
+script = ExtResource("21_onpa1")
 
-[node name="area_of_interaction" type="Area" parent="well"]
+[node name="area_of_interaction" type="Area3D" parent="well"]
 
-[node name="CollisionShape" type="CollisionShape" parent="well/area_of_interaction"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26358, 0 )
-shape = SubResource( 7 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="well/area_of_interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26358, 0)
+shape = SubResource("7")
 
-[node name="compost_bin" parent="." instance=ExtResource( 9 )]
+[node name="compost_bin" parent="." instance=ExtResource("22_s68j6")]
 
-[node name="area_of_interaction" type="Area" parent="compost_bin"]
+[node name="area_of_interaction" type="Area3D" parent="compost_bin"]
 
-[node name="CollisionShape" type="CollisionShape" parent="compost_bin/area_of_interaction"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00917, 0 )
-shape = SubResource( 8 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="compost_bin/area_of_interaction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00917, 0)
+shape = SubResource("8")
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = ExtResource("23_tpbai")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.0976002, 0.995226, 0, -0.995226, 0.0976002, -0.700223, 7.46612, -1.8141)
+shadow_enabled = true
+shadow_bias = 0.05
 
 [connection signal="fertilizer_equiped_from_can" from="Player/water_can" to="Flower_bed" method="_fertilizer_equiped_from_can"]
 [connection signal="fertilizer_full_from_can" from="Player/water_can" to="Flower_bed" method="_fertilizer_full_from_can"]

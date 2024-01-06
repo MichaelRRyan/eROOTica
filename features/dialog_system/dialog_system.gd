@@ -1,8 +1,8 @@
 extends Node
 
-onready var _dialogs = get_node("Dialogs").dialogs
-onready var _interface : DialogInterface = get_node("CanvasLayer/DialogInterface")
-onready var _time_manager = get_node("../TimeManager")
+@onready var _dialogs = get_node("Dialogs").dialogs
+@onready var _interface : DialogInterface = get_node("CanvasLayer/DialogInterface")
+@onready var _time_manager = get_node("../TimeManager")
 
 var _current_dialog = null
 var _current_character = null
@@ -11,10 +11,10 @@ signal _leaving_dialogue
 
 
 #-------------------------------------------------------------------------------
-func _on_character_talked_to(character):
+func _on_character_talked_to(character : FlowerBrain):
 	_current_character = character
-	_interface.show()
-	_interface.set_character_name(character.get_name())
+	_interface.display()
+	_interface.set_character_name(character.get_flower_name())
 	_current_dialog = _find_dialog(character)
 	_time_manager._pause_time_dependencies()
 	
@@ -28,8 +28,8 @@ func _on_character_talked_to(character):
 
 
 #-------------------------------------------------------------------------------
-func _find_dialog(character):
-	var char_dialogs = _dialogs[character.get_name()]
+func _find_dialog(character : FlowerBrain):
+	var char_dialogs = _dialogs[character.get_flower_name()]
 	var next_familiarity = character.get_familiarity() + 1
 	
 	var options = []
@@ -41,7 +41,7 @@ func _find_dialog(character):
 	if options.size() == 1:
 		dialog = options[0]
 		
-	elif not options.empty():
+	elif not options.is_empty():
 		var closest_dist = 1
 		
 		for option in options:
